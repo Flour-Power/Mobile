@@ -12,8 +12,8 @@
 		3D148E7D1BD06A87007460D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D148E7B1BD06A87007460D7 /* Main.storyboard */; };
 		3D148E7F1BD06A87007460D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D148E7E1BD06A87007460D7 /* Assets.xcassets */; };
 		3D148E821BD06A87007460D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D148E801BD06A87007460D7 /* LaunchScreen.storyboard */; };
-		3D2EEB6C1C0CB309009E4472 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB6B1C0CB309009E4472 /* LoginViewController.swift */; };
 		3D2EEB6E1C0CB39D009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB6D1C0CB39D009E4472 /* RailsRequest.swift */; };
+		3D2EEB701C0E0687009E4472 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB6F1C0E0687009E4472 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		3D148E7E1BD06A87007460D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D148E811BD06A87007460D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D148E831BD06A87007460D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2EEB6B1C0CB309009E4472 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3D2EEB6D1C0CB39D009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
+		3D2EEB6F1C0E0687009E4472 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				3D148E801BD06A87007460D7 /* LaunchScreen.storyboard */,
 				3D148E831BD06A87007460D7 /* Info.plist */,
 				3D2EEB6D1C0CB39D009E4472 /* RailsRequest.swift */,
-				3D2EEB6B1C0CB309009E4472 /* LoginViewController.swift */,
+				3D2EEB6F1C0E0687009E4472 /* LoginViewController.swift */,
 			);
 			path = FlourPower;
 			sourceTree = "<group>";
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2EEB6C1C0CB309009E4472 /* LoginViewController.swift in Sources */,
+				3D2EEB701C0E0687009E4472 /* LoginViewController.swift in Sources */,
 				3D2EEB6E1C0CB39D009E4472 /* RailsRequest.swift in Sources */,
 				3D148E7A1BD06A87007460D7 /* FlourPowerViewController.swift in Sources */,
 				3D148E781BD06A87007460D7 /* AppDelegate.swift in Sources */,
