@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  HomeViewController.swift
 //  FlourPower
 //
 //  Created by Kelly Robinson on 12/2/15.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

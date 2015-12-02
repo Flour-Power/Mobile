@@ -12,9 +12,9 @@
 		3D2EEB851C0E3F6F009E4472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */; };
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
-		3D2EEB921C0F3D8F009E4472 /* FlourPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */; };
-		3D2EEB941C0F3DED009E4472 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */; };
+		3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */; };
 		3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB951C0F3E70009E4472 /* MainButton.swift */; };
+		3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		3D2EEB871C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
-		3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlourPowerViewController.swift; sourceTree = "<group>"; };
-		3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPLoginViewController.swift; sourceTree = "<group>"; };
 		3D2EEB951C0F3E70009E4472 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +67,8 @@
 				3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */,
 				3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */,
 				3D2EEB891C0E3F6F009E4472 /* Info.plist */,
-				3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */,
-				3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */,
+				3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */,
+				3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */,
 			);
 			path = FlourPower;
 			sourceTree = "<group>";
@@ -144,9 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2EEB941C0F3DED009E4472 /* RegisterViewController.swift in Sources */,
+				3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */,
 				3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */,
-				3D2EEB921C0F3D8F009E4472 /* FlourPowerViewController.swift in Sources */,
+				3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
 			);

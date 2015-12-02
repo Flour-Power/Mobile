@@ -26,7 +26,7 @@
             
         }
         //will need out own server info
-        private let APIbaseURL = "http://flour-power.herokuapp.com"
+        private let APIbaseURL = "https://flour-power.herokuapp.com"
         
         func loginWithEmail(email: String, andPassword password: String, completion: () -> ()) {
             
@@ -45,17 +45,13 @@
             
             requiredWithInfo(info) { (returnedInfo) -> () in
                 
-                if let user = returnedInfo?["user"] as? [String:AnyObject] {
+                if let key = returnedInfo?["auth_token"] as? String {
                     
-                    if let key = user["auth_token"] as? String {
-                        
-                        
-                        
-                        self.token = key
-                        
-                    }
+                    self.token = key
+                    
+                    print(self.token)
+                    
                 }
-                
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
                     //loops through errors
@@ -71,13 +67,13 @@
             
             var info = RequestInfo()
             
-            info.endpoint = "/signup"
+            info.endpoint = "/users/new"
             
             info.method = .POST
             
             info.parameters = [
                 
-              
+                
                 "password" : password,
                 "email" : email
                 
@@ -85,17 +81,13 @@
             
             requiredWithInfo(info) { (returnedInfo) -> () in
                 
-                if let user = returnedInfo?["user"] as? [String:AnyObject] {
+                if let key = returnedInfo?["auth_token"] as? String {
                     
-                    print("user")
+                    self.token = key
                     
-                    if let key = user["auth_token"] as? String {
-                        
-                        self.token = key
-                        
-                    }
+                    print(self.token)
+                    
                 }
-                
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
                     //loops through errors
@@ -126,7 +118,7 @@
             
             if let token = token {
                 
-                request.setValue(token, forHTTPHeaderField: "Access-Token")
+                request.setValue(token, forHTTPHeaderField: "auth-token")
                 
                 print(token)
                 
