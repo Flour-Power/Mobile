@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */; };
+		3D2EEB831C0E3F6F009E4472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB811C0E3F6F009E4472 /* Main.storyboard */; };
+		3D2EEB851C0E3F6F009E4472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */; };
+		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
+		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
+		3D2EEB921C0F3D8F009E4472 /* FlourPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */; };
+		3D2EEB941C0F3DED009E4472 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */; };
+		3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB951C0F3E70009E4472 /* MainButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3D2EEB7A1C0E3F6F009E4472 /* FlourPower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlourPower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D2EEB821C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D2EEB871C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
+		3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlourPowerViewController.swift; sourceTree = "<group>"; };
+		3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3D2EEB951C0F3E70009E4472 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D2EEB771C0E3F6F009E4472 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D2EEB711C0E3F6F009E4472 = {
+			isa = PBXGroup;
+			children = (
+				3D2EEB7C1C0E3F6F009E4472 /* FlourPower */,
+				3D2EEB7B1C0E3F6F009E4472 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D2EEB7B1C0E3F6F009E4472 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D2EEB7A1C0E3F6F009E4472 /* FlourPower.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D2EEB7C1C0E3F6F009E4472 /* FlourPower */ = {
+			isa = PBXGroup;
+			children = (
+				3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */,
+				3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */,
+				3D2EEB951C0F3E70009E4472 /* MainButton.swift */,
+				3D2EEB811C0E3F6F009E4472 /* Main.storyboard */,
+				3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */,
+				3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */,
+				3D2EEB891C0E3F6F009E4472 /* Info.plist */,
+				3D2EEB911C0F3D8F009E4472 /* FlourPowerViewController.swift */,
+				3D2EEB931C0F3DED009E4472 /* RegisterViewController.swift */,
+			);
+			path = FlourPower;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D2EEB791C0E3F6F009E4472 /* FlourPower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D2EEB8C1C0E3F6F009E4472 /* Build configuration list for PBXNativeTarget "FlourPower" */;
+			buildPhases = (
+				3D2EEB761C0E3F6F009E4472 /* Sources */,
+				3D2EEB771C0E3F6F009E4472 /* Frameworks */,
+				3D2EEB781C0E3F6F009E4472 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlourPower;
+			productName = FlourPower;
+			productReference = 3D2EEB7A1C0E3F6F009E4472 /* FlourPower.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D2EEB721C0E3F6F009E4472 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Kelly Robinson";
+				TargetAttributes = {
+					3D2EEB791C0E3F6F009E4472 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 3D2EEB751C0E3F6F009E4472 /* Build configuration list for PBXProject "FlourPower" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D2EEB711C0E3F6F009E4472;
+			productRefGroup = 3D2EEB7B1C0E3F6F009E4472 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D2EEB791C0E3F6F009E4472 /* FlourPower */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D2EEB781C0E3F6F009E4472 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */,
+				3D2EEB851C0E3F6F009E4472 /* Assets.xcassets in Resources */,
+				3D2EEB831C0E3F6F009E4472 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D2EEB761C0E3F6F009E4472 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2EEB941C0F3DED009E4472 /* RegisterViewController.swift in Sources */,
+				3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */,
+				3D2EEB921C0F3D8F009E4472 /* FlourPowerViewController.swift in Sources */,
+				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
+				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3D2EEB811C0E3F6F009E4472 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D2EEB821C0E3F6F009E4472 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D2EEB871C0E3F6F009E4472 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D2EEB8A1C0E3F6F009E4472 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D2EEB8B1C0E3F6F009E4472 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D2EEB8D1C0E3F6F009E4472 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlourPower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3D2EEB8E1C0E3F6F009E4472 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlourPower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D2EEB751C0E3F6F009E4472 /* Build configuration list for PBXProject "FlourPower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2EEB8A1C0E3F6F009E4472 /* Debug */,
+				3D2EEB8B1C0E3F6F009E4472 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D2EEB8C1C0E3F6F009E4472 /* Build configuration list for PBXNativeTarget "FlourPower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D2EEB8D1C0E3F6F009E4472 /* Debug */,
+				3D2EEB8E1C0E3F6F009E4472 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D2EEB721C0E3F6F009E4472 /* Project object */;
+}
