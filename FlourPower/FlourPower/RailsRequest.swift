@@ -1,13 +1,10 @@
-    //
-    //  RailsRequest.swift
-    //  RR
-    //
-    //  Created by Paul Vagner on 11/5/15.
-    //  Copyright © 2015 Paul Vagner. All rights reserved.
-    //
-    //
-    //
-    // THIS WILL FUNCTION WITH ALL REQUESTS
+//
+//  FPCollectionViewController.swift
+//  FlourPower
+//
+//  Created by Kelly Robinson on 12/2/15.
+//  Copyright © 2015 Kelly Robinson. All rights reserved.
+//
     
     import UIKit
     

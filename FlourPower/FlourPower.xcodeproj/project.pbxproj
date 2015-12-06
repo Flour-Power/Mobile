@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0B66531C0F9B8B00D2143E /* FPCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B66521C0F9B8B00D2143E /* FPCollectionViewController.swift */; };
 		3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */; };
 		3D2EEB831C0E3F6F009E4472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB811C0E3F6F009E4472 /* Main.storyboard */; };
 		3D2EEB851C0E3F6F009E4472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */; };
@@ -15,9 +16,13 @@
 		3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */; };
 		3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB951C0F3E70009E4472 /* MainButton.swift */; };
 		3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */; };
+		3DEB8F5E1C120208006B9152 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */; };
+		3DEB8F601C122243006B9152 /* RecipeImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */; };
+		3DEB8F621C1222C6006B9152 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F611C1222C6006B9152 /* AddRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0B66521C0F9B8B00D2143E /* FPCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPCollectionViewController.swift; sourceTree = "<group>"; };
 		3D2EEB7A1C0E3F6F009E4472 /* FlourPower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlourPower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D2EEB821C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPLoginViewController.swift; sourceTree = "<group>"; };
 		3D2EEB951C0F3E70009E4472 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
+		3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DEB8F611C1222C6006B9152 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +72,15 @@
 				3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */,
 				3D2EEB951C0F3E70009E4472 /* MainButton.swift */,
 				3D2EEB811C0E3F6F009E4472 /* Main.storyboard */,
+				3DEB8F611C1222C6006B9152 /* AddRecipeViewController.swift */,
 				3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */,
 				3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */,
 				3D2EEB891C0E3F6F009E4472 /* Info.plist */,
 				3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */,
 				3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */,
+				3D0B66521C0F9B8B00D2143E /* FPCollectionViewController.swift */,
+				3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */,
+				3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */,
 			);
 			path = FlourPower;
 			sourceTree = "<group>";
@@ -144,8 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEB8F621C1222C6006B9152 /* AddRecipeViewController.swift in Sources */,
+				3DEB8F601C122243006B9152 /* RecipeImageCollectionViewCell.swift in Sources */,
+				3D0B66531C0F9B8B00D2143E /* FPCollectionViewController.swift in Sources */,
 				3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */,
 				3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */,
+				3DEB8F5E1C120208006B9152 /* RecipesDetailViewController.swift in Sources */,
 				3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,

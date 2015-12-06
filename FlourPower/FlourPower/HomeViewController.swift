@@ -8,28 +8,53 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class HomeViewController: UIViewController, UISearchBarDelegate {
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func categoryButton(sender: AnyObject) {
     }
-    */
+    
+    @IBOutlet weak var recipeImage: UIImageView!
+    
+typealias categories = String
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+     
+    }
+    
+        // get categories
+        
+        var category = String()
+        
+        func getCategories(completion:([categories]) -> Void) {
+            
+            var info = RequestInfo()
+            
+            info.endpoint = "/categories"
+            info.method = .GET
+            
+            
+            
+            RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
+                
+                
+//                var _categories: [String] = []
+//                if let categories = returnedInfo?["categories"] as? [[String:AnyObject]] {
+//                    
+//                    categories.map{$0["name"]}
+//                    
+//                    
+//                }
+                
+            print(returnedInfo)
+                
+              //pass categories back in completion handler
+              completion([""])
+            }
+        
+        }
+        
+    
 
 }

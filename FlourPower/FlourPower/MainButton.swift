@@ -1,11 +1,10 @@
 //
-//  MainButton.swift
-//  FlashCardsGame
+//  FPCollectionViewController.swift
+//  FlourPower
 //
-//  Created by Paul Vagner on 11/4/15.
-//  Copyright © 2015 Paul Vagner. All rights reserved.
+//  Created by Kelly Robinson on 12/2/15.
+//  Copyright © 2015 Kelly Robinson. All rights reserved.
 //
-
 import UIKit
 
 @IBDesignable
