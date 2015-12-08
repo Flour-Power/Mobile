@@ -9,6 +9,12 @@
 import UIKit
 
 class RecipesDetailViewController: UIViewController {
+    
+    
+    @IBOutlet weak var recipeImageView: UIImageView!
+    
+    
+    @IBOutlet weak var recipeTitleView: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

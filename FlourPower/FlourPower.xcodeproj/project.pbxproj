@@ -19,6 +19,10 @@
 		3DEB8F5E1C120208006B9152 /* RecipesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */; };
 		3DEB8F601C122243006B9152 /* RecipeImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */; };
 		3DEB8F621C1222C6006B9152 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB8F611C1222C6006B9152 /* AddRecipeViewController.swift */; };
+		3DEBA4261C17283000C088BA /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4251C17283000C088BA /* SearchTableViewController.swift */; };
+		3DEBA42A1C172D9A00C088BA /* FPDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4291C172D9A00C088BA /* FPDetailTableViewController.swift */; };
+		3DEBA42E1C1739BD00C088BA /* RecipeStepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA42D1C1739BD00C088BA /* RecipeStepsTableViewController.swift */; };
+		3DEBA4301C173A0E00C088BA /* RecipeIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA42F1C173A0E00C088BA /* RecipeIngredientsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesDetailViewController.swift; sourceTree = "<group>"; };
 		3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DEB8F611C1222C6006B9152 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		3DEBA4251C17283000C088BA /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		3DEBA4291C172D9A00C088BA /* FPDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDetailTableViewController.swift; sourceTree = "<group>"; };
+		3DEBA42D1C1739BD00C088BA /* RecipeStepsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepsTableViewController.swift; sourceTree = "<group>"; };
+		3DEBA42F1C173A0E00C088BA /* RecipeIngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +87,22 @@
 				3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */,
 				3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */,
 				3D0B66521C0F9B8B00D2143E /* FPCollectionViewController.swift */,
+				3DEBA4311C173B4200C088BA /* Recipes */,
+			);
+			path = FlourPower;
+			sourceTree = "<group>";
+		};
+		3DEBA4311C173B4200C088BA /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				3DEBA42D1C1739BD00C088BA /* RecipeStepsTableViewController.swift */,
+				3DEBA4291C172D9A00C088BA /* FPDetailTableViewController.swift */,
+				3DEBA4251C17283000C088BA /* SearchTableViewController.swift */,
+				3DEBA42F1C173A0E00C088BA /* RecipeIngredientsTableViewController.swift */,
 				3DEB8F5D1C120208006B9152 /* RecipesDetailViewController.swift */,
 				3DEB8F5F1C122243006B9152 /* RecipeImageCollectionViewCell.swift */,
 			);
-			path = FlourPower;
+			name = Recipes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,11 +178,15 @@
 			files = (
 				3DEB8F621C1222C6006B9152 /* AddRecipeViewController.swift in Sources */,
 				3DEB8F601C122243006B9152 /* RecipeImageCollectionViewCell.swift in Sources */,
+				3DEBA4301C173A0E00C088BA /* RecipeIngredientsTableViewController.swift in Sources */,
 				3D0B66531C0F9B8B00D2143E /* FPCollectionViewController.swift in Sources */,
 				3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */,
 				3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */,
+				3DEBA42A1C172D9A00C088BA /* FPDetailTableViewController.swift in Sources */,
 				3DEB8F5E1C120208006B9152 /* RecipesDetailViewController.swift in Sources */,
 				3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */,
+				3DEBA4261C17283000C088BA /* SearchTableViewController.swift in Sources */,
+				3DEBA42E1C1739BD00C088BA /* RecipeStepsTableViewController.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
 			);
