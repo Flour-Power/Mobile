@@ -13,9 +13,16 @@ private let reuseIdentifier = "RecipesCell"
 typealias Dictionary = [String : AnyObject]
 
 
-class FPCollectionViewController: UICollectionViewController, UISearchBarDelegate {
+class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
 
     var recipes: [Recipe] = []
+    
+    var category: String?
+    var categoryID: Int?
+    
+    @IBAction func doneButton(sender: AnyObject) {
+        
+    }
     
     @IBAction func addRecipe(sender: AnyObject) {
         
@@ -24,10 +31,21 @@ class FPCollectionViewController: UICollectionViewController, UISearchBarDelegat
     @IBOutlet var recipeCollectionView: UICollectionView!
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         // show recipes in specific category
+        
+      var info = RequestInfo()
+        
+        info.endpoint = "/categories/\(categoryID ?? 0)/recipes"
+        info.method = .GET
+        
+        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
+
+            print(returnedInfo)
+            
+        }
 
     }
     
@@ -38,12 +56,13 @@ class FPCollectionViewController: UICollectionViewController, UISearchBarDelegat
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeCell
         
         // setup cell
         
         let recipe = recipes[indexPath.item]
         
+       
         
         cell.recipeInfo = recipe
         

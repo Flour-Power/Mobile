@@ -10,7 +10,7 @@ import UIKit
 
 import Foundation
 
-class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
+class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     
   
     
@@ -30,13 +30,9 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         print("logged in pressed")
         
         RailsRequest.session().loginWithEmail(email, andPassword: password, completion: {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let LoginVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeVC") as UIViewController
-            
-            //var vc: NewViewController = storyboard.instantiateViewControllerWithIdentifier("newView") as NewViewController
-            
-            self.presentViewController(LoginVC, animated: true, completion: nil)
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC")
+            self.navigationController?.pushViewController(homeVC!, animated: true)
             
         })
             
@@ -47,7 +43,6 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
     @IBAction func pressedRegister(sender: AnyObject) {
         
         guard let password = passwordField?.text else { return }
-        
         guard let email = emailField.text else { return }
         
         print("registered pressed")
@@ -57,13 +52,8 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         
         RailsRequest.session().registerWithEmail(email, andPassword: password, completion: {
             
-            
-                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let RegisterVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeVC") as UIViewController
-                
-                
-                self.presentViewController(RegisterVC, animated: true, completion: nil)
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC")
+            self.navigationController?.pushViewController(homeVC!, animated: true)
             
         
         })
@@ -96,7 +86,7 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         
     }
     
-    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
         return true;
     }

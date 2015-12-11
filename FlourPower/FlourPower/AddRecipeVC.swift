@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddRecipeViewController: UIViewController {
+class AddRecipeVC: UIViewController {
 
     @IBOutlet weak var searchRecipe: UISearchBar!
 

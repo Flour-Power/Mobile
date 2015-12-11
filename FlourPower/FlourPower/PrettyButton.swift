@@ -9,7 +9,7 @@ import UIKit
 
 @IBDesignable
 
-    class MainButton: UIButton {
+    class PrettyButton: UIButton {
         
         @IBInspectable var cornerRadius: CGFloat = 0
         

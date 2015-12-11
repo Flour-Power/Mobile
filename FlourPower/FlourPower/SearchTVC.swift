@@ -1,5 +1,5 @@
 //
-//  RecipeStepsTableViewController.swift
+//  SearchTableViewController.swift
 //  FlourPower
 //
 //  Created by Kelly Robinson on 12/8/15.
@@ -8,7 +8,12 @@
 
 import UIKit
 
-class RecipeStepsTableViewController: UITableViewController {
+class SearchTVC: UITableViewController {
+    
+    @IBOutlet weak var FPSearchBar: UISearchBar!
+    
+    @IBOutlet weak var FPTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

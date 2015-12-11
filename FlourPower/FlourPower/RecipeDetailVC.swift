@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FPDetailTableViewController: UITableViewController {
+class RecipeDetailVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
