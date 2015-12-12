@@ -10,6 +10,8 @@ import UIKit
 
 class RecipeDetailVC: UITableViewController {
 
+    var recipe: Recipe!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,33 +21,47 @@ class RecipeDetailVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // set title & image based on recipe
+        
+        recipe.setValuesForKeysWithDictionary(["name" : title!])
+        recipe.setValuesForKeysWithDictionary(["source_image_url" : UIImage()])
+        
     }
+    
+    // add actions for buttons to play stuff
+    
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+        // based on section 0 = ingredients count, section 1 = steps count
         return 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+//        indexPath.section
+        // chanege reuseID based on section
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
+        
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

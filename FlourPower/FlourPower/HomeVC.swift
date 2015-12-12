@@ -22,12 +22,10 @@ class HomeVC: UIViewController {
     
         let recipesVC = storyboard?.instantiateViewControllerWithIdentifier("RecipesVC") as? RecipesCollectionVC
         
-        // set the category that we chose
         
         recipesVC?.category = sender.titleLabel?.text
         recipesVC?.categoryID = sender.tag
         
-        // set categoryID based on tag
         
         navigationController?.pushViewController(recipesVC!, animated: true)
         
@@ -51,7 +49,6 @@ class HomeVC: UIViewController {
                 
                 print(categories)
                 
-                // per button tag = categories[0]["id"] as? Int ?? 0
                 
                 self.category0.tag = categories[0]["id"] as? Int ?? 0
                 self.category1.tag = categories[1]["id"] as? Int ?? 0

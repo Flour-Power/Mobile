@@ -101,7 +101,7 @@
             
             let fullURLString = APIbaseURL + info.endpoint
             
-            print(fullURLString)
+//            print(fullURLString)
             
             guard let url = NSURL(string: fullURLString) else { return } //add run completion with fail
             
@@ -117,7 +117,7 @@
                 
                 request.setValue(token, forHTTPHeaderField: "auth-token")
                 
-                print(token)
+//                print(token)
                 
             }
             
@@ -154,8 +154,8 @@
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     
                     
-                    print(data)
-                    print(error)
+//                    print(data)
+//                    print(error)
                     
                     //work with the data returned
                     if let data = data {
@@ -163,7 +163,6 @@
                         //have data
                         if let returnedInfo = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) {
                             
-                            print(returnedInfo)
                             completion(returnedInfo: returnedInfo)
                             
                         }

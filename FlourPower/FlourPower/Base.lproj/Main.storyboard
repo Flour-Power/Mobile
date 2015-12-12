@@ -175,6 +175,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ajT-3R-or2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0D5-xf-w4J">
                             <size key="itemSize" width="180" height="210"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -192,7 +193,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-wR-Zx5">
                                             <rect key="frame" x="0.0" y="180" width="180" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-RI-Jeb">
@@ -220,7 +221,6 @@
                                 <connections>
                                     <outlet property="recipeImageView" destination="qyo-RI-Jeb" id="RxR-Tc-t1Q"/>
                                     <outlet property="titleLabel" destination="hIu-wR-Zx5" id="Hs1-5q-Xz9"/>
-                                    <segue destination="fVY-B5-5Jo" kind="show" id="FJo-lH-sr6"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -301,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="677.5" y="1264.5"/>
         </scene>
-        <!--Recipe DetailVC-->
+        <!--Recipe Title-->
         <scene sceneID="hc8-lC-0nT">
             <objects>
-                <viewController id="fVY-B5-5Jo" customClass="RecipeDetailVC" customModule="FlourPower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="fVY-B5-5Jo" customClass="RecipeDetailVC" customModule="FlourPower" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eCT-7F-Tx1"/>
                         <viewControllerLayoutGuide type="bottom" id="A5G-fs-O2c"/>
@@ -385,6 +385,8 @@
                             <constraint firstItem="wK0-aJ-MmK" firstAttribute="leading" secondItem="Z43-Nj-OfE" secondAttribute="leading" id="zFN-nt-qXi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipe Title" id="gaC-RO-yH3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="recipeImageView" destination="NYH-OF-C9x" id="JoO-Q8-8DS"/>

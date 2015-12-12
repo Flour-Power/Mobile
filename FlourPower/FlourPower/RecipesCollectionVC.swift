@@ -14,7 +14,7 @@ typealias Dictionary = [String : AnyObject]
 
 
 class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
-
+    
     var recipes: [Recipe] = []
     
     var category: String?
@@ -29,31 +29,44 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     }
     
     @IBOutlet var recipeCollectionView: UICollectionView!
-
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         // show recipes in specific category
         
-      var info = RequestInfo()
+        var info = RequestInfo()
         
         info.endpoint = "/categories/\(categoryID ?? 0)/recipes"
         info.method = .GET
         
         RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-
-            print(returnedInfo)
+            
+            //            print(returnedInfo)
+            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
+                
+                for recipeInfo in recipeInfos {
+                    
+                    let recipe = Recipe(info: recipeInfo, category: self.category)
+                    
+                    self.recipes.append(recipe)
+                    
+                }
+                
+                self.collectionView?.reloadData()
+                
+            }
             
         }
-
+        
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return recipes.count
     }
-
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeCell
@@ -62,7 +75,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         let recipe = recipes[indexPath.item]
         
-       
+        
         
         cell.recipeInfo = recipe
         
@@ -75,6 +88,27 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         return cell
         
     }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let recipe = recipes[indexPath.item]
+        
+        // get detailVC from storyboard
+        
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
+
+        
+        // set recipe on detailVC
+        
+            recipe.select(detailVC)
+        
+        // push detailVC
+        
+        navigationController?.pushViewController(detailVC!, animated: true)
+
+        
+    }
+    
     
 }
 
@@ -94,7 +128,7 @@ class Recipe: NSObject {
     var recipeSource: String?
     var recipeSourceImage: UIImage?
     
-    init(info: Dictionary, category: String) {
+    init(info: Dictionary, category: String?) {
         
         self.category = category
         
