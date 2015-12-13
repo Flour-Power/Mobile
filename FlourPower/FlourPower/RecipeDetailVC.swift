@@ -12,6 +12,27 @@ class RecipeDetailVC: UITableViewController {
 
     var recipe: Recipe!
     
+    @IBOutlet weak var recipeImageView: UIImageView!
+    
+    
+    
+    
+    
+    @IBAction func startButtton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func pauseButton(sender: AnyObject) {
+        
+    }
+    
+    
+    @IBAction func stopButton(sender: AnyObject) {
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
