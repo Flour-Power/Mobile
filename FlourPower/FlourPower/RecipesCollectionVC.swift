@@ -99,8 +99,10 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
 
         
         // set recipe on detailVC
+
+        detailVC?.recipe = recipe
         
-            recipe.select(detailVC)
+//            recipe.select(detailVC)
         
         // push detailVC
         
@@ -129,6 +131,8 @@ class Recipe: NSObject {
     var recipeSourceImage: UIImage?
     
     init(info: Dictionary, category: String?) {
+        
+        print(info)
         
         self.category = category
         
