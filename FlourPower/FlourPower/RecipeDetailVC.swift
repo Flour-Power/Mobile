@@ -15,6 +15,11 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var recipeImageView: UIImageView!
     
+    @IBOutlet weak var btnLast: UIButton!
+    
+    @IBOutlet weak var btnPause: UIButton!
+    
+    @IBOutlet weak var btnStop: UIButton!
     
     @IBOutlet weak var recipeTableView: UITableView!
     
@@ -50,15 +55,34 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         navigationItem.title = recipe.recipeTitle
         
+        recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
+      
+        recipeImageView.contentMode = .ScaleAspectFill
+        
+    
         recipeTableView.dataSource = self
         recipeTableView.delegate = self
         
         recipeTableView.reloadData()
         
+        btnNextIngredient.layer.cornerRadius = 25.0
+        btnNextStep.layer.cornerRadius = 25.0
+        btnLast.layer.cornerRadius = 25.0
+        btnPause.layer.cornerRadius = 25.0
+        btnStop.layer.cornerRadius = 25.0
+        
+        // Set the initial alpha value of the following buttons to zero (make them invisible).
+        btnPause.alpha = 0.0
+        btnStop.alpha = 0.0
+        btnLast.alpha = 0.0
+        
+        // Make the progress view invisible and set is initial progress to zero.
+        
         
         
     }
     
+
     func registerDefaultSettings() {
         rate = AVSpeechUtteranceDefaultSpeechRate
         pitch = 1.0
@@ -100,7 +124,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let thingToSay = "\(amount) \(unit) \(name)"
             
-            let speechUtterance = AVSpeechUtterance(string: thingToSay)
+            speechUtterance = AVSpeechUtterance(string: thingToSay)
             speechUtterance.rate = rate
             speechUtterance.pitchMultiplier = pitch
             speechUtterance.volume = volume
@@ -116,6 +140,8 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             speechSynthesizer.continueSpeaking()
         }
         
+        animateActionButtonAppearance(true)
+
     }
     
     var currentStep = 0
@@ -129,7 +155,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let step = recipe.directions[currentStep]
                 
                 
-                let speechUtterance = AVSpeechUtterance(string: step)
+                speechUtterance = AVSpeechUtterance(string: step)
                 speechUtterance.rate = rate
                 speechUtterance.pitchMultiplier = pitch
                 speechUtterance.volume = volume
@@ -140,29 +166,89 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 if currentStep == recipe.directions.count { currentStep = 0 }
                 
-            }
-            else{
+            } else {
                 speechSynthesizer.continueSpeaking()
             }
+        
+        animateActionButtonAppearance(true)
+        if !speechSynthesizer.speaking {
+            animateActionButtonAppearance(false)
+        }
+        
+    }
+    
+    @IBAction func pauseButton(sender: AnyObject) {
+        
+        speechSynthesizer.pauseSpeakingAtBoundary(AVSpeechBoundary.Word)
+        
+        animateActionButtonAppearance(false)
+        
+    }
+    
+    var speechUtterance: AVSpeechUtterance!
+    
+    @IBAction func lastButton(sender: AnyObject) {
+        
+        guard !speechSynthesizer.speaking else { return }
+        
+        if let utterance = speechUtterance {
+            
+            speechSynthesizer.speakUtterance(utterance)
             
         }
         
-        
-    
-    
-    // add actions for buttons to play stuff
-    
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didFinishSpeechUtterance utterance: AVSpeechUtterance!) {
+        animateActionButtonAppearance(false)
         
     }
     
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, didStartSpeechUtterance utterance: AVSpeechUtterance!) {
+    @IBAction func stopButton(sender: AnyObject) {
+        
+        speechSynthesizer.stopSpeakingAtBoundary(AVSpeechBoundary.Word)
+        
+        animateActionButtonAppearance(false)
+        
+    }
+    
+    func animateActionButtonAppearance(shouldHideSpeakButton: Bool) {
+
+        var nextIngredientStepButtonsAlphaValue: CGFloat = 1.0
+        var pauseLastStopButtonsAlphaValue: CGFloat = 0.0
+        
+        if shouldHideSpeakButton {
+            
+            nextIngredientStepButtonsAlphaValue = 0.0
+            pauseLastStopButtonsAlphaValue = 1.0
+            
+        }
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            
+            self.btnNextIngredient.alpha = nextIngredientStepButtonsAlphaValue
+            self.btnNextStep.alpha = nextIngredientStepButtonsAlphaValue
+
+            
+            self.btnPause.alpha = pauseLastStopButtonsAlphaValue
+                
+            self.btnLast.alpha = pauseLastStopButtonsAlphaValue
+            
+            self.btnStop.alpha = pauseLastStopButtonsAlphaValue
+            
+        })
+        
+    }
+
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
         
     }
     
     
-    func speechSynthesizer(synthesizer: AVSpeechSynthesizer!, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance!) {
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didStartSpeechUtterance utterance: AVSpeechUtterance) {
+        
+    }
+    
+    
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
         
     }
     // MARK: - Table view data source
@@ -190,7 +276,6 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         
         // indexPath.section
         // change reuseID based on section
@@ -246,3 +331,15 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

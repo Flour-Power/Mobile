@@ -304,7 +304,7 @@
         <!--Recipe DetailVC-->
         <scene sceneID="hc8-lC-0nT">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="fVY-B5-5Jo" customClass="RecipeDetailVC" customModule="FlourPower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" automaticallyAdjustsScrollViewInsets="NO" id="fVY-B5-5Jo" customClass="RecipeDetailVC" customModule="FlourPower" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eCT-7F-Tx1"/>
                         <viewControllerLayoutGuide type="bottom" id="A5G-fs-O2c"/>
@@ -313,12 +313,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-u9-m42">
+                                <rect key="frame" x="10" y="223" width="355" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APz-Pp-KzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="50"/>
+                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <state key="normal" title="Next Ingredient"/>
+                                        <connections>
+                                            <action selector="nextIngredientButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="atw-hZ-9Ek"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-Kw-e01">
+                                        <rect key="frame" x="73" y="0.0" width="63" height="50"/>
+                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="HtI-WK-pnd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjD-eF-Lme">
+                                        <rect key="frame" x="146" y="0.0" width="63" height="50"/>
+                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <state key="normal" title="Last"/>
+                                        <connections>
+                                            <action selector="lastButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="VGc-Z3-4up"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oX-e4-rqV">
+                                        <rect key="frame" x="219" y="0.0" width="63" height="50"/>
+                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="O3P-4u-PPA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg7-Mq-3Fh">
+                                        <rect key="frame" x="292" y="0.0" width="63" height="50"/>
+                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <state key="normal" title="Next Step"/>
+                                        <connections>
+                                            <action selector="nextStepButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="xTA-ob-Yyr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="s0O-Ro-Zpc"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NYH-OF-C9x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="oAF-oh-RfM"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wK0-aJ-MmK">
-                                <rect key="frame" x="0.0" y="214" width="375" height="453"/>
+                                <rect key="frame" x="0.0" y="284" width="375" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="BIS-1i-P2d" customClass="IngredientCell" customModule="FlourPower" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BIS-1i-P2d" id="OpR-vL-8Wd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -341,7 +400,7 @@
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="zi8-wl-hGT" customClass="StepCell" customModule="FlourPower" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zi8-wl-hGT" id="h0R-vK-U3r">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -365,36 +424,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eWh-u9-m42">
-                                <rect key="frame" x="10" y="223" width="355" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APz-Pp-KzD">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="50"/>
-                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Next Ingredient"/>
-                                        <connections>
-                                            <action selector="nextIngredientButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="atw-hZ-9Ek"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yg7-Mq-3Fh">
-                                        <rect key="frame" x="183" y="0.0" width="173" height="50"/>
-                                        <color key="backgroundColor" red="0.70222335979999995" green="1" blue="0.71817650519999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Next Step"/>
-                                        <connections>
-                                            <action selector="nextStepButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="xTA-ob-Yyr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="s0O-Ro-Zpc"/>
-                                </constraints>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NYH-OF-C9x">
-                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="oAF-oh-RfM"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -405,7 +434,7 @@
                             <constraint firstItem="NYH-OF-C9x" firstAttribute="top" secondItem="eCT-7F-Tx1" secondAttribute="bottom" id="JFj-pL-RL1"/>
                             <constraint firstAttribute="trailing" secondItem="eWh-u9-m42" secondAttribute="trailing" constant="10" id="PGg-eM-g0P"/>
                             <constraint firstItem="wK0-aJ-MmK" firstAttribute="leading" secondItem="Z43-Nj-OfE" secondAttribute="leading" id="TEK-Vb-FD2"/>
-                            <constraint firstItem="wK0-aJ-MmK" firstAttribute="top" secondItem="NYH-OF-C9x" secondAttribute="bottom" id="dpb-lW-KKp"/>
+                            <constraint firstItem="wK0-aJ-MmK" firstAttribute="top" secondItem="NYH-OF-C9x" secondAttribute="bottom" constant="70" id="dpb-lW-KKp"/>
                             <constraint firstAttribute="trailing" secondItem="wK0-aJ-MmK" secondAttribute="trailing" id="m6t-23-O0x"/>
                             <constraint firstItem="eWh-u9-m42" firstAttribute="leading" secondItem="Z43-Nj-OfE" secondAttribute="leading" constant="10" id="v3h-go-clO"/>
                         </constraints>
@@ -414,8 +443,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnLast" destination="vjD-eF-Lme" id="Lgx-nt-rSg"/>
                         <outlet property="btnNextIngredient" destination="APz-Pp-KzD" id="6Ln-yY-JS5"/>
                         <outlet property="btnNextStep" destination="yg7-Mq-3Fh" id="bEM-K5-ft6"/>
+                        <outlet property="btnPause" destination="Qzy-Kw-e01" id="Ba2-Mr-QWO"/>
+                        <outlet property="btnStop" destination="4oX-e4-rqV" id="o8g-qA-mMl"/>
                         <outlet property="recipeImageView" destination="NYH-OF-C9x" id="fcX-oe-e4Q"/>
                         <outlet property="recipeTableView" destination="wK0-aJ-MmK" id="20p-pA-Tuu"/>
                     </connections>
