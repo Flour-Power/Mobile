@@ -82,6 +82,13 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        
+        // tell it to shutup
+        speechSynthesizer.stopSpeakingAtBoundary(AVSpeechBoundary.Word)
+
+    }
+    
 
     func registerDefaultSettings() {
         rate = AVSpeechUtteranceDefaultSpeechRate
@@ -276,13 +283,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        // indexPath.section
-        // change reuseID based on section
-        
-        
-        
-        // if section == 0 then set reuse identifier to ingredientCell else set reuse identifier to stepCell
+  
 
         var reuseID = ""
 
@@ -304,7 +305,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let ingredient = recipe.ingredients[indexPath.row]
             
-            // create 3 variables
+      
             
             let amount = ingredient["amount"] as? Int ?? 0
             let unit = ingredient["unit"] as? String ?? ""
