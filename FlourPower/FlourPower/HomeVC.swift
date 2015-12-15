@@ -33,7 +33,9 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var staticImageView: UIImageView!
 
+    @IBOutlet weak var slImage: UIImageView!
     
+    @IBOutlet weak var bgColorImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         

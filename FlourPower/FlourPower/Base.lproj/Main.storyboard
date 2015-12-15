@@ -21,21 +21,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gjD-Tc-C3U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXb-Bj-pcY" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
-                                <rect key="frame" x="20" y="442" width="335" height="55"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.9882352941176471" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="uqH-D2-USv"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="27"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mK-3h-zUH" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                 <rect key="frame" x="20" y="592" width="335" height="55"/>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.396078431372549" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,6 +73,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXb-Bj-pcY" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
+                                <rect key="frame" x="20" y="442" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.9882352941176471" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="uqH-D2-USv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -121,8 +121,11 @@
                     <navigationItem key="navigationItem" id="Ywq-8U-nWO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="emPrettyButton" destination="WXb-Bj-pcY" id="TUJ-YA-XJ5"/>
                         <outlet property="emailField" destination="alS-Rd-wCV" id="a2c-ne-kCg"/>
+                        <outlet property="flowersImage" destination="al8-hY-87y" id="A7T-z9-r4K"/>
                         <outlet property="passwordField" destination="U1X-KO-2Uo" id="MRR-YN-BkC"/>
+                        <outlet property="pwPrettyButton" destination="K9o-T7-ox3" id="Hs7-zk-Pam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -235,7 +238,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bgImage" destination="gcf-d6-Da7" id="0Pa-f0-6ml"/>
                         <outlet property="emailField" destination="eRy-ED-h3K" id="VaZ-Ut-5Fw"/>
+                        <outlet property="flourLargeLogoImage" destination="UKU-Ds-Q6U" id="SP9-sI-8qx"/>
                         <outlet property="passwordField" destination="ZeV-1m-aAv" id="NWp-fl-9kc"/>
                     </connections>
                 </viewController>
@@ -471,7 +476,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="lastButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="VGc-Z3-4up"/>
+                                            <action selector="pauseButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="rVz-vJ-5mV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APz-Pp-KzD" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
@@ -487,7 +492,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="nextIngredientButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="atw-hZ-9Ek"/>
+                                            <action selector="lastButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="SOz-Sw-YOU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oX-e4-rqV" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
@@ -503,7 +508,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="stopButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="O3P-4u-PPA"/>
+                                            <action selector="stopButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="vwy-7Y-b7J"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -527,7 +532,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pauseButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="HtI-WK-pnd"/>
+                                    <action selector="nextIngredientButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="Awa-0V-b8K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69v-cH-VI5" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
@@ -546,7 +551,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pauseButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="EAe-qJ-95S"/>
+                                    <action selector="nextStepButton:" destination="fVY-B5-5Jo" eventType="touchUpInside" id="c1P-5p-vzq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -579,10 +584,13 @@
                     <navigationItem key="navigationItem" id="gaC-RO-yH3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="btnLast" destination="vjD-eF-Lme" id="Lgx-nt-rSg"/>
-                        <outlet property="btnNextIngredient" destination="APz-Pp-KzD" id="6Ln-yY-JS5"/>
-                        <outlet property="btnPause" destination="Qzy-Kw-e01" id="Ba2-Mr-QWO"/>
-                        <outlet property="btnStop" destination="4oX-e4-rqV" id="o8g-qA-mMl"/>
+                        <outlet property="FImageView" destination="hhe-Vp-Wmz" id="3zy-L0-WAx"/>
+                        <outlet property="bgImageView" destination="lyU-fZ-2C3" id="9rn-St-e7a"/>
+                        <outlet property="btnLast" destination="APz-Pp-KzD" id="Iyo-hy-1WX"/>
+                        <outlet property="btnNextIngredient" destination="Qzy-Kw-e01" id="KjT-xf-ZSx"/>
+                        <outlet property="btnNextStep" destination="69v-cH-VI5" id="q8W-9K-lAN"/>
+                        <outlet property="btnPause" destination="vjD-eF-Lme" id="aLL-Uy-4dy"/>
+                        <outlet property="btnStop" destination="4oX-e4-rqV" id="Xw8-SU-Jqn"/>
                         <outlet property="recipeImageView" destination="NYH-OF-C9x" id="fcX-oe-e4Q"/>
                         <outlet property="recipeTableView" destination="wK0-aJ-MmK" id="20p-pA-Tuu"/>
                     </connections>
@@ -609,7 +617,7 @@
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="cell4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N2-V5-TC7" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="DESSERTS">
+                                        <state key="normal" title="SIDE ITEMS">
                                             <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -627,7 +635,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="cell2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTj-bL-jhS" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                         <rect key="frame" x="170" y="0.0" width="165" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="MAIN COURSES">
+                                        <state key="normal" title="SOUP/SALAD">
                                             <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -697,7 +705,7 @@
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="cell5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB6-5X-8A4" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="SIDE DISHES">
+                                        <state key="normal" title="MAIN COURSES">
                                             <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -715,7 +723,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="cell3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvk-JJ-Fop" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                         <rect key="frame" x="170" y="0.0" width="165" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="SOUP/SALAD">
+                                        <state key="normal" title="DESSERTS">
                                             <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -797,10 +805,14 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="category2" destination="tTj-bL-jhS" id="XwO-63-WUl"/>
-                        <outlet property="category3" destination="Vvk-JJ-Fop" id="IeH-xY-PcK"/>
-                        <outlet property="category4" destination="2N2-V5-TC7" id="GGk-Sk-Dpk"/>
-                        <outlet property="category5" destination="jB6-5X-8A4" id="Wgm-vW-08r"/>
+                        <outlet property="bgColorImage" destination="ZxZ-1I-ChN" id="w6M-4H-Ytd"/>
+                        <outlet property="category0" destination="5Am-x0-MtE" id="F4K-CH-hp4"/>
+                        <outlet property="category1" destination="Ef6-b9-rEO" id="zXC-JJ-A50"/>
+                        <outlet property="category2" destination="jB6-5X-8A4" id="v31-Ps-hwr"/>
+                        <outlet property="category3" destination="Vvk-JJ-Fop" id="Als-9h-vni"/>
+                        <outlet property="category4" destination="tTj-bL-jhS" id="Q2B-G5-1Jg"/>
+                        <outlet property="category5" destination="2N2-V5-TC7" id="gKT-Xr-OIf"/>
+                        <outlet property="slImage" destination="k90-38-CdA" id="vPU-5U-2kP"/>
                         <outlet property="staticImageView" destination="D0L-BS-Ccu" id="Xe7-ba-DbS"/>
                     </connections>
                 </viewController>

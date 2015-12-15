@@ -12,14 +12,19 @@ import Foundation
 
 class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var flourLargeLogoImage: UIImageView!
   
+    @IBOutlet weak var flowersImage: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
     
     @IBOutlet weak var passwordField: UITextField!
     
     
     @IBOutlet weak var emailField: UITextField!
     
+    @IBOutlet weak var pwPrettyButton: PrettyButton!
     
+    @IBOutlet weak var emPrettyButton: PrettyButton!
     @IBAction func pressedLogin(sender: AnyObject) {
         
        

@@ -13,6 +13,8 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var recipe: Recipe!
     
+    @IBOutlet weak var FImageView: UIImageView!
+    @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var recipeImageView: UIImageView!
     
     @IBOutlet weak var btnLast: UIButton!
