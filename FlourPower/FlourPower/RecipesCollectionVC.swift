@@ -20,9 +20,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     var category: String?
     var categoryID: Int?
     
-    @IBAction func doneButton(sender: AnyObject) {
-        
-    }
+  
     
     @IBAction func addRecipe(sender: AnyObject) {
         
@@ -82,6 +80,8 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         /// add back image
         
         cell.recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
+        
+        cell.recipeImageView.contentMode = .ScaleAspectFill
         
         cell.titleLabel.text = recipe.recipeTitle
         
