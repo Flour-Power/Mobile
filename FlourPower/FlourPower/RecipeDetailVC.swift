@@ -337,7 +337,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let view = UIView(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
         
-        view.backgroundColor =  UIColor(red:0.21, green:0.45, blue:0.35, alpha:1)
+        view.backgroundColor =  UIColor(red:0.21, green:0.45, blue:0.35, alpha:0.8)
         
 
         
