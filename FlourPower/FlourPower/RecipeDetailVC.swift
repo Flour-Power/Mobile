@@ -12,6 +12,10 @@ import AVFoundation
 class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate {
 
     var recipe: Recipe!
+
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var FImageView: UIImageView!
     @IBOutlet weak var bgImageView: UIImageView!
@@ -57,7 +61,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print(recipe.recipeTitle)
         
-        navigationItem.title = recipe.recipeTitle
+        titleLabel.text = recipe.recipeTitle
         
         recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
       
@@ -76,9 +80,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         btnStop.layer.cornerRadius = 25.0
         
         // Set the initial alpha value of the following buttons to zero (make them invisible).
-//        btnPause.alpha = 0.0
-//        btnStop.alpha = 0.0
-//        btnLast.alpha = 0.0
+
         
         // Make the progress view invisible and set is initial progress to zero.
         
@@ -320,15 +322,46 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(recipe.directions[indexPath.row])
             
             cell.textLabel?.text = recipe.directions[indexPath.row]
-            
+
+            cell.backgroundColor = UIColor(red:0.82, green:0.99, blue:1, alpha:1)
+  
         }
         
         
-        // Configure the cell...
 
         return cell
     }
 
+     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        
+        let view = UIView(frame: CGRect(x: 20, y: 0, width: 200, height: 40))
+        
+        view.backgroundColor =  UIColor(red:0.21, green:0.45, blue:0.35, alpha:1)
+        
+
+        
+        let label = UILabel(frame: view.frame)
+        
+        label.textColor = UIColor.whiteColor()
+        
+        if section == 0 {
+            
+            label.text = "Ingredients"
+        } else {
+            
+            label.text = "Directions"
+        }
+        
+        view.addSubview(label)
+        return view
+    }
+    
+     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        
+        return 40
+    }
 
 }
 
