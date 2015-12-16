@@ -27,7 +27,8 @@ class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var emPrettyButton: PrettyButton!
     @IBAction func pressedLogin(sender: AnyObject) {
         
-       
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
         guard let password = passwordField?.text else { return }
         guard let email = emailField.text else { return }
         //if they aren't empty

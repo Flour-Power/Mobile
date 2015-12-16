@@ -27,6 +27,8 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var btnNextIngredient: UIButton!
     
+    @IBOutlet weak var nextStack: UIStackView!
+    @IBOutlet weak var buttonStack: UIStackView!
 
     @IBOutlet weak var btnNextStep: UIButton!
     
@@ -74,9 +76,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         btnStop.layer.cornerRadius = 25.0
         
         // Set the initial alpha value of the following buttons to zero (make them invisible).
-        btnPause.alpha = 0.0
-        btnStop.alpha = 0.0
-        btnLast.alpha = 0.0
+//        btnPause.alpha = 0.0
+//        btnStop.alpha = 0.0
+//        btnLast.alpha = 0.0
         
         // Make the progress view invisible and set is initial progress to zero.
         
@@ -233,15 +235,10 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         UIView.animateWithDuration(0.25, animations: { () -> Void in
             
-            self.btnNextIngredient.alpha = nextIngredientStepButtonsAlphaValue
-            self.btnNextStep.alpha = nextIngredientStepButtonsAlphaValue
+            self.nextStack.alpha = nextIngredientStepButtonsAlphaValue
+            
+            self.buttonStack.alpha = pauseLastStopButtonsAlphaValue
 
-            
-            self.btnPause.alpha = pauseLastStopButtonsAlphaValue
-                
-            self.btnLast.alpha = pauseLastStopButtonsAlphaValue
-            
-            self.btnStop.alpha = pauseLastStopButtonsAlphaValue
             
         })
         
