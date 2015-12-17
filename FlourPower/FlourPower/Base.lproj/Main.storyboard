@@ -151,18 +151,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gcf-d6-Da7">
-                                <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="gcf-d6-Da7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="performance_testing_goddess@live.com" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-ED-h3K">
-                                <rect key="frame" x="20" y="442" width="335" height="55"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="7gf-Wp-hUD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pHA-Vv-xGT">
                                 <rect key="frame" x="20" y="592" width="335" height="55"/>
                                 <subviews>
@@ -213,7 +204,6 @@
                                 <rect key="frame" x="38" y="78" width="299" height="312"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="299" id="GOX-04-qj3"/>
-                                    <constraint firstAttribute="height" constant="312" id="yKw-hj-Cua"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="passwordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeV-1m-aAv">
@@ -225,9 +215,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="demo@demo.net" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-ED-h3K">
+                                <rect key="frame" x="20" y="441" width="335" height="55"/>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="7gf-Wp-hUD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gcf-d6-Da7" firstAttribute="top" secondItem="3Xt-Kg-4Th" secondAttribute="top" id="0e7-cs-IEC"/>
+                            <constraint firstAttribute="trailing" secondItem="gcf-d6-Da7" secondAttribute="trailing" id="5Fj-Yd-Gnr"/>
                             <constraint firstAttribute="trailing" secondItem="pHA-Vv-xGT" secondAttribute="trailing" constant="20" id="Icj-gu-0Ok"/>
                             <constraint firstAttribute="trailing" secondItem="ZeV-1m-aAv" secondAttribute="trailing" constant="20" id="KdH-5o-bE1"/>
                             <constraint firstItem="pHA-Vv-xGT" firstAttribute="leading" secondItem="3Xt-Kg-4Th" secondAttribute="leading" constant="20" id="M9S-gj-gTy"/>
@@ -235,7 +236,9 @@
                             <constraint firstItem="UKU-Ds-Q6U" firstAttribute="leading" secondItem="3Xt-Kg-4Th" secondAttribute="leading" constant="38" id="OsI-rr-9wl"/>
                             <constraint firstItem="ZeV-1m-aAv" firstAttribute="leading" secondItem="3Xt-Kg-4Th" secondAttribute="leading" constant="20" id="Rlg-ZQ-mjB"/>
                             <constraint firstItem="UKU-Ds-Q6U" firstAttribute="top" secondItem="1nS-1V-fxk" secondAttribute="bottom" constant="58" id="Vqj-EE-8Yq"/>
+                            <constraint firstItem="gcf-d6-Da7" firstAttribute="leading" secondItem="3Xt-Kg-4Th" secondAttribute="leading" id="dVq-HY-s1A"/>
                             <constraint firstItem="pHA-Vv-xGT" firstAttribute="top" secondItem="ZeV-1m-aAv" secondAttribute="bottom" constant="20" id="gAI-YU-Fse"/>
+                            <constraint firstItem="z5s-1Y-QsY" firstAttribute="top" secondItem="gcf-d6-Da7" secondAttribute="bottom" id="h3L-Id-6YG"/>
                             <constraint firstAttribute="trailing" secondItem="UKU-Ds-Q6U" secondAttribute="trailing" constant="38" id="iua-Z1-LM4"/>
                             <constraint firstItem="eRy-ED-h3K" firstAttribute="top" secondItem="UKU-Ds-Q6U" secondAttribute="bottom" constant="52" id="jLk-l6-qGw"/>
                             <constraint firstAttribute="trailing" secondItem="eRy-ED-h3K" secondAttribute="trailing" constant="20" id="jag-Vd-mKZ"/>
@@ -840,9 +843,12 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0v8-r8-lO8"/>
+                                </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Food-Photo-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-BS-Ccu">
-                                <rect key="frame" x="0.0" y="63" width="375" height="364"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food-Photo-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-BS-Ccu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="363"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="K5c-Ri-pum"/>
@@ -864,7 +870,7 @@
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" constant="30" id="QQQ-j1-rG1"/>
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" id="WWc-J8-GI4"/>
                             <constraint firstAttribute="trailing" secondItem="fqM-KJ-AOz" secondAttribute="trailing" constant="20" id="Wi5-CP-hRt"/>
-                            <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" constant="43" id="piq-zR-97o"/>
+                            <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" id="piq-zR-97o"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" constant="50" id="y48-jV-HZO"/>
                             <constraint firstItem="fqM-KJ-AOz" firstAttribute="top" secondItem="D0L-BS-Ccu" secondAttribute="bottom" constant="20" id="yFx-B6-sdM"/>
                         </constraints>
