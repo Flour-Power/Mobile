@@ -841,7 +841,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-BS-Ccu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Food-Photo-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-BS-Ccu">
                                 <rect key="frame" x="0.0" y="63" width="375" height="364"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1128,6 +1128,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Food-Photo-1" width="900" height="600"/>
         <image name="bg" width="320" height="568"/>
         <image name="directionbutton" width="76" height="28"/>
         <image name="flowers" width="233" height="180"/>
