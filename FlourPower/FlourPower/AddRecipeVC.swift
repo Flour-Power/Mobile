@@ -14,19 +14,11 @@ class AddRecipeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchRecipe.delegate = self
-//        
-//        recipeData.searchForRecipe("Cheese Grits") { () -> () in
-//            
-//            self.recipesCollectionView.reloadData()
-//            
-//        }
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -43,12 +35,7 @@ class AddRecipeVC: UIViewController {
     func searchRecipeSearchButtonClicked(searchRecipe: UISearchBar) {
         
         let searchText = searchRecipe.text ?? ""
-        
-//        recipeData.searchForRecipe(searchText) { () -> () in
-//            
-//            self.recipesCollectionView.reloadData()
-//            
-//        }
+
         
         
         searchRecipe.resignFirstResponder()
@@ -58,39 +45,7 @@ class AddRecipeVC: UIViewController {
     let requestManager = RailsRequest()
     
     func searchForRecipe(named: String, completion: () -> ()) {
-        
-//        Recipe = []
-//        
-//        let namedStripped = named.stringByReplacingOccurrencesOfString(" ", withString: "+")
-//        
-//        let urlString = "" + namedStripped + ""
-//        
-//        requestManager.GET(urlString, parameters: nil, success: { (operation, data) -> Void in
-//            
-//            if let foundInfo = data as? Dictionary {
-//                
-//                if let results = foundInfo["results"] as? [Dictionary] {
-//                    
-//                    for result in results {
-//                        
-//                        let recipe = Recipe(info: result)
-//                        self.recipe.append(recipe)
-//                        
-//                    }
-//                    
-//                    completion()
-//                    
-//                }
-//                
-//            }
-//            
-//            //        print(data)
-//            
-//            }) { (operation, error) -> Void in
-//                
-//                print(error)
-//                
-//        }
+
         
     }
 
