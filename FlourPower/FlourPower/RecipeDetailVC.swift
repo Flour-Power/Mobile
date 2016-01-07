@@ -16,24 +16,16 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var FImageView: UIImageView!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var recipeImageView: UIImageView!
-    
     @IBOutlet weak var btnLast: UIButton!
-    
     @IBOutlet weak var btnPause: UIButton!
-    
     @IBOutlet weak var btnStop: UIButton!
-    
     @IBOutlet weak var recipeTableView: UITableView!
-    
     @IBOutlet weak var btnNextIngredient: UIButton!
-    
     @IBOutlet weak var nextStack: UIStackView!
     @IBOutlet weak var buttonStack: UIStackView!
-
     @IBOutlet weak var btnNextStep: UIButton!
     
     let speechSynthesizer = AVSpeechSynthesizer()
@@ -79,18 +71,13 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         btnPause.layer.cornerRadius = 25.0
         btnStop.layer.cornerRadius = 25.0
         
-        // Set the initial alpha value of the following buttons to zero (make them invisible).
-
-        
-        // Make the progress view invisible and set is initial progress to zero.
-        
+       
         
         
     }
     
     override func viewWillDisappear(animated: Bool) {
         
-        // tell it to shutup
         speechSynthesizer.stopSpeakingAtBoundary(AVSpeechBoundary.Word)
 
     }

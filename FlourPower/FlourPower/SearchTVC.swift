@@ -8,26 +8,30 @@
 
 import UIKit
 
-class SearchTVC: UITableViewController {
+
+class SearchTVC: UITableViewController, UISearchResultsUpdating {
     
     @IBOutlet weak var FPSearchBar: UISearchBar!
     
     @IBOutlet weak var FPTableView: UITableView!
     
 
+    let searchController = UISearchController(searchResultsController: nil)
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source

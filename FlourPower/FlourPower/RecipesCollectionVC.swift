@@ -32,7 +32,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        // show recipes in specific category
+        
         
         var info = RequestInfo()
         
@@ -69,7 +69,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeCell
         
-        // setup cell
+     
         
         let recipe = recipes[indexPath.item]
         
@@ -77,7 +77,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         cell.recipeInfo = recipe
         
-        /// add back image
+     
         
         cell.recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
         
@@ -93,18 +93,15 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         let recipe = recipes[indexPath.item]
         
-        // get detailVC from storyboard
+      
         
         let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
 
         
-        // set recipe on detailVC
+
 
         detailVC?.recipe = recipe
-        
-//            recipe.select(detailVC)
-        
-        // push detailVC
+
         
         navigationController?.pushViewController(detailVC!, animated: true)
 

@@ -22,7 +22,6 @@
             set { _d.setObject(newValue, forKey: "token") }
             
         }
-        //will need out own server info
         private let APIbaseURL = "https://flour-power.herokuapp.com"
         
         func loginWithEmail(email: String, andPassword password: String, completion: () -> ()) {
@@ -100,9 +99,7 @@
         func requiredWithInfo(info: RequestInfo, completion: (returnedInfo: AnyObject?) -> ()) {
             
             let fullURLString = APIbaseURL + info.endpoint
-            
-//            print(fullURLString)
-            
+
             guard let url = NSURL(string: fullURLString) else { return } //add run completion with fail
             
             let request = NSMutableURLRequest(URL: url)
@@ -110,8 +107,7 @@
             request.HTTPMethod = info.method.rawValue
             
             
-            
-            //add token if we have one
+      
             
             if let token = token {
                 
@@ -197,8 +193,5 @@
         var parameters: [String:AnyObject] = [:]
         
     }
-    
-    
-    
-    //RailsRequest.session()
+
     
