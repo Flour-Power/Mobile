@@ -24,6 +24,26 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     
     @IBAction func addRecipe(sender: AnyObject) {
         
+        func searchUrl() {
+            
+            var info = RequestInfo()
+            
+            info.endpoint = "/api/recipes/search?query=:search_terms"
+            info.method = .GET
+            
+            RailsRequest.session().requiredWithInfo(info) { (returnedRecipe) -> () in
+                
+                if let searchRecipes = returnedRecipe?[""] as? [String] {
+                    
+                    for searchRecipe in searchRecipes {
+                        
+                    
+                    }
+                }
+            }
+            
+        }
+        
     }
     
     @IBOutlet var recipeCollectionView: UICollectionView!

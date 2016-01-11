@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SearchTVC: UITableViewController, UISearchResultsUpdating {
+class SearchTVC: UITableViewController {
     
     @IBOutlet weak var FPSearchBar: UISearchBar!
     
@@ -21,11 +21,7 @@ class SearchTVC: UITableViewController, UISearchResultsUpdating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+
         
 
     }

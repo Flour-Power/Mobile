@@ -340,10 +340,10 @@
                                 <constraint firstItem="9Ge-Iq-kxQ" firstAttribute="leading" secondItem="YLo-qJ-RYE" secondAttribute="leading" id="h1v-3v-0xJ"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" id="K7m-Ll-3Bh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="K7m-Ll-3Bh">
                             <connections>
                                 <action selector="addRecipe:" destination="s4u-dh-xzh" id="363-Df-R0o"/>
-                                <segue destination="SWe-o3-Chg" kind="presentation" id="H0O-NU-WAx"/>
+                                <segue destination="SWe-o3-Chg" kind="presentation" id="YYn-oA-5vd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
