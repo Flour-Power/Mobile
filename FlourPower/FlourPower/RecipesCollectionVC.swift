@@ -28,18 +28,21 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
             
             var info = RequestInfo()
             
-            info.endpoint = "/api/recipes/search?query=:search_terms"
+            info.endpoint = "/api/recipes/search?query/\(searchDisplayController)"
             info.method = .GET
+          
             
             RailsRequest.session().requiredWithInfo(info) { (returnedRecipe) -> () in
                 
-                if let searchRecipes = returnedRecipe?[""] as? [String] {
+                if let searchRecipes = returnedRecipe?["recipe"] as? [[String:AnyObject]] {
+
                     
                     for searchRecipe in searchRecipes {
                         
-                        
-                    
+                        let recipe = Recipe(info: searchRecipe, category: self.category)
+                        self.recipes.append(recipe)
                     }
+                    self.collectionView?.reloadData()
                 }
             }
             

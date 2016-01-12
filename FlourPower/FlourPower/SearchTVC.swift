@@ -16,7 +16,7 @@ class SearchTVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDele
     @IBOutlet weak var FPTableView: UITableView!
     
     var recipeSearchResults = Dictionary()
-    
+    var filteredRecipe = [Dictionary]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
