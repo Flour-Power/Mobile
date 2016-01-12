@@ -9,19 +9,27 @@
 import UIKit
 
 
-class SearchTVC: UITableViewController {
-    
-    @IBOutlet weak var FPSearchBar: UISearchBar!
+class SearchTVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+
+    @IBOutlet weak var searchBarFP: UISearchBar!
     
     @IBOutlet weak var FPTableView: UITableView!
     
-
+    var recipeSearchResults = Dictionary()
+    
+    
     let searchController = UISearchController(searchResultsController: nil)
-
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        
+//        searchController.searchResultsUpdater = self.recipeSearchResults
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext = true
+//        tableView.tableHeaderView = searchController.searchBar
+        
         
 
     }
@@ -29,6 +37,8 @@ class SearchTVC: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
 
     // MARK: - Table view data source
 

@@ -369,16 +369,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="F1Z-QK-4es">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-Lk-M7J">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-Lk-M7J">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y5R-pq-A0X">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y5R-pq-A0X" id="Kpq-I4-wbn">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -387,26 +383,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Lb-1aA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MfP-xr-7Bz" id="D4Z-Vc-net"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rdh-Lk-M7J" secondAttribute="trailing" id="6FQ-sM-w9I"/>
-                            <constraint firstAttribute="trailing" secondItem="F1Z-QK-4es" secondAttribute="trailing" id="9f3-2J-W1d"/>
-                            <constraint firstItem="F1Z-QK-4es" firstAttribute="leading" secondItem="UTN-N0-EFm" secondAttribute="leading" id="K62-Lz-zoU"/>
-                            <constraint firstItem="rdh-Lk-M7J" firstAttribute="top" secondItem="F1Z-QK-4es" secondAttribute="bottom" id="R5q-Wz-UB5"/>
                             <constraint firstItem="eFQ-8I-RhH" firstAttribute="top" secondItem="rdh-Lk-M7J" secondAttribute="bottom" id="aJr-Eh-A4L"/>
                             <constraint firstItem="rdh-Lk-M7J" firstAttribute="leading" secondItem="UTN-N0-EFm" secondAttribute="leading" id="c9i-07-3wq"/>
-                            <constraint firstItem="F1Z-QK-4es" firstAttribute="top" secondItem="PR6-62-t1c" secondAttribute="bottom" id="zXu-hi-vgB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggY-yZ-ARN"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="FPSearchBar" destination="F1Z-QK-4es" id="YHR-ec-bb4"/>
                         <outlet property="FPTableView" destination="rdh-Lk-M7J" id="iWg-4d-xWB"/>
+                        <outlet property="searchBarFP" destination="fRu-Lb-1aA" id="RPx-OP-97h"/>
+                        <outlet property="searchDisplayController" destination="mYP-pN-Ttk" id="vZa-lT-XD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTu-vf-osl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="mYP-pN-Ttk">
+                    <connections>
+                        <outlet property="delegate" destination="MfP-xr-7Bz" id="Ld2-KY-FdM"/>
+                        <outlet property="searchBar" destination="fRu-Lb-1aA" id="tsA-Tt-m7j"/>
+                        <outlet property="searchContentsController" destination="MfP-xr-7Bz" id="dja-5A-Xh3"/>
+                        <outlet property="searchResultsDataSource" destination="MfP-xr-7Bz" id="Z6v-mL-EWC"/>
+                        <outlet property="searchResultsDelegate" destination="MfP-xr-7Bz" id="PXP-EN-seO"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="677.5" y="1264.5"/>
         </scene>

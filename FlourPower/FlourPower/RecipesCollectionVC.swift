@@ -37,6 +37,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
                     
                     for searchRecipe in searchRecipes {
                         
+                        
                     
                     }
                 }
