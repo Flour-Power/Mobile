@@ -38,6 +38,23 @@ class SearchTVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDele
         super.didReceiveMemoryWarning()
     }
     
+    func searchRecipeSearchButtonClicked(searchRecipe: UISearchBar) {
+        
+        let searchText = searchRecipe.text ?? ""
+        
+        
+        
+        searchRecipe.resignFirstResponder()
+        
+    }
+    
+    let requestManager = RailsRequest()
+    
+    func searchForRecipe(named: String, completion: () -> ()) {
+        
+        
+    }
+    
     
 
     // MARK: - Table view data source
