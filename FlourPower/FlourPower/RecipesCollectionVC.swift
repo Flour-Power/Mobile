@@ -84,6 +84,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
     }
     
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return recipes.count
