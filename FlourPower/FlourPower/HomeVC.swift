@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeVC: UIViewController {
-    
+        
+    @IBOutlet weak var recipeSearchBar: UISearchBar!
     @IBOutlet weak var category0: UIButton!
     @IBOutlet weak var category1: UIButton!
     @IBOutlet weak var category2: UIButton!
@@ -44,6 +45,32 @@ class HomeVC: UIViewController {
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
+        var searchByName = RequestInfo()
+        
+        searchByName.endpoint = "/recipes/search?name\(searchByName)"
+        searchByName.method = .GET
+        
+        RailsRequest.session().requiredWithInfo(searchByName) { (returnedInfo) -> () in
+            
+            if let searchTerms = returnedInfo?["searchTerms"] as? [[String:AnyObject]] {
+                
+                print(searchTerms)
+            }
+            
+        }
+        
+        var searchByIngredient = RequestInfo()
+        
+        searchByIngredient.endpoint = "/recipes/search?ingredients\(searchByIngredient)"
+        searchByIngredient.method = .GET
+        
+        RailsRequest.session().requiredWithInfo(searchByIngredient) { (returnedInfo) -> () in
+            
+            if let searchByIngredient = returnedInfo?["searchByIngredient"] as? String {
+                
+                print(searchByIngredient)
+            }
+        }
         
 
         var info = RequestInfo()

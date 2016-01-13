@@ -10,7 +10,6 @@ import UIKit
 
 class SFPTableViewController: UITableViewController {
     
-    @IBOutlet weak var urlSearchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()

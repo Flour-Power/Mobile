@@ -383,13 +383,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" restorationIdentifier="cell" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Lb-1aA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="MfP-xr-7Bz" id="D4Z-Vc-net"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -400,24 +393,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="ggY-yZ-ARN"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="FPTableView" destination="rdh-Lk-M7J" id="iWg-4d-xWB"/>
-                        <outlet property="searchBarFP" destination="fRu-Lb-1aA" id="RPx-OP-97h"/>
-                        <outlet property="searchDisplayController" destination="mYP-pN-Ttk" id="vZa-lT-XD2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTu-vf-osl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="mYP-pN-Ttk">
                     <connections>
                         <outlet property="delegate" destination="MfP-xr-7Bz" id="Ld2-KY-FdM"/>
-                        <outlet property="searchBar" destination="fRu-Lb-1aA" id="tsA-Tt-m7j"/>
                         <outlet property="searchContentsController" destination="MfP-xr-7Bz" id="dja-5A-Xh3"/>
                         <outlet property="searchResultsDataSource" destination="MfP-xr-7Bz" id="Z6v-mL-EWC"/>
                         <outlet property="searchResultsDelegate" destination="MfP-xr-7Bz" id="PXP-EN-seO"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1335.5" y="1230.5"/>
+            <point key="canvasLocation" x="973.5" y="1208.5"/>
         </scene>
         <!--Recipe DetailVC-->
         <scene sceneID="hc8-lC-0nT">
@@ -719,20 +706,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="coM-Zb-bHY" id="tFt-fl-YMu">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qdK-oX-TfR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="ujv-JF-an1" id="S7e-C3-KDe"/>
-                                            </connections>
-                                        </searchBar>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="qdK-oX-TfR" firstAttribute="top" secondItem="tFt-fl-YMu" secondAttribute="top" id="K6w-Sp-W7k"/>
-                                        <constraint firstItem="qdK-oX-TfR" firstAttribute="leading" secondItem="tFt-fl-YMu" secondAttribute="leading" id="QxR-15-L20"/>
-                                        <constraint firstAttribute="trailing" secondItem="qdK-oX-TfR" secondAttribute="trailing" id="t6n-rY-LQg"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -744,21 +717,19 @@
                     <navigationItem key="navigationItem" id="3Td-3b-TJt"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="VFy-sY-pSO" id="BTi-A6-nww"/>
-                        <outlet property="urlSearchBar" destination="qdK-oX-TfR" id="i0m-Bm-D1a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEy-YS-lWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="VFy-sY-pSO">
                     <connections>
                         <outlet property="delegate" destination="ujv-JF-an1" id="SaU-DQ-omi"/>
-                        <outlet property="searchBar" destination="qdK-oX-TfR" id="1yP-n0-yHH"/>
                         <outlet property="searchContentsController" destination="ujv-JF-an1" id="owU-bq-D82"/>
                         <outlet property="searchResultsDataSource" destination="ujv-JF-an1" id="ODo-2L-oNE"/>
                         <outlet property="searchResultsDelegate" destination="ujv-JF-an1" id="xxR-PN-Ude"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="64.5" y="1213.5"/>
+            <point key="canvasLocation" x="107.5" y="1288.5"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="1Np-b4-hUZ">
@@ -913,7 +884,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food-Photo-1" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-BS-Ccu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="363"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="329"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="K5c-Ri-pum"/>
@@ -924,6 +895,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-zq-mcc">
+                                <rect key="frame" x="0.0" y="398" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="S8a-yg-HXF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -933,11 +911,15 @@
                             <constraint firstItem="fqM-KJ-AOz" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" constant="20" id="NtZ-Vc-AhS"/>
                             <constraint firstItem="9bz-1O-6gJ" firstAttribute="top" secondItem="fqM-KJ-AOz" secondAttribute="bottom" constant="20" id="PbR-cf-cCz"/>
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" constant="30" id="QQQ-j1-rG1"/>
+                            <constraint firstItem="lzE-zq-mcc" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" id="WPG-7a-Fn6"/>
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" id="WWc-J8-GI4"/>
                             <constraint firstAttribute="trailing" secondItem="fqM-KJ-AOz" secondAttribute="trailing" constant="20" id="Wi5-CP-hRt"/>
+                            <constraint firstItem="lzE-zq-mcc" firstAttribute="top" secondItem="D0L-BS-Ccu" secondAttribute="bottom" constant="5" id="WkE-1A-EVY"/>
+                            <constraint firstAttribute="trailing" secondItem="lzE-zq-mcc" secondAttribute="trailing" id="b8l-Vp-vSj"/>
+                            <constraint firstItem="fqM-KJ-AOz" firstAttribute="top" secondItem="lzE-zq-mcc" secondAttribute="bottom" constant="5" id="if6-gV-huZ"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" id="piq-zR-97o"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" constant="50" id="y48-jV-HZO"/>
-                            <constraint firstItem="fqM-KJ-AOz" firstAttribute="top" secondItem="D0L-BS-Ccu" secondAttribute="bottom" constant="20" id="yFx-B6-sdM"/>
+                            <constraint firstItem="fqM-KJ-AOz" firstAttribute="top" secondItem="D0L-BS-Ccu" secondAttribute="bottom" constant="54" id="yFx-B6-sdM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -975,6 +957,7 @@
                         <outlet property="category3" destination="Vvk-JJ-Fop" id="Als-9h-vni"/>
                         <outlet property="category4" destination="tTj-bL-jhS" id="Q2B-G5-1Jg"/>
                         <outlet property="category5" destination="2N2-V5-TC7" id="gKT-Xr-OIf"/>
+                        <outlet property="recipeSearchBar" destination="lzE-zq-mcc" id="P55-ak-rZt"/>
                         <outlet property="staticImageView" destination="D0L-BS-Ccu" id="Xe7-ba-DbS"/>
                     </connections>
                 </viewController>
@@ -1196,7 +1179,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lI-zr-pOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1231"/>
+            <point key="canvasLocation" x="540.5" y="1200.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jVx-zy-hun">
@@ -1215,7 +1198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFn-8d-Wq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-352.5" y="1208.5"/>
+            <point key="canvasLocation" x="-357.5" y="1296.5"/>
         </scene>
     </scenes>
     <resources>
