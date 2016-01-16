@@ -20,6 +20,16 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     var category: String?
     var categoryID: Int?
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
+        var searchActive : Bool = false
+        var data: [String] = []
+        var filteredSearch = [Dictionary]()
+        var search = [Dictionary]()
+    
+    
+    
+
   
     
     @IBAction func addRecipe(sender: AnyObject) {
@@ -51,6 +61,8 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     }
     
     @IBOutlet var recipeCollectionView: UICollectionView!
+    
+  
     
     
     override func viewDidAppear(animated: Bool) {

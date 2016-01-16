@@ -10,9 +10,17 @@ import UIKit
 
 class SFPTableViewController: UITableViewController {
     
+    @IBOutlet weak var searchingSearchBar: UISearchBar!
 
+    @IBOutlet var searchingTableView: UITableView!
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -93,4 +101,5 @@ class SFPTableViewController: UITableViewController {
     }
     */
 
+    
 }

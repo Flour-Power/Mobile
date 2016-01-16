@@ -9,8 +9,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-        
-    @IBOutlet weak var recipeSearchBar: UISearchBar!
+   
     @IBOutlet weak var category0: UIButton!
     @IBOutlet weak var category1: UIButton!
     @IBOutlet weak var category2: UIButton!
@@ -70,6 +69,8 @@ class HomeVC: UIViewController {
                 
                 print(searchByIngredient)
             }
+            
+            self.reloadInputViews()
         }
         
 
