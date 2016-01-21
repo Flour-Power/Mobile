@@ -14,24 +14,30 @@ class HomeVC: UIViewController {
     
     var dataTask: NSURLSessionDataTask?
     
-    lazy var tapRecognizer: UITapGestureRecognizer = {
-        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
-        return recognizer
-    }()
-    private let APIbaseURL = "https://flour-power.herokuapp.com"
+
 
    
     func updateSearchResults() {
         
         var info = RequestInfo()
         
-        let fullURLString = APIbaseURL + info.endpoint
+        info.endpoint = "/api/recipes/search?query=:search_terms"
+        info.method = .GET
+       
         
-        guard let url = NSURL(string: fullURLString) else { return } 
+        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
         
-        let request = NSMutableURLRequest(URL: url)
-        
-        request.HTTPMethod = info.method.rawValue
+            
+          
+            
+            if let errors = returnedInfo?["errors"] as? [String] {
+                
+            }
+            
+          
+            
+        }
+
     }
   
     @IBOutlet weak var searchBar: UISearchBar!
@@ -70,11 +76,6 @@ class HomeVC: UIViewController {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         
-        
-        func dismissKeyboard() {
-            searchBar.resignFirstResponder()
-        }
- 
         
         var searchByName = RequestInfo()
         
@@ -142,11 +143,16 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UISearchBarDelegate {
     
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    
       func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        
+        dismissKeyboard()
         
     }
+    
     
     
 }
