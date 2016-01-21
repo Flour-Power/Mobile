@@ -18,8 +18,8 @@ class SearchTVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDele
     let searchController = UISearchController(searchResultsController: nil)
     
     var searchActive : Bool = false
-    var data: [[Dictionary]]
-    var filtered:[[Dictionary]]
+    var data: [[Dictionary]] = []
+    var filtered:[[Dictionary]] = []
     
  
 
@@ -110,7 +110,22 @@ class SearchTVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDele
             
             cell!.textLabel?.text = self.filtered[indexPath.row] as? String
           
+        } else {
+            
+            cell!.textLabel?.text = self.data[indexPath.row] as? String
         }
+        
+        return true
+        
+    }
+  
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        self.filtered.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (self.data as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        self.filtered = array as! [[Dictionary]]
+        self.tableView.reloadData()
     }
     
 }

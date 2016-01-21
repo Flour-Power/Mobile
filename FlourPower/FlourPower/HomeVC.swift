@@ -9,7 +9,32 @@
 import UIKit
 
 class HomeVC: UIViewController {
+    
+    let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    
+    var dataTask: NSURLSessionDataTask?
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
+    private let APIbaseURL = "https://flour-power.herokuapp.com"
+
    
+    func updateSearchResults() {
+        
+        var info = RequestInfo()
+        
+        let fullURLString = APIbaseURL + info.endpoint
+        
+        guard let url = NSURL(string: fullURLString) else { return } 
+        
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = info.method.rawValue
+    }
+  
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var category0: UIButton!
     @IBOutlet weak var category1: UIButton!
     @IBOutlet weak var category2: UIButton!
@@ -43,6 +68,13 @@ class HomeVC: UIViewController {
         
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        
+        
+        func dismissKeyboard() {
+            searchBar.resignFirstResponder()
+        }
+ 
         
         var searchByName = RequestInfo()
         
@@ -105,5 +137,16 @@ class HomeVC: UIViewController {
         }
         
     }
+    
+}
+
+extension HomeVC: UISearchBarDelegate {
+    
+      func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        
+        
+    }
+    
     
 }
