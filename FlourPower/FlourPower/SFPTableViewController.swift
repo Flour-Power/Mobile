@@ -10,11 +10,11 @@ import UIKit
 
 class SFPTableViewController: UITableViewController {
     
-    @IBOutlet weak var searchingSearchBar: UISearchBar!
 
-    @IBOutlet var searchingTableView: UITableView!
     
    
+    @IBOutlet weak var appSearchBar: UISearchBar!
+    @IBOutlet var searchRecipesTVC: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

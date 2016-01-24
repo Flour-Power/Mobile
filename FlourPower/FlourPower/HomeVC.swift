@@ -10,37 +10,11 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-    
-    var dataTask: NSURLSessionDataTask?
-    
-
-
-   
-    func updateSearchResults() {
-        
-        var info = RequestInfo()
-        
-        info.endpoint = "/api/recipes/search?query=:search_terms"
-        info.method = .GET
-       
-        
-        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-        
-            
-          
-            
-            if let errors = returnedInfo?["errors"] as? [String] {
-                
-            }
-            
-          
-            
-        }
-
-    }
   
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var sMR: UIButton!
+   
+    @IBOutlet weak var sFR: UIButton!
+  
     @IBOutlet weak var category0: UIButton!
     @IBOutlet weak var category1: UIButton!
     @IBOutlet weak var category2: UIButton!
@@ -48,6 +22,14 @@ class HomeVC: UIViewController {
     @IBOutlet weak var category4: UIButton!
     @IBOutlet weak var category5: UIButton!
     
+    @IBAction func searchMyRecipes(sender: AnyObject) {
+        
+        
+    }
+    @IBAction func searchForRecipes(sender: AnyObject) {
+        
+        
+    }
     
     @IBAction func categoryButton(sender: UIButton) {
     
@@ -75,37 +57,7 @@ class HomeVC: UIViewController {
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
-        
-        
-        var searchByName = RequestInfo()
-        
-        searchByName.endpoint = "/recipes/search?name\(searchByName)"
-        searchByName.method = .GET
-        
-        RailsRequest.session().requiredWithInfo(searchByName) { (returnedInfo) -> () in
-            
-            if let searchTerms = returnedInfo?["searchTerms"] as? [[String:AnyObject]] {
-                
-                print(searchTerms)
-            }
-            
-        }
-        
-        var searchByIngredient = RequestInfo()
-        
-        searchByIngredient.endpoint = "/recipes/search?ingredients\(searchByIngredient)"
-        searchByIngredient.method = .GET
-        
-        RailsRequest.session().requiredWithInfo(searchByIngredient) { (returnedInfo) -> () in
-            
-            if let searchByIngredient = returnedInfo?["searchByIngredient"] as? String {
-                
-                print(searchByIngredient)
-            }
-            
-            self.reloadInputViews()
-        }
-        
+      
 
         var info = RequestInfo()
         
@@ -138,21 +90,5 @@ class HomeVC: UIViewController {
         }
         
     }
-    
-}
-
-extension HomeVC: UISearchBarDelegate {
-    
-    func dismissKeyboard() {
-        searchBar.resignFirstResponder()
-    }
-    
-      func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
-        dismissKeyboard()
-        
-    }
-    
-    
     
 }

@@ -29,41 +29,9 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     
     
     
-
-  
-    
-    @IBAction func addRecipe(sender: AnyObject) {
-        
-        func searchUrl() {
-            
-            var info = RequestInfo()
-            
-            info.endpoint = "/api/recipes/search?query/\(searchDisplayController)"
-            info.method = .GET
-          
-            
-            RailsRequest.session().requiredWithInfo(info) { (returnedRecipe) -> () in
-                
-                if let searchRecipes = returnedRecipe?["recipe"] as? [[String:AnyObject]] {
-
-                    
-                    for searchRecipe in searchRecipes {
-                        
-                        let recipe = Recipe(info: searchRecipe, category: self.category)
-                        self.recipes.append(recipe)
-                    }
-                    self.collectionView?.reloadData()
-                }
-            }
-            
-        }
-        
-    }
-    
     @IBOutlet var recipeCollectionView: UICollectionView!
     
   
-    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
