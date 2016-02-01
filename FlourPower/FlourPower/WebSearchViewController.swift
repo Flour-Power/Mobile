@@ -8,11 +8,11 @@
 
 import UIKit
 
-class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
 
-    var dataTask: NSURLSessionDataTask?
+//    var dataTask: NSURLSessionDataTask?
     
     var searchController: UISearchController!
     
@@ -21,7 +21,6 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     var searchActive : Bool = false
     var data = [""]
     var filtered:[String] = []
-    var shouldShowSearchResults = false
   
   
     lazy var tapRecognizer: UITapGestureRecognizer = {
@@ -49,9 +48,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
+//        searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = "Search here..."
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
         
@@ -72,33 +71,24 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 extension WebSearchViewController: UISearchBarDelegate {
  
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        shouldShowSearchResults = true
-        webSearchTV.reloadData()
+        searchActive = true;
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        shouldShowSearchResults = false
+        searchActive = false;
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        shouldShowSearchResults = false
-        webSearchTV.reloadData()
+        searchActive = false;
     }
 
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         dismissKeyboard()
-        if !shouldShowSearchResults {
-            shouldShowSearchResults = true
-            webSearchTV.reloadData()
-        }
         
-        searchController.searchBar.resignFirstResponder()
+     
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-
         let APIbaseURL = "https://flour-power.herokuapp.com"
         
         var info = RequestInfo()
@@ -114,25 +104,10 @@ extension WebSearchViewController: UISearchBarDelegate {
             let request = NSMutableURLRequest(URL: url)
             
             request.HTTPMethod = info.method.rawValue
+          
             
-            dataTask = defaultSession.dataTaskWithURL(url) {
-                data, response, error in
-             
-                dispatch_async(dispatch_get_main_queue()) {
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                }
-                if let error = error {
-                    print(error.localizedDescription)
-                } else if let httpResponse = response as? NSHTTPURLResponse {
-                    if httpResponse.statusCode == 200 {
-                        self.updateSearchResults(data)
-                    }
-                }
-                
-                self.dataTask?.resume()
         }
         
-        }
         if(filtered.count == 0){
             searchActive = false;
         } else {
@@ -141,22 +116,9 @@ extension WebSearchViewController: UISearchBarDelegate {
         self.webSearchTV.reloadData()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchString = searchController.searchBar.text
-     
-        filtered = data.filter({ (RailsRequest) -> Bool in
-            let searchText: NSString = String()
-            
-            return (searchText.rangeOfString(searchString!, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound
-        })
-        
-      
-        webSearchTV.reloadData()
-    }
-
-  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
@@ -168,23 +130,18 @@ extension WebSearchViewController: UISearchBarDelegate {
         if(searchActive) {
             return filtered.count
         }
-        return data.count
+        return data.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = webSearchTV.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        if shouldShowSearchResults {
-            
+        let cell = webSearchTV.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell;
+        if(searchActive){
             cell.textLabel?.text = filtered[indexPath.row]
-            
         } else {
-            
-            cell.textLabel?.text = data[indexPath.row]
+            cell.textLabel?.text = data[indexPath.row];
         }
         
-        return cell
+        return cell;
     }
     
 }
