@@ -30,6 +30,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 
 
     @IBAction func backButtonItem(sender: UIBarButtonItem) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+
     }
     @IBOutlet weak var webSearchBar: UISearchBar!
     @IBOutlet weak var webSearchTV: UITableView!

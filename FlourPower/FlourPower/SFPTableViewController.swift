@@ -12,20 +12,24 @@ class SFPTableViewController: UITableViewController {
     
 
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
-    @IBAction func bButton(sender: AnyObject) {
+    
+    @IBAction func bButton(sender: UIBarButtonItem) {
+        
+        dismissViewControllerAnimated(true, completion: nil) 
+            
+        
     }
     
-   
     @IBOutlet weak var sLogo: UIButton!
     @IBOutlet weak var appSearchBar: UISearchBar!
     @IBOutlet var searchRecipesTVC: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-
-
+      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -95,15 +99,6 @@ class SFPTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     
 }

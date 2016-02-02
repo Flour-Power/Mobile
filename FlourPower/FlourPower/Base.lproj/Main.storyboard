@@ -937,7 +937,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="hsS-TM-XWJ">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="BACK" id="CkN-Tj-13F">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="CkN-Tj-13F">
                             <connections>
                                 <action selector="bButton:" destination="jCy-Kp-1Ab" id="IuG-CQ-hpU"/>
                             </connections>
@@ -1216,7 +1216,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Cah-6X-Mlt">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="BACK" id="tQ5-GG-PUq">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="tQ5-GG-PUq">
                             <connections>
                                 <action selector="backButtonItem:" destination="iUG-Bo-YaE" id="GVN-wH-9Kk"/>
                             </connections>
