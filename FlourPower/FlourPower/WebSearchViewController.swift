@@ -29,9 +29,13 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     }()
 
 
+    @IBAction func backButtonItem(sender: UIBarButtonItem) {
+    }
     @IBOutlet weak var webSearchBar: UISearchBar!
     @IBOutlet weak var webSearchTV: UITableView!
     
+    @IBOutlet weak var bbItem: UIBarButtonItem!
+    @IBOutlet weak var imageLogo: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         webSearchTV.delegate = self

@@ -935,9 +935,23 @@
                             <outlet property="delegate" destination="jCy-Kp-1Ab" id="gET-s8-Uxe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hsS-TM-XWJ"/>
+                    <navigationItem key="navigationItem" id="hsS-TM-XWJ">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="CkN-Tj-13F">
+                            <connections>
+                                <action selector="bButton:" destination="jCy-Kp-1Ab" id="IuG-CQ-hpU"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ce6-qd-ZCX">
+                            <rect key="frame" x="173.5" y="6" width="28" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="logosmall"/>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="appSearchBar" destination="0ht-QU-jSc" id="FgR-QF-3Zp"/>
+                        <outlet property="itemBackButton" destination="CkN-Tj-13F" id="9O8-Qi-724"/>
+                        <outlet property="sLogo" destination="Ce6-qd-ZCX" id="Y1h-we-LW1"/>
                         <outlet property="searchDisplayController" destination="FDc-19-sHg" id="e5R-wZ-bMo"/>
                         <outlet property="searchRecipesTVC" destination="ccV-c7-1Aj" id="2tu-AP-O0V"/>
                     </connections>
@@ -1200,22 +1214,28 @@
                             <constraint firstItem="dT1-Vv-xoR" firstAttribute="top" secondItem="PMZ-QK-PCz" secondAttribute="bottom" id="zfV-wc-qoc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Cah-6X-Mlt"/>
+                    <navigationItem key="navigationItem" id="Cah-6X-Mlt">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="tQ5-GG-PUq">
+                            <connections>
+                                <action selector="backButtonItem:" destination="iUG-Bo-YaE" id="GVN-wH-9Kk"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FDL-Bk-PaE">
+                            <rect key="frame" x="173.5" y="6" width="28" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="logosmall"/>
+                        </button>
+                    </navigationItem>
                     <connections>
+                        <outlet property="bbItem" destination="tQ5-GG-PUq" id="w4Z-hL-qaI"/>
+                        <outlet property="imageLogo" destination="FDL-Bk-PaE" id="Nat-Xe-eZS"/>
                         <outlet property="searchDisplayController" destination="9Yf-Xn-Nkc" id="56f-kL-6DZ"/>
                         <outlet property="webSearchBar" destination="gMb-DD-jvm" id="WZb-IB-psH"/>
                         <outlet property="webSearchTV" destination="PMZ-QK-PCz" id="c1m-vj-7Px"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBa-ON-n4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Mff-Wq-Ofg">
-                    <connections>
-                        <outlet property="delegate" destination="iUG-Bo-YaE" id="nLU-DZ-dzK"/>
-                        <outlet property="searchContentsController" destination="iUG-Bo-YaE" id="3sL-g0-iyO"/>
-                        <outlet property="searchResultsDataSource" destination="iUG-Bo-YaE" id="gKz-V7-0JE"/>
-                        <outlet property="searchResultsDelegate" destination="iUG-Bo-YaE" id="zUa-8u-oez"/>
-                    </connections>
-                </searchDisplayController>
                 <searchDisplayController id="9Yf-Xn-Nkc">
                     <connections>
                         <outlet property="delegate" destination="iUG-Bo-YaE" id="E7M-o7-Mda"/>
@@ -1237,6 +1257,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zxi-q1-I2g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1252,10 +1273,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEG-X4-cNe" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Kg-aO-Xh4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

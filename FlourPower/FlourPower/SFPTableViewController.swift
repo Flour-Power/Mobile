@@ -11,8 +11,12 @@ import UIKit
 class SFPTableViewController: UITableViewController {
     
 
+    @IBOutlet weak var itemBackButton: UIBarButtonItem!
+    @IBAction func bButton(sender: AnyObject) {
+    }
     
    
+    @IBOutlet weak var sLogo: UIButton!
     @IBOutlet weak var appSearchBar: UISearchBar!
     @IBOutlet var searchRecipesTVC: UITableView!
     
