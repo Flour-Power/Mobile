@@ -94,7 +94,7 @@ class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     
     func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
-        return true;
+        return true
     }
 
 }

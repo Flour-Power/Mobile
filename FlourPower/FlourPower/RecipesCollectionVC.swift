@@ -19,13 +19,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     
     var category: String?
     var categoryID: Int?
-    
-    let searchController = UISearchController(searchResultsController: nil)
-    
-        var searchActive : Bool = false
-        var data: [String] = []
-        var filteredSearch = [Dictionary]()
-        var search = [Dictionary]()
+  
     
     
     

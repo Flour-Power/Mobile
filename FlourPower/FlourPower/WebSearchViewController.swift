@@ -8,19 +8,25 @@
 
 import UIKit
 
-class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
 
 //    var dataTask: NSURLSessionDataTask?
+    var searchResultsUpdater: UISearchResultsUpdating?
+
     
     var searchController: UISearchController!
     
     var searchResults = [String]()
     
+    
     var searchActive : Bool = false
-    var data = [""]
-    var filtered:[String] = []
+    var data: [String] = []
+    var filteredSearch = [String]()
+    var search = [Dictionary]()
+    
+
   
   
     lazy var tapRecognizer: UITapGestureRecognizer = {
@@ -55,11 +61,12 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search here..."
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
+        
+
         
     }
     func updateSearchResults(data: NSData?) {
@@ -70,23 +77,32 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
             self.webSearchTV.setContentOffset(CGPointZero, animated: false)
         }
     }
-  
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        filteredSearch.removeAll(keepCapacity: false)
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (data as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredSearch = array as! [String]
+        
+        self.webSearchTV.reloadData()
+    }
+
     
-  
 }
 
 extension WebSearchViewController: UISearchBarDelegate {
  
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
+        searchActive = true
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = false
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = false
     }
 
     
@@ -94,9 +110,6 @@ extension WebSearchViewController: UISearchBarDelegate {
         
         dismissKeyboard()
         
-     
-        
-        let APIbaseURL = "https://flour-power.herokuapp.com"
         
         var info = RequestInfo()
         info.endpoint = "/api/recipes/search?query=:search_terms"
@@ -104,52 +117,46 @@ extension WebSearchViewController: UISearchBarDelegate {
        
         func requiredWithInfo(info: RequestInfo, completion: (returnedInfo: AnyObject?) -> ()) {
             
-            let fullURLString = APIbaseURL + info.endpoint
             
-            guard let url = NSURL(string: fullURLString) else { return }
-            
-            let request = NSMutableURLRequest(URL: url)
-            
-            request.HTTPMethod = info.method.rawValue
           
             
         }
         
-        if(filtered.count == 0){
-            searchActive = false;
+        if(filteredSearch.count == 0){
+            searchActive = false
         } else {
-            searchActive = true;
+            searchActive = true
         }
         self.webSearchTV.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
+   
+  
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive) {
-            return filtered.count
+            return filteredSearch.count
         }
-        return data.count;
+        return data.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = webSearchTV.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell;
-        if(searchActive){
-            cell.textLabel?.text = filtered[indexPath.row]
-        } else {
-            cell.textLabel?.text = data[indexPath.row];
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        return cell;
-    }
     
-}
+        if (self.searchController.active) {
+            cell.textLabel?.text = filteredSearch[indexPath.row]
+            
+            return cell
+        }
+        else {
+            cell.textLabel?.text = data[indexPath.row]
+            
+            return cell
+        }
+    
+    }
 
+}

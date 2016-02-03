@@ -54,11 +54,8 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBarHidden = false
         
-        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        
-      
-
+              
         var info = RequestInfo()
         
         info.endpoint = "/categories"
