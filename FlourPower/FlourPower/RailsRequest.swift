@@ -11,7 +11,10 @@
     private let _rr = RailsRequest()
     
     private let _d = NSUserDefaults.standardUserDefaults()
-    
+
+    private let APIbaseURL = "https://flour-power.herokuapp.com"
+
+
     class RailsRequest: NSObject {
         
         class func session() -> RailsRequest { return _rr }
@@ -22,7 +25,6 @@
             set { _d.setObject(newValue, forKey: "token") }
             
         }
-        private let APIbaseURL = "https://flour-power.herokuapp.com"
         
         func loginWithEmail(email: String, andPassword password: String, completion: () -> ()) {
             
@@ -50,7 +52,7 @@
                 }
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
-                    //loops through errors
+                   
                 }
                 
                 completion()
@@ -86,7 +88,7 @@
                 }
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
-                    //loops through errors
+                    
                 }
                 
                 completion()
@@ -149,14 +151,10 @@
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     
-                    
-//                    print(data)
-//                    print(error)
-                    
-                    //work with the data returned
+     
                     if let data = data {
                         
-                        //have data
+                 
                         if let returnedInfo = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) {
                             
                             completion(returnedInfo: returnedInfo)

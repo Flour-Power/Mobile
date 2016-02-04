@@ -12,8 +12,6 @@ import AVFoundation
 class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate {
 
     var recipe: Recipe!
-
-    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FImageView: UIImageView!

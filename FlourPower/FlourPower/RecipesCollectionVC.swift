@@ -21,15 +21,11 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     var categoryID: Int?
   
     
-    
-    
     @IBOutlet var recipeCollectionView: UICollectionView!
     
-  
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         
         var info = RequestInfo()

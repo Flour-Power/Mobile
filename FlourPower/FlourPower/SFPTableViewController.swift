@@ -12,11 +12,12 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     var searchActive : Bool = false
     var data: [String] = []
-    var filtered:[String] = []
+    
     
     var category: String?
     var categoryID: Int?
-    var recipes: [Recipe] = []
+    var filtered: String?
+
     
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
     
@@ -24,8 +25,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         
         dismissViewControllerAnimated(true, completion: nil) 
             
-        
-    }
+        }
     
     @IBOutlet weak var sLogo: UIButton!
     @IBOutlet weak var appSearchBar: UISearchBar!
@@ -35,16 +35,21 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureSearchController()
+        
+    }
     
-    
+    private func configureSearchController() {
+        
         searchRecipesTVC.delegate = self
         searchRecipesTVC.dataSource = self
         appSearchBar.delegate = self
-    
+        self.definesPresentationContext = true
+
     
     }
    
-  
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
