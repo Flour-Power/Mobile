@@ -16,7 +16,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     var category: String?
     var categoryID: Int?
-    var filtered: String?
+    var filtered:[String] = []
 
     
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
