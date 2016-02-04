@@ -10,19 +10,25 @@ import UIKit
 
 import Foundation
 
-class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
+class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var flourLargeLogoImage: UIImageView!
   
+    @IBOutlet weak var flowersImage: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
     
     @IBOutlet weak var passwordField: UITextField!
     
     
     @IBOutlet weak var emailField: UITextField!
     
+    @IBOutlet weak var pwPrettyButton: PrettyButton!
     
+    @IBOutlet weak var emPrettyButton: PrettyButton!
     @IBAction func pressedLogin(sender: AnyObject) {
         
-       
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
         guard let password = passwordField?.text else { return }
         guard let email = emailField.text else { return }
         //if they aren't empty
@@ -30,13 +36,9 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         print("logged in pressed")
         
         RailsRequest.session().loginWithEmail(email, andPassword: password, completion: {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let LoginVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeVC") as UIViewController
-            
-            //var vc: NewViewController = storyboard.instantiateViewControllerWithIdentifier("newView") as NewViewController
-            
-            self.presentViewController(LoginVC, animated: true, completion: nil)
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC")
+            self.navigationController?.pushViewController(homeVC!, animated: true)
             
         })
             
@@ -47,7 +49,6 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
     @IBAction func pressedRegister(sender: AnyObject) {
         
         guard let password = passwordField?.text else { return }
-        
         guard let email = emailField.text else { return }
         
         print("registered pressed")
@@ -57,13 +58,8 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         
         RailsRequest.session().registerWithEmail(email, andPassword: password, completion: {
             
-            
-                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let RegisterVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("HomeVC") as UIViewController
-                
-                
-                self.presentViewController(RegisterVC, animated: true, completion: nil)
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC")
+            self.navigationController?.pushViewController(homeVC!, animated: true)
             
         
         })
@@ -96,9 +92,9 @@ class FPLoginViewController: UIViewController, UIWebViewDelegate, UITextFieldDel
         
     }
     
-    func textFieldShouldReturn(userText: UITextField!) -> Bool {
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
-        return true;
+        return true
     }
 
 }

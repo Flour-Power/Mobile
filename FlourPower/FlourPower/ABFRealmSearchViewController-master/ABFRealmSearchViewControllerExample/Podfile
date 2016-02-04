@@ -1,0 +1,11 @@
+target 'ABFRealmSearchViewControllerExample' do
+  pod 'Realm'
+  pod 'RBQFetchedResultsController'
+  pod 'RealmSFRestaurantData'
+  pod 'TOWebViewController'
+end
+
+target 'ABFRealmSearchViewControllerExampleTests' do
+  pod 'Realm/Headers'
+end
+

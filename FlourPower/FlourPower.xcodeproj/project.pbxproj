@@ -7,17 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */; };
+		3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */; };
+		3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF971C1A133700169B2A /* IngredientCell.swift */; };
+		3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF991C1A134F00169B2A /* StepCell.swift */; };
+		3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */; };
+		3D29EFA21C1A1CE100169B2A /* PrettyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EFA11C1A1CE100169B2A /* PrettyButton.swift */; };
 		3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */; };
 		3D2EEB831C0E3F6F009E4472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB811C0E3F6F009E4472 /* Main.storyboard */; };
 		3D2EEB851C0E3F6F009E4472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */; };
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
-		3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */; };
-		3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB951C0F3E70009E4472 /* MainButton.swift */; };
-		3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */; };
+		3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */; };
+		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
+		3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */; };
+		3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesCollectionVC.swift; sourceTree = "<group>"; };
+		3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
+		3D29EF971C1A133700169B2A /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		3D29EF991C1A134F00169B2A /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
+		3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		3D29EFA11C1A1CE100169B2A /* PrettyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyButton.swift; sourceTree = "<group>"; };
 		3D2EEB7A1C0E3F6F009E4472 /* FlourPower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlourPower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D2EEB821C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -25,9 +38,10 @@
 		3D2EEB871C0E3F6F009E4472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
-		3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPLoginViewController.swift; sourceTree = "<group>"; };
-		3D2EEB951C0F3E70009E4472 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
-		3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
+		3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D29EF9B1C1A1A2300169B2A /* System */ = {
+			isa = PBXGroup;
+			children = (
+				3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */,
+				3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */,
+				3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */,
+				3D2EEB891C0E3F6F009E4472 /* Info.plist */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		3D29EF9C1C1A1A6800169B2A /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */,
+			);
+			name = "Login Flow";
+			sourceTree = "<group>";
+		};
+		3D29EF9D1C1A1A9B00169B2A /* Create Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */,
+				3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */,
+			);
+			name = "Create Flow";
+			sourceTree = "<group>";
+		};
+		3D29EF9E1C1A1AAD00169B2A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */,
+				3D29EF971C1A133700169B2A /* IngredientCell.swift */,
+				3D29EF991C1A134F00169B2A /* StepCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		3D29EFA31C1A1CEA00169B2A /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				3D29EFA11C1A1CE100169B2A /* PrettyButton.swift */,
+			);
+			name = Designable;
+			sourceTree = "<group>";
+		};
 		3D2EEB711C0E3F6F009E4472 = {
 			isa = PBXGroup;
 			children = (
@@ -60,17 +120,26 @@
 		3D2EEB7C1C0E3F6F009E4472 /* FlourPower */ = {
 			isa = PBXGroup;
 			children = (
-				3D2EEB7D1C0E3F6F009E4472 /* AppDelegate.swift */,
-				3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */,
-				3D2EEB951C0F3E70009E4472 /* MainButton.swift */,
 				3D2EEB811C0E3F6F009E4472 /* Main.storyboard */,
-				3D2EEB841C0E3F6F009E4472 /* Assets.xcassets */,
-				3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */,
-				3D2EEB891C0E3F6F009E4472 /* Info.plist */,
-				3D2EEB911C0F3D8F009E4472 /* FPLoginViewController.swift */,
-				3DD4C9BC1C0F766F0067D90D /* HomeViewController.swift */,
+				3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */,
+				3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */,
+				3D29EFA31C1A1CEA00169B2A /* Designable */,
+				3D29EF9C1C1A1A6800169B2A /* Login Flow */,
+				3D29EF9D1C1A1A9B00169B2A /* Create Flow */,
+				3DEBA4311C173B4200C088BA /* Recipe Flow */,
+				3D29EF9B1C1A1A2300169B2A /* System */,
 			);
 			path = FlourPower;
+			sourceTree = "<group>";
+		};
+		3DEBA4311C173B4200C088BA /* Recipe Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */,
+				3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */,
+				3D29EF9E1C1A1AAD00169B2A /* Cells */,
+			);
+			name = "Recipe Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +174,7 @@
 				TargetAttributes = {
 					3D2EEB791C0E3F6F009E4472 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = EJ39HX343P;
 					};
 				};
 			};
@@ -144,11 +214,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD4C9BD1C0F766F0067D90D /* HomeViewController.swift in Sources */,
-				3D2EEB961C0F3E70009E4472 /* MainButton.swift in Sources */,
-				3D2EEB921C0F3D8F009E4472 /* FPLoginViewController.swift in Sources */,
+				3D29EFA21C1A1CE100169B2A /* PrettyButton.swift in Sources */,
+				3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */,
+				3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */,
+				3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */,
+				3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */,
+				3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */,
+				3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */,
+				3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */,
+				3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
+				3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,10 +336,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -270,10 +351,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};

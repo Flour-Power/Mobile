@@ -1,20 +1,20 @@
-    //
-    //  RailsRequest.swift
-    //  RR
-    //
-    //  Created by Paul Vagner on 11/5/15.
-    //  Copyright © 2015 Paul Vagner. All rights reserved.
-    //
-    //
-    //
-    // THIS WILL FUNCTION WITH ALL REQUESTS
+//
+//  FPCollectionViewController.swift
+//  FlourPower
+//
+//  Created by Kelly Robinson on 12/2/15.
+//  Copyright © 2015 Kelly Robinson. All rights reserved.
+//
     
     import UIKit
     
     private let _rr = RailsRequest()
     
     private let _d = NSUserDefaults.standardUserDefaults()
-    
+
+    private let APIbaseURL = "https://flour-power.herokuapp.com"
+
+
     class RailsRequest: NSObject {
         
         class func session() -> RailsRequest { return _rr }
@@ -25,8 +25,6 @@
             set { _d.setObject(newValue, forKey: "token") }
             
         }
-        //will need out own server info
-        private let APIbaseURL = "https://flour-power.herokuapp.com"
         
         func loginWithEmail(email: String, andPassword password: String, completion: () -> ()) {
             
@@ -54,7 +52,7 @@
                 }
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
-                    //loops through errors
+                   
                 }
                 
                 completion()
@@ -90,7 +88,7 @@
                 }
                 
                 if let errors = returnedInfo?["errors"] as? [String] {
-                    //loops through errors
+                    
                 }
                 
                 completion()
@@ -103,9 +101,7 @@
         func requiredWithInfo(info: RequestInfo, completion: (returnedInfo: AnyObject?) -> ()) {
             
             let fullURLString = APIbaseURL + info.endpoint
-            
-            print(fullURLString)
-            
+
             guard let url = NSURL(string: fullURLString) else { return } //add run completion with fail
             
             let request = NSMutableURLRequest(URL: url)
@@ -113,14 +109,13 @@
             request.HTTPMethod = info.method.rawValue
             
             
-            
-            //add token if we have one
+      
             
             if let token = token {
                 
                 request.setValue(token, forHTTPHeaderField: "auth-token")
                 
-                print(token)
+//                print(token)
                 
             }
             
@@ -156,17 +151,12 @@
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     
-                    
-                    print(data)
-                    print(error)
-                    
-                    //work with the data returned
+     
                     if let data = data {
                         
-                        //have data
+                 
                         if let returnedInfo = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) {
                             
-                            print(returnedInfo)
                             completion(returnedInfo: returnedInfo)
                             
                         }
@@ -201,8 +191,5 @@
         var parameters: [String:AnyObject] = [:]
         
     }
-    
-    
-    
-    //RailsRequest.session()
+
     
