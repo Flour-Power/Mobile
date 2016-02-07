@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
 
@@ -20,9 +20,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     var searchResults = [String]()
     
-    
+    var data = Indexing()
+    var results : [RailsRequest] = []
     var searchActive : Bool = false
-    var data: [String] = []
     var filteredSearch = [String]()
     var search = [Dictionary]()
     
@@ -53,6 +53,10 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         configureSearchController()
         webSearchTV.tableFooterView = UIView()
 
+        data.searchAPI("") { (content, error) -> Void in
+            
+            self.webSearchTV.reloadData()
+        }
     }
 
     func dismissKeyboard() {
@@ -69,29 +73,21 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 
         
     }
-    func updateSearchResults(data: NSData?) {
-        searchResults.removeAll()
-      
-            dispatch_async(dispatch_get_main_queue()) {
-            self.webSearchTV.reloadData()
-            self.webSearchTV.setContentOffset(CGPointZero, animated: false)
-        }
-    }
+//    func updateSearchResults(data: NSData?) {
+//        searchResults.removeAll()
+//      
+//            dispatch_async(dispatch_get_main_queue()) {
+//            self.webSearchTV.reloadData()
+//            self.webSearchTV.setContentOffset(CGPointZero, animated: false)
+//        }
+//    }
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        filteredSearch.removeAll(keepCapacity: false)
-        
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (data as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredSearch = array as! [String]
-        
-        self.webSearchTV.reloadData()
-    }
+     
 
     
 }
 
-extension WebSearchViewController: UISearchBarDelegate {
  
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
@@ -111,17 +107,6 @@ extension WebSearchViewController: UISearchBarDelegate {
         dismissKeyboard()
         
         
-        var info = RequestInfo()
-        info.endpoint = "/api/recipes/search?query=:search_terms"
-        info.method = .GET
-       
-        func requiredWithInfo(info: RequestInfo, completion: (returnedInfo: AnyObject?) -> ()) {
-            
-            
-          
-            
-        }
-        
         if(filteredSearch.count == 0){
             searchActive = false
         } else {
@@ -139,7 +124,7 @@ extension WebSearchViewController: UISearchBarDelegate {
         if(searchActive) {
             return filteredSearch.count
         }
-        return data.count
+        return results.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -152,7 +137,7 @@ extension WebSearchViewController: UISearchBarDelegate {
             return cell
         }
         else {
-            cell.textLabel?.text = data[indexPath.row]
+            cell.textLabel?.text = data.search_terms
             
             return cell
         }

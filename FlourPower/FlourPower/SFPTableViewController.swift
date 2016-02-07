@@ -11,12 +11,12 @@ import UIKit
 class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     var searchActive : Bool = false
-    var data: [String] = []
-    
-    
+    var data = Indexing()
+    var results : [RailsRequest] = []
     var category: String?
     var categoryID: Int?
-    var filtered:[String] = []
+    var filtered = [String]()
+    
 
     
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
@@ -37,7 +37,19 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         configureSearchController()
+      
+        data.searchByIngredient("ingredient") { (content, error) -> Void in
+            
+            self.tableView.reloadData()
+        }
         
+        data.searchByName("name") { (content, error) -> Void in
+            
+            self.tableView.reloadData()
+        }
+        
+    
+       
     }
     
     private func configureSearchController() {
@@ -69,24 +81,20 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filtered = data.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return range.location != NSNotFound
-        })
-        if(filtered.count == 0){
-            searchActive = false
-        } else {
-            searchActive = true
-        }
+        
+        
+        self.tableView.reloadData()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+     
+        
         self.tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
-
+  
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -95,7 +103,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         if(searchActive) {
             return filtered.count
         }
-        return data.count
+        return results.count
     }
     
     func TV(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -103,10 +111,12 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         if(searchActive){
             cell.textLabel?.text = filtered[indexPath.row]
         } else {
-            cell.textLabel?.text = data[indexPath.row]
+            cell.textLabel?.text = data.search_terms
         }
         
         return cell
         }
+    
 
     }
+
