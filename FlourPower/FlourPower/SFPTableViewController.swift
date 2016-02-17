@@ -61,7 +61,23 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
 
     
     }
-   
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+        let searchText = searchBar.text ?? ""
+        
+        data.searchByIngredient(searchText) { (content, error) -> Void in
+            
+            self.searchRecipesTVC.reloadData()
+        }
+        
+        data.searchByName(searchText) { (content, error) -> Void in
+            
+            self.searchRecipesTVC.reloadData()
+        }
+        
+    }
+
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
@@ -75,16 +91,6 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         searchActive = false
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        
-        
-        self.tableView.reloadData()
-    }
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {

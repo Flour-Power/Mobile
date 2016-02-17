@@ -64,15 +64,10 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeCell
         
-     
         
         let recipe = recipes[indexPath.item]
         
-        
-        
         cell.recipeInfo = recipe
-        
-     
         
         cell.recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
         

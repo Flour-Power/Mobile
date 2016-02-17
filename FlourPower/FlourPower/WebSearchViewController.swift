@@ -45,6 +45,7 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var bbItem: UIBarButtonItem!
     @IBOutlet weak var imageLogo: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         webSearchTV.delegate = self
@@ -103,7 +104,12 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        let searchText = searchBar.text ?? ""
         
+        data.searchByIngredient(searchText) { (content, error) -> Void in
+            <#code#>
+        }
+
         dismissKeyboard()
         
         

@@ -24,6 +24,8 @@
 		3D6F06FE1C669A6D008062E0 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F06FD1C669A6D008062E0 /* Cache.swift */; };
 		3D6F07001C669CBF008062E0 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F06FF1C669CBF008062E0 /* Type.swift */; };
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
+		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
+		3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */; };
 		3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */; };
 		3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		3D6F06FD1C669A6D008062E0 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		3D6F06FF1C669CBF008062E0 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
+		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */,
+				3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,8 @@
 			children = (
 				3D2EEB7C1C0E3F6F009E4472 /* FlourPower */,
 				3D2EEB7B1C0E3F6F009E4472 /* Products */,
+				3D9CD7FE1C72AD9600645850 /* Fabric.framework */,
+				3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +172,7 @@
 				3D2EEB761C0E3F6F009E4472 /* Sources */,
 				3D2EEB771C0E3F6F009E4472 /* Frameworks */,
 				3D2EEB781C0E3F6F009E4472 /* Resources */,
+				3D9CD7FD1C72AD8000645850 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -220,6 +229,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D9CD7FD1C72AD8000645850 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 651593452a0683520ecc410343302dae90372f30 709673c732fbc2ce897d07678ae42237b483427d601511ee662778c5ef213f10";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D2EEB761C0E3F6F009E4472 /* Sources */ = {
@@ -354,6 +379,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
@@ -369,6 +398,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
