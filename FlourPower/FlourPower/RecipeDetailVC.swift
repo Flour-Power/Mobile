@@ -49,9 +49,9 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
             speechSynthesizer.delegate = self
         
-        print(recipe.recipeTitle)
-        
         titleLabel.text = recipe.recipeTitle
+        
+        print(recipe.recipeTitle)
         
         recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
       
@@ -293,7 +293,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
       
             
-            let amount = ingredient["amount"] as? Int ?? 0
+            let amount = ingredient["amount"] as? Float ?? 0.0
             let unit = ingredient["unit"] as? String ?? ""
             let name = ingredient["name"] as? String ?? ""
             

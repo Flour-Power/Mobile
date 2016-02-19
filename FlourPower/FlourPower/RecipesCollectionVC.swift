@@ -13,7 +13,7 @@ private let reuseIdentifier = "RecipesCell"
 typealias Dictionary = [String : AnyObject]
 
 
-class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
+class RecipesCollectionVC: UICollectionViewController {
     
     var recipes: [Recipe] = []
     
@@ -44,12 +44,11 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
                     
                     self.recipes.append(recipe)
                     
+
                 }
                 
-                self.collectionView?.reloadData()
-                
             }
-            
+            self.collectionView?.reloadData()
         }
         
     }
@@ -105,13 +104,10 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
 class Recipe: NSObject {
     
     var category: String?
-    
     var recipeID: Int?
     var recipeTitle: String?
-    
     var ingredients: [[String:AnyObject]] = []
     var directions: [String] = []
-    
     var recipeSourceURL: String?
     var recipeSourceImageURL: String?
     var recipeSource: String?
@@ -153,5 +149,4 @@ class Recipe: NSObject {
         
     }
     
-    
-}
+  }

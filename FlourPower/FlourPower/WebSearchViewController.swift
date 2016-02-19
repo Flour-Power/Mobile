@@ -10,25 +10,14 @@ import UIKit
 
 class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
-    let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-
-//    var dataTask: NSURLSessionDataTask?
-    var searchResultsUpdater: UISearchResultsUpdating?
-
-    
+    var search_terms = String()
+    var category: String?
+    var recipes: [Recipe] = []
     var searchController: UISearchController!
-    
     var searchResults = [String]()
-    
-    var data = Indexing()
-    var results : [RailsRequest] = []
     var searchActive : Bool = false
-    var filteredSearch = [String]()
-    var search = [Dictionary]()
+  
     
-
-  
-  
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
         return recognizer
@@ -48,20 +37,53 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webSearchTV.delegate = self
-        webSearchTV.dataSource = self
+        
         webSearchBar.delegate = self
+        webSearchTV.dataSource = self
         configureSearchController()
         webSearchTV.tableFooterView = UIView()
-
-        data.searchAPI("") { (content, error) -> Void in
+        
+        var info = RequestInfo()
+        info.endpoint = "/api/recipes/search?query\(search_terms)"
+        info.method = .GET
+        info.parameters = [
             
-            self.webSearchTV.reloadData()
+            "search_terms" : search_terms,
+            
+        ]
+        
+        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
+            
+            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
+                
+                for recipeInfo in recipeInfos {
+                    
+                    let recipe = Recipe(info: recipeInfo, category: self.category)
+                    
+                    self.recipes.append(recipe)
+                    
+                }
+            }
         }
+        
     }
 
     func dismissKeyboard() {
         webSearchBar.resignFirstResponder()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResults.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = searchResults[indexPath.row]
+        
+        return cell
+
     }
     
     func configureSearchController() {
@@ -74,80 +96,52 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 
         
     }
-//    func updateSearchResults(data: NSData?) {
-//        searchResults.removeAll()
-//      
-//            dispatch_async(dispatch_get_main_queue()) {
-//            self.webSearchTV.reloadData()
-//            self.webSearchTV.setContentOffset(CGPointZero, animated: false)
-//        }
-//    }
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
-     
 
     
-}
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        searchResults.removeAll()
+        
+                    dispatch_async(dispatch_get_main_queue()) {
+                    self.webSearchTV.reloadData()
+                    self.webSearchTV.setContentOffset(CGPointZero, animated: false)
+                }
+    
+    }
 
  
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true
+        webSearchTV.reloadData()
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         searchActive = false
+        webSearchTV.reloadData()
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
+        dismissKeyboard()
+        webSearchBar.text = ""
+        webSearchTV.reloadData()
     }
 
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let searchText = searchBar.text ?? ""
         
-        data.searchByIngredient(searchText) { (content, error) -> Void in
-            <#code#>
-        }
-
-        dismissKeyboard()
+        var searchText = searchBar.text ?? ""
         
         
-        if(filteredSearch.count == 0){
-            searchActive = false
-        } else {
-            searchActive = true
-        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
         self.webSearchTV.reloadData()
-    }
-   
-  
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive) {
-            return filteredSearch.count
-        }
-        return results.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        self.dismissKeyboard()
         
-    
-        if (self.searchController.active) {
-            cell.textLabel?.text = filteredSearch[indexPath.row]
-            
-            return cell
         }
-        else {
-            cell.textLabel?.text = data.search_terms
-            
-            return cell
-        }
-    
     }
-
 }
+
+
+
+
