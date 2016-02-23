@@ -41,35 +41,40 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     @IBOutlet weak var appSearchBar: UISearchBar!
     @IBOutlet var searchRecipesTVC: UITableView!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     func configureSearchController() {
         
-        searchRecipesTVC.delegate = self
-        searchRecipesTVC.dataSource = self
-        appSearchBar.delegate = self
-        self.definesPresentationContext = true
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
         
         
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
- 
+    
+
+        configureSearchController()
     
 }
+    
 
-func dismissKeyboard() {
-    webSearchBar.resignFirstResponder()
+
+    func dismissKeyboard() {
+    appSearchBar.resignFirstResponder()
 }
 
-func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return searchResults.count
 }
 
 
-func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     
     cell.textLabel?.text = searchResults[indexPath.row]
@@ -78,60 +83,51 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
     
 }
 
-func configureSearchController() {
-    searchController = UISearchController(searchResultsController: nil)
-    searchController.searchResultsUpdater = self
-    searchController.dimsBackgroundDuringPresentation = false
-    searchController.searchBar.delegate = self
-    searchController.searchBar.sizeToFit()
-    
-    
-    
-}
 
 
-func updateSearchResultsForSearchController(searchController: UISearchController)
+
+    func updateSearchResultsForSearchController(searchController: UISearchController)
 {
     searchResults.removeAll()
     
     dispatch_async(dispatch_get_main_queue()) {
-        self.webSearchTV.reloadData()
-        self.webSearchTV.setContentOffset(CGPointZero, animated: false)
+        self.searchRecipesTVC.reloadData()
+        self.searchRecipesTVC.setContentOffset(CGPointZero, animated: false)
     }
     
 }
 
 
-func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-    searchActive = true
-    webSearchTV.reloadData()
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true
+        searchRecipesTVC.reloadData()
 }
 
-func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-    searchActive = false
-    webSearchTV.reloadData()
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false
+        searchRecipesTVC.reloadData()
 }
 
-func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-    searchActive = false
-    dismissKeyboard()
-    webSearchBar.text = ""
-    webSearchTV.reloadData()
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false
+        dismissKeyboard()
+        appSearchBar.text = ""
+        searchRecipesTVC.reloadData()
 }
 
 
-func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     
-    var searchText = searchBar.text ?? ""
+        var searchText = searchBar.text ?? ""
     
     
     
     dispatch_async(dispatch_get_main_queue()) {
-        self.webSearchTV.reloadData()
+        self.searchRecipesTVC.reloadData()
         self.dismissKeyboard()
         
+        }
     }
-}
 }
 
 
