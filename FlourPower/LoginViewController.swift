@@ -20,13 +20,14 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         guard let password = passwordField.text else { return }
         //is username field blank?
         guard let username = usernameField.text else { return }
-        //if they aren't empty
+        //if they aren't empty, continue
+        guard let email = emailField.text else { return }
         
-        print("loged in pressed")
+        print("logged in pressed")
         
-        RailsRequest.session().loginWithEmail(email , andPassword: password, completion: {
+        RailsRequest.session().loginWithEmail(email, andPassword: password, success: {_ in
             
-            print("loged in finished")
+            print("logged in finished")
             
             let loginSB = UIStoryboard(name: "FlashCardStoryboard", bundle: nil)
             
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         
         //send request to server to create registration
         
-        RailsRequest.session().registerWithUsername(username, andPassword: password, email: email, completion: {
+        RailsRequest.session().registerWithEmail(email, password: password, success: {_ in
             
             print("registered finished")
             
