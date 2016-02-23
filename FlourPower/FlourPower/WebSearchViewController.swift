@@ -38,7 +38,6 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webSearchBar.delegate = self
         webSearchTV.dataSource = self
         configureSearchController()
         webSearchTV.tableFooterView = UIView()

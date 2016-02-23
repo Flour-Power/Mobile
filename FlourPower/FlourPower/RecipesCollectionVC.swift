@@ -74,25 +74,25 @@ class RecipesCollectionVC: UICollectionViewController {
         
         cell.titleLabel.text = recipe.recipeTitle
         
+        
         return cell
         
+    
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let recipe = recipes[indexPath.item]
         
-      
         
         let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
-
         
-
 
         detailVC?.recipe = recipe
-
+        
         
         navigationController?.pushViewController(detailVC!, animated: true)
+        
 
         
     }
@@ -148,5 +148,6 @@ class Recipe: NSObject {
         return nil
         
     }
+   
     
   }

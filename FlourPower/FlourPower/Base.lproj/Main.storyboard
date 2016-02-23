@@ -921,7 +921,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" id="oGB-NX-Bm7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" id="oGB-NX-Bm7">
                                 <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGB-NX-Bm7" id="w2F-hZ-pZO">

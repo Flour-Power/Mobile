@@ -11,17 +11,22 @@ import UIKit
 public let ingredient = String!()
 public var type = String()
 
+
 class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
-    var searchActive : Bool = false
-    var recipes : [Recipe] = []
-    var searchResults: [String] = []
-    var category: String?
-    var categoryID: Int?
-    var searchController : UISearchController!
-    var sesarch_terms = String()
 
+    var search_terms = String()
+    var category: String?
+    var recipes: [Recipe] = []
+    var searchController: UISearchController!
+    var searchResults = [String]()
+    var searchActive : Bool = false
     
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
 
     
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
@@ -35,10 +40,13 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     @IBOutlet weak var sLogo: UIButton!
     @IBOutlet weak var appSearchBar: UISearchBar!
     @IBOutlet var searchRecipesTVC: UITableView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
     func configureSearchController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
+        
         searchRecipesTVC.delegate = self
         searchRecipesTVC.dataSource = self
         appSearchBar.delegate = self
@@ -47,133 +55,88 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         
     }
     
-    func searchByIngredient() {
-        var info = RequestInfo()
-                info.endpoint = "recipes/search?ingredients\(ingredient)\(type)"
-                info.method = .GET
-//                info.parameters = [
-//        
-//                "ingredient" : ingredient,
-//                    "type" : type
-//        
-//               ]
-        
-                RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-        
-                    if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
-        
-                        for recipeInfo in recipeInfos {
-        
-                            let recipe = Recipe(info: recipeInfo, category: self.category)
-        
-                            self.recipes.append(recipe)
-                }
-                      
-            }
-                   
-        }
-        
-    }
-    
-    func searchByName() {
-        
-        var info = RequestInfo()
-                info.endpoint = "/recipes/search?name\(sesarch_terms)"
-                info.method = .GET
-                info.parameters = [
-        
-                    "sesarch_terms" : sesarch_terms
-        
-                ]
-        
-                RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-        
-                    if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
-        
-                        for recipeInfo in recipeInfos {
-        
-                            let recipe = Recipe(info: recipeInfo, category: self.category)
-        
-                            self.recipes.append(recipe)
-                            
-                        }
-                    }
-                }
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-        searchByIngredient()
-        searchByName()
-        configureSearchController()
-        
-    }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchActive {
-            
-            return searchResults.count
-            
-        } else {
-            
-            return recipes.count
-        
-        }
-            
-    }
-        
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-            let cell = searchRecipesTVC.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        
-        if searchActive {
-            
-            cell.textLabel?.text = searchResults[indexPath.row]
-            
-        }
-        
-            return cell
-        
-        }
 
-
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        if !searchActive {
-        
-            searchActive = true
-            searchRecipesTVC.reloadData()
-        }
-        
-        searchController.searchBar.resignFirstResponder()
-    }
-
+ 
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true
-        searchRecipesTVC.reloadData()
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false
-        searchRecipesTVC.reloadData()
-    }
-    
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
-        let searchString = searchController.searchBar.text
-     
-     
-        searchRecipesTVC.reloadData()
-    }
-
-
 }
+
+func dismissKeyboard() {
+    webSearchBar.resignFirstResponder()
+}
+
+func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return searchResults.count
+}
+
+
+func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    
+    cell.textLabel?.text = searchResults[indexPath.row]
+    
+    return cell
+    
+}
+
+func configureSearchController() {
+    searchController = UISearchController(searchResultsController: nil)
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    searchController.searchBar.delegate = self
+    searchController.searchBar.sizeToFit()
+    
+    
+    
+}
+
+
+func updateSearchResultsForSearchController(searchController: UISearchController)
+{
+    searchResults.removeAll()
+    
+    dispatch_async(dispatch_get_main_queue()) {
+        self.webSearchTV.reloadData()
+        self.webSearchTV.setContentOffset(CGPointZero, animated: false)
+    }
+    
+}
+
+
+func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    searchActive = true
+    webSearchTV.reloadData()
+}
+
+func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    searchActive = false
+    webSearchTV.reloadData()
+}
+
+func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    searchActive = false
+    dismissKeyboard()
+    webSearchBar.text = ""
+    webSearchTV.reloadData()
+}
+
+
+func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    
+    var searchText = searchBar.text ?? ""
+    
+    
+    
+    dispatch_async(dispatch_get_main_queue()) {
+        self.webSearchTV.reloadData()
+        self.dismissKeyboard()
+        
+    }
+}
+}
+
+
+
+
 
 
 
