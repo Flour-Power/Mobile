@@ -921,7 +921,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" id="oGB-NX-Bm7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oGB-NX-Bm7">
                                 <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGB-NX-Bm7" id="w2F-hZ-pZO">
@@ -952,20 +952,10 @@
                         <outlet property="appSearchBar" destination="0ht-QU-jSc" id="FgR-QF-3Zp"/>
                         <outlet property="itemBackButton" destination="CkN-Tj-13F" id="9O8-Qi-724"/>
                         <outlet property="sLogo" destination="Ce6-qd-ZCX" id="Y1h-we-LW1"/>
-                        <outlet property="searchDisplayController" destination="FDc-19-sHg" id="e5R-wZ-bMo"/>
-                        <outlet property="searchRecipesTVC" destination="ccV-c7-1Aj" id="2tu-AP-O0V"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fc-gE-Vw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="FDc-19-sHg">
-                    <connections>
-                        <outlet property="delegate" destination="jCy-Kp-1Ab" id="Gve-SG-fAX"/>
-                        <outlet property="searchBar" destination="0ht-QU-jSc" id="Pfh-gi-5i9"/>
-                        <outlet property="searchContentsController" destination="jCy-Kp-1Ab" id="1yd-gZ-fln"/>
-                        <outlet property="searchResultsDataSource" destination="jCy-Kp-1Ab" id="x9V-RB-tL7"/>
-                        <outlet property="searchResultsDelegate" destination="jCy-Kp-1Ab" id="OaR-WN-eWJ"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="FDc-19-sHg"/>
             </objects>
             <point key="canvasLocation" x="732.5" y="1258.5"/>
         </scene>
@@ -1182,7 +1172,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KrH-Gt-Mkq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KrH-Gt-Mkq">
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KrH-Gt-Mkq" id="zNS-7m-Zuf">
@@ -1191,6 +1181,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iUG-Bo-YaE" id="XDU-cY-Lg9"/>
+                                    <outlet property="delegate" destination="iUG-Bo-YaE" id="9Ut-KD-dyx"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-DD-jvm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
@@ -1230,21 +1224,12 @@
                     <connections>
                         <outlet property="bbItem" destination="tQ5-GG-PUq" id="w4Z-hL-qaI"/>
                         <outlet property="imageLogo" destination="FDL-Bk-PaE" id="Nat-Xe-eZS"/>
-                        <outlet property="searchDisplayController" destination="9Yf-Xn-Nkc" id="56f-kL-6DZ"/>
                         <outlet property="webSearchBar" destination="gMb-DD-jvm" id="WZb-IB-psH"/>
                         <outlet property="webSearchTV" destination="PMZ-QK-PCz" id="c1m-vj-7Px"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBa-ON-n4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="9Yf-Xn-Nkc">
-                    <connections>
-                        <outlet property="delegate" destination="iUG-Bo-YaE" id="E7M-o7-Mda"/>
-                        <outlet property="searchBar" destination="gMb-DD-jvm" id="oGw-YD-bSf"/>
-                        <outlet property="searchContentsController" destination="iUG-Bo-YaE" id="ggl-fQ-4U1"/>
-                        <outlet property="searchResultsDataSource" destination="iUG-Bo-YaE" id="FAs-Rf-e8h"/>
-                        <outlet property="searchResultsDelegate" destination="iUG-Bo-YaE" id="79z-xh-Q8H"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="9Yf-Xn-Nkc"/>
             </objects>
             <point key="canvasLocation" x="-181.5" y="1238.5"/>
         </scene>

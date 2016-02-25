@@ -22,7 +22,6 @@
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
 		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
 		3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */; };
-		3D9CD80B1C7BCC3000645850 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9CD80A1C7BCC3000645850 /* TableViewCell.swift */; };
 		3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */; };
 		3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
 		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		3D9CD80A1C7BCC3000645850 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +85,6 @@
 			children = (
 				3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */,
 				3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */,
-				3D9CD80A1C7BCC3000645850 /* TableViewCell.swift */,
 			);
 			name = "Create Flow";
 			sourceTree = "<group>";
@@ -137,10 +134,18 @@
 				3D29EFA31C1A1CEA00169B2A /* Designable */,
 				3D29EF9C1C1A1A6800169B2A /* Login Flow */,
 				3D29EF9D1C1A1A9B00169B2A /* Create Flow */,
+				3D30FD361C7E5A5300F35D03 /* Delete Flow */,
 				3DEBA4311C173B4200C088BA /* Recipe Flow */,
 				3D29EF9B1C1A1A2300169B2A /* System */,
 			);
 			path = FlourPower;
+			sourceTree = "<group>";
+		};
+		3D30FD361C7E5A5300F35D03 /* Delete Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Delete Flow";
 			sourceTree = "<group>";
 		};
 		3DEBA4311C173B4200C088BA /* Recipe Flow */ = {
@@ -242,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9CD80B1C7BCC3000645850 /* TableViewCell.swift in Sources */,
 				3D29EFA21C1A1CE100169B2A /* PrettyButton.swift in Sources */,
 				3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */,
 				3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */,

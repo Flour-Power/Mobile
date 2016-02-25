@@ -38,32 +38,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webSearchTV.dataSource = self
-        configureSearchController()
-        webSearchTV.tableFooterView = UIView()
+//        configureSearchController()
+//        webSearchTV.tableFooterView = UIView()
         
-        var info = RequestInfo()
-        info.endpoint = "/api/recipes/search?query\(search_terms)"
-        info.method = .GET
-        info.parameters = [
-            
-            "search_terms" : search_terms,
-            
-        ]
-        
-        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-            
-            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
-                
-                for recipeInfo in recipeInfos {
-                    
-                    let recipe = Recipe(info: recipeInfo, category: self.category)
-                    
-                    self.recipes.append(recipe)
-                    
-                }
-            }
-        }
         
     }
 
@@ -72,14 +49,16 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return recipes.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = searchResults[indexPath.row]
+        let recipe = recipes[indexPath.row]
+        
+        cell.textLabel?.text = recipe.recipeTitle
         
         return cell
 
@@ -109,15 +88,15 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
  
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true
-        webSearchTV.reloadData()
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false
-        webSearchTV.reloadData()
-    }
+//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+//        searchActive = true
+//        webSearchTV.reloadData()
+//    }
+//    
+//    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+//        searchActive = false
+//        webSearchTV.reloadData()
+//    }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
@@ -129,12 +108,31 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        var searchText = searchBar.text ?? ""
+        let searchText = searchBar.text ?? ""
         
+        var info = RequestInfo()
+        info.endpoint = "/api/recipes/search?query=\(searchText)"
+        info.method = .GET
         
+        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
+            
+            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
+                
+                for recipeInfo in recipeInfos {
+                    
+                    let recipe = Recipe(info: recipeInfo, category: self.category)
+                    
+                    self.recipes.append(recipe)
+                    
+                }
+            }
+            
+            self.webSearchTV.reloadData()
+
+        }
+
         
         dispatch_async(dispatch_get_main_queue()) {
-        self.webSearchTV.reloadData()
         self.dismissKeyboard()
         
         }

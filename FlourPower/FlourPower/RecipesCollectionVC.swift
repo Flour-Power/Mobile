@@ -27,6 +27,7 @@ class RecipesCollectionVC: UICollectionViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        recipes = []
         
         var info = RequestInfo()
         
