@@ -80,8 +80,8 @@ class HomeVC: UIViewController {
                 self.category1.setTitle(categories[1]["name"] as? String ?? "", forState: .Normal)
                 self.category2.setTitle(categories[2]["name"] as? String ?? "", forState: .Normal)
                 self.category3.setTitle(categories[3]["name"] as? String ?? "", forState: .Normal)
-                self.category4.setTitle(categories[4]["name"] as? String ?? "", forState: .Normal)
-                self.category5.setTitle(categories[5]["name"] as? String ?? "", forState: .Normal)
+                self.category4.setTitle(categories[4][""] as? String ?? "Soups/Salads", forState: .Normal)
+                self.category5.setTitle(categories[5][""] as? String ?? "Side Items", forState: .Normal)
                 
             }
             

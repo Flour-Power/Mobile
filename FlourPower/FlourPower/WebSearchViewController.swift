@@ -37,9 +37,7 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        configureSearchController()
-//        webSearchTV.tableFooterView = UIView()
+
         
         
     }
@@ -87,16 +85,7 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     }
 
- 
-//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-//        searchActive = true
-//        webSearchTV.reloadData()
-//    }
-//    
-//    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-//        searchActive = false
-//        webSearchTV.reloadData()
-//    }
+
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
@@ -136,8 +125,24 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         self.dismissKeyboard()
         
         }
+        
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let recipe = recipes[indexPath.row]
+        
+        let webVC = storyboard?.instantiateViewControllerWithIdentifier("webVC") as? WSVViewController
+    
+        webVC?.recipe = recipe
+        
+        navigationController?.pushViewController(webVC!, animated: true)
+        
+    }
+    
 }
+
+
 
 
 

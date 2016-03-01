@@ -12,18 +12,17 @@ public let ingredient = String!()
 public var type = String()
 
 
-class SFPTableViewController: UITableViewController, UISearchBarDelegate {
+class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
     
     var search_terms = String?()
     var category: String?
-    var data: [String] = []
-    var filteredData: [String] = []
+    var data : [String] = []
+    var filteredData: [String]!
     var recipes: [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
     var searchActive : Bool = false
-    //    var ingredients = String?()
     var type = String?()
     
     
@@ -47,7 +46,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     func configureSearchController() {
         
         searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
@@ -57,11 +56,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-//        configureSearchController()
-        
+ 
     }
     
     
@@ -70,7 +65,14 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         appSearchBar.resignFirstResponder()
     }
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+      
+        return 1
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        
         return recipes.count
     }
     
@@ -87,43 +89,39 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.text = recipe.recipeTitle
 
         return cell
-        
-//        if self.searchActive {
-//            
-//            
-//            return cell
-//            
-//        } else {
-//            
-//            cell.textLabel?.text = filteredData[indexPath.row]
-//            
-//            return cell
-//        }
-//        
+    
     }
+
     
 //    func updateSearchResultsForSearchController(searchController: UISearchController) {
-//        
-//        searchResults.removeAll(keepCapacity: false)
-//        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-//        let array = (data as NSArray).filteredArrayUsingPredicate(searchPredicate)
-//        filteredData = array as! [String]
-//        
-//        dispatch_async(dispatch_get_main_queue()) {
-//            self.tableView.setContentOffset(CGPointZero, animated: false)
+//        if let searchText = searchController.searchBar.text {
+//            filteredData = searchText.isEmpty ? data : data.filter({(dataString: String) -> Bool in
+//                return dataString.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+//            })
+//            
+//            tableView.reloadData()
 //        }
-//        
-//        tableView.reloadData()
-//        
 //    }
+
     
     
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        filteredData.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "name CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredData = array as! [String]
+        
+        self.tableView.reloadData()
+        
+    }
+
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
         dismissKeyboard()
         appSearchBar.text = ""
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     

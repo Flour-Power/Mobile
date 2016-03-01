@@ -669,6 +669,7 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="cell1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef6-b9-rEO" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="APPETIZERS">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -687,6 +688,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cell0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Am-x0-MtE" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="170" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="DRINKS">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -713,6 +715,7 @@
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="cell4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N2-V5-TC7" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="SIDE ITEMS">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -731,7 +734,8 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="cell2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTj-bL-jhS" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="170" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="SOUP/SALAD">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="SOUP / SALAD">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -757,6 +761,7 @@
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="cell5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB6-5X-8A4" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="MAIN COURSES">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -775,6 +780,7 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="cell3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvk-JJ-Fop" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
                                                 <rect key="frame" x="170" y="0.0" width="165" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="DESSERTS">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.4392156862745098" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -801,42 +807,49 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Q3J-Yv-P8t">
-                                <rect key="frame" x="50" y="397" width="275" height="40"/>
+                                <rect key="frame" x="20" y="397" width="335" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-uA-4d2" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
-                                        <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="SEARCH"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="aEG-X4-cNe" kind="presentation" id="Xjs-0J-Bbk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZF-IX-BXH" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
-                                        <rect key="frame" x="173" y="0.0" width="103" height="40"/>
-                                        <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="MY RECIPES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="Ia4-Jw-zai" kind="presentation" id="byV-Ne-8HA"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0X2-Q0-82S">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-uA-4d2" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
+                                                <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="New Recipes"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchForRecipes:" destination="ZBq-zV-fxN" eventType="touchUpInside" id="kmd-8m-5FT"/>
+                                                    <segue destination="aEG-X4-cNe" kind="presentation" id="Xjs-0J-Bbk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZF-IX-BXH" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
+                                                <rect key="frame" x="171" y="0.0" width="165" height="40"/>
+                                                <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="My Recipes"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="searchMyRecipes:" destination="ZBq-zV-fxN" eventType="touchUpInside" id="qzK-4A-lEA"/>
+                                                    <segue destination="Ia4-Jw-zai" kind="presentation" id="byV-Ne-8HA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DGL-dc-IHg"/>
@@ -848,17 +861,17 @@
                             <constraint firstItem="fqM-KJ-AOz" firstAttribute="top" secondItem="Q3J-Yv-P8t" secondAttribute="bottom" constant="10" id="2hH-dg-6AB"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" constant="30" id="5Oh-IY-O3O"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" id="64A-1y-rCH"/>
-                            <constraint firstItem="Q3J-Yv-P8t" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" constant="50" id="I4y-qT-ScT"/>
+                            <constraint firstItem="Q3J-Yv-P8t" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" constant="20" id="I4y-qT-ScT"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="centerX" secondItem="NXR-eJ-r1a" secondAttribute="centerX" id="IlR-S8-kh4"/>
                             <constraint firstItem="Q3J-Yv-P8t" firstAttribute="top" secondItem="D0L-BS-Ccu" secondAttribute="bottom" constant="10" id="KqA-X3-3sp"/>
                             <constraint firstItem="fqM-KJ-AOz" firstAttribute="leading" secondItem="NXR-eJ-r1a" secondAttribute="leading" constant="20" id="NtZ-Vc-AhS"/>
-                            <constraint firstAttribute="trailing" secondItem="Q3J-Yv-P8t" secondAttribute="trailing" constant="50" id="PX5-A2-YyD"/>
+                            <constraint firstAttribute="trailing" secondItem="Q3J-Yv-P8t" secondAttribute="trailing" constant="20" id="PX5-A2-YyD"/>
                             <constraint firstItem="9bz-1O-6gJ" firstAttribute="top" secondItem="fqM-KJ-AOz" secondAttribute="bottom" constant="20" id="PbR-cf-cCz"/>
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" constant="30" id="QQQ-j1-rG1"/>
                             <constraint firstAttribute="trailing" secondItem="D0L-BS-Ccu" secondAttribute="trailing" id="WWc-J8-GI4"/>
                             <constraint firstAttribute="trailing" secondItem="fqM-KJ-AOz" secondAttribute="trailing" constant="20" id="Wi5-CP-hRt"/>
                             <constraint firstItem="Q3J-Yv-P8t" firstAttribute="centerX" secondItem="NXR-eJ-r1a" secondAttribute="centerX" id="efp-0j-mG2"/>
-                            <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" id="piq-zR-97o"/>
+                            <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" constant="1" id="piq-zR-97o"/>
                             <constraint firstItem="D0L-BS-Ccu" firstAttribute="top" secondItem="pCS-Gv-xsf" secondAttribute="bottom" constant="50" id="y48-jV-HZO"/>
                         </constraints>
                         <variation key="default">
@@ -1232,6 +1245,40 @@
                 <searchDisplayController id="9Yf-Xn-Nkc"/>
             </objects>
             <point key="canvasLocation" x="-181.5" y="1238.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EOK-tk-ZRO">
+            <objects>
+                <viewController storyboardIdentifier="webVC" id="H4X-MP-5HZ" customClass="WSVViewController" customModule="FlourPower" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U9y-Ev-VNZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cyb-hp-JR9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ipo-aL-zpV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-Ab-m0w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="BV4-Ab-m0w" secondAttribute="bottom" id="JFj-xy-LI5"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="top" secondItem="U9y-Ev-VNZ" secondAttribute="bottom" id="dXx-PV-Jco"/>
+                            <constraint firstAttribute="trailing" secondItem="BV4-Ab-m0w" secondAttribute="trailing" id="n5q-8L-gqL"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="nOG-M1-Eqf"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="wView" destination="BV4-Ab-m0w" id="JUx-rc-ezx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsW-vK-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.5" y="1977.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="40I-Nu-qkX">

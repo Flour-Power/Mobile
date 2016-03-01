@@ -19,6 +19,7 @@
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
 		3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */; };
+		3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8176A31C86270E009EBEF3 /* WSVViewController.swift */; };
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
 		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
 		3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */; };
@@ -41,6 +42,7 @@
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
 		3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3D8176A31C86270E009EBEF3 /* WSVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSVViewController.swift; sourceTree = "<group>"; };
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
 		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */,
 				3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */,
+				3D8176A31C86270E009EBEF3 /* WSVViewController.swift */,
 			);
 			name = "Create Flow";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */,
 				3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */,
 				3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */,
+				3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */,
 				3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */,
 				3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */,
 				3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */,
