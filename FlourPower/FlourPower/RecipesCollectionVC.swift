@@ -13,7 +13,7 @@ private let reuseIdentifier = "RecipesCell"
 typealias Dictionary = [String : AnyObject]
 
 
-class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
+class RecipesCollectionVC: UICollectionViewController {
     
     var recipes: [Recipe] = []
     
@@ -27,6 +27,7 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        recipes = []
         
         var info = RequestInfo()
         
@@ -44,12 +45,11 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
                     
                     self.recipes.append(recipe)
                     
+
                 }
                 
-                self.collectionView?.reloadData()
-                
             }
-            
+            self.collectionView?.reloadData()
         }
         
     }
@@ -64,15 +64,10 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RecipesCell", forIndexPath: indexPath) as! RecipeCell
         
-     
         
         let recipe = recipes[indexPath.item]
         
-        
-        
         cell.recipeInfo = recipe
-        
-     
         
         cell.recipeImageView.image = recipe.recipeSourceImage ?? recipe.getImage()
         
@@ -80,25 +75,25 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
         
         cell.titleLabel.text = recipe.recipeTitle
         
+        
         return cell
         
+    
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let recipe = recipes[indexPath.item]
         
-      
         
         let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
-
         
-
 
         detailVC?.recipe = recipe
-
+        
         
         navigationController?.pushViewController(detailVC!, animated: true)
+        
 
         
     }
@@ -110,13 +105,10 @@ class RecipesCollectionVC: UICollectionViewController, UISearchBarDelegate {
 class Recipe: NSObject {
     
     var category: String?
-    
     var recipeID: Int?
     var recipeTitle: String?
-    
     var ingredients: [[String:AnyObject]] = []
     var directions: [String] = []
-    
     var recipeSourceURL: String?
     var recipeSourceImageURL: String?
     var recipeSource: String?
@@ -157,6 +149,6 @@ class Recipe: NSObject {
         return nil
         
     }
+   
     
-    
-}
+  }

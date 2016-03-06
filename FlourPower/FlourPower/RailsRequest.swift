@@ -109,8 +109,6 @@
             request.HTTPMethod = info.method.rawValue
             
             
-      
-            
             if let token = token {
                 
                 request.setValue(token, forHTTPHeaderField: "auth-token")
@@ -183,7 +181,7 @@
         
         enum MethodType: String {
             
-            case POST, GET, DELETE
+            case POST, GET, DELETE, PATCH
         }
         
         var endpoint: String!

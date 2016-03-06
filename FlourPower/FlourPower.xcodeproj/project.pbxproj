@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */; };
-		3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */; };
+		3D1F212A1C8C715D00513A28 /* WebSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */; };
 		3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF971C1A133700169B2A /* IngredientCell.swift */; };
 		3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF991C1A134F00169B2A /* StepCell.swift */; };
 		3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */; };
@@ -19,14 +19,17 @@
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
 		3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */; };
+		3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8176A31C86270E009EBEF3 /* WSVViewController.swift */; };
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
+		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
+		3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */; };
 		3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */; };
 		3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesCollectionVC.swift; sourceTree = "<group>"; };
-		3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
+		3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSearchTableViewController.swift; sourceTree = "<group>"; };
 		3D29EF971C1A133700169B2A /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		3D29EF991C1A134F00169B2A /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -39,7 +42,10 @@
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
 		3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3D8176A31C86270E009EBEF3 /* WSVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSVViewController.swift; sourceTree = "<group>"; };
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
+		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		3DD4C9BC1C0F766F0067D90D /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9CD8011C72AD9600645850 /* Crashlytics.framework in Frameworks */,
+				3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */,
-				3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */,
+				3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */,
+				3D8176A31C86270E009EBEF3 /* WSVViewController.swift */,
 			);
 			name = "Create Flow";
 			sourceTree = "<group>";
@@ -106,6 +115,8 @@
 			children = (
 				3D2EEB7C1C0E3F6F009E4472 /* FlourPower */,
 				3D2EEB7B1C0E3F6F009E4472 /* Products */,
+				3D9CD7FE1C72AD9600645850 /* Fabric.framework */,
+				3D9CD7FF1C72AD9600645850 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,10 +137,18 @@
 				3D29EFA31C1A1CEA00169B2A /* Designable */,
 				3D29EF9C1C1A1A6800169B2A /* Login Flow */,
 				3D29EF9D1C1A1A9B00169B2A /* Create Flow */,
+				3D30FD361C7E5A5300F35D03 /* Delete Flow */,
 				3DEBA4311C173B4200C088BA /* Recipe Flow */,
 				3D29EF9B1C1A1A2300169B2A /* System */,
 			);
 			path = FlourPower;
+			sourceTree = "<group>";
+		};
+		3D30FD361C7E5A5300F35D03 /* Delete Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Delete Flow";
 			sourceTree = "<group>";
 		};
 		3DEBA4311C173B4200C088BA /* Recipe Flow */ = {
@@ -152,6 +171,7 @@
 				3D2EEB761C0E3F6F009E4472 /* Sources */,
 				3D2EEB771C0E3F6F009E4472 /* Frameworks */,
 				3D2EEB781C0E3F6F009E4472 /* Resources */,
+				3D9CD7FD1C72AD8000645850 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,6 +229,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D9CD7FD1C72AD8000645850 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 651593452a0683520ecc410343302dae90372f30 709673c732fbc2ce897d07678ae42237b483427d601511ee662778c5ef213f10";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D2EEB761C0E3F6F009E4472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,12 +256,13 @@
 				3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */,
 				3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */,
 				3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */,
+				3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */,
 				3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */,
 				3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */,
 				3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */,
+				3D1F212A1C8C715D00513A28 /* WebSearchTableViewController.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
-				3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +375,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;
@@ -353,6 +394,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlourPower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kelly.FlourPower;

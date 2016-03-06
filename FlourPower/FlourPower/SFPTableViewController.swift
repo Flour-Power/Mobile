@@ -8,105 +8,159 @@
 
 import UIKit
 
-class SFPTableViewController: UITableViewController, UISearchBarDelegate {
-    
-    var searchActive : Bool = false
-    var data: [String] = []
-    
-    
-    var category: String?
-    var categoryID: Int?
-    var filtered: String?
+public let ingredient = String!()
+public var type = String()
 
+
+class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    
+    var search_terms = String?()
+    var category: String?
+    var data : [String] = []
+    var filteredData: [String]!
+    var recipes: [Recipe] = []
+    var searchController: UISearchController!
+    var searchResults = [String]()
+    var searchActive : Bool = false
+    var type = String?()
+    
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
+    
     
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
     
     @IBAction func bButton(sender: UIBarButtonItem) {
         
-        dismissViewControllerAnimated(true, completion: nil) 
-            
-        }
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
     @IBOutlet weak var sLogo: UIButton!
     @IBOutlet weak var appSearchBar: UISearchBar!
-    @IBOutlet var searchRecipesTVC: UITableView!
     
-    
+    func configureSearchController() {
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureSearchController()
-        
+ 
     }
     
-    private func configureSearchController() {
+    
+    
+    func dismissKeyboard() {
+        appSearchBar.resignFirstResponder()
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+      
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         
-        searchRecipesTVC.delegate = self
-        searchRecipesTVC.dataSource = self
-        appSearchBar.delegate = self
-        self.definesPresentationContext = true
+        return recipes.count
+    }
+    
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let recipe = recipes[indexPath.row]
+        
+        print(recipe.recipeTitle)
+        
+        cell.textLabel?.text = recipe.recipeTitle
+
+        return cell
+    
+    }
 
     
-    }
-   
+
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true
-    }
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        recipes.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredData = array as! [String]
+        
+        self.tableView.reloadData()
+        
     }
+
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filtered = data.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return range.location != NSNotFound
-        })
-        if(filtered.count == 0){
-            searchActive = false
-        } else {
-            searchActive = true
-        }
+        dismissKeyboard()
+        appSearchBar.text = ""
         self.tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive) {
-            return filtered.count
-        }
-        return data.count
-    }
     
-    func TV(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = searchRecipesTVC.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        if(searchActive){
-            cell.textLabel?.text = filtered[indexPath.row]
-        } else {
-            cell.textLabel?.text = data[indexPath.row]
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        recipes = []
+        
+        let searchText = appSearchBar.text ?? ""
+        
+        var info = RequestInfo()
+        
+        info.endpoint = "/recipes/search?name=\(searchText)"
+        
+        info.method = .GET
+        
+        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
+            
+            //            print(returnedInfo)
+            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
+                
+                for recipeInfo in recipeInfos {
+                    
+                    let recipe = Recipe(info: recipeInfo, category: self.category)
+                    
+                    self.recipes.append(recipe)
+                    
+                    
+                }
+                
+            }
+            self.tableView.reloadData()
         }
         
-        return cell
-        }
+        dispatch_async(dispatch_get_main_queue()) {
 
+            self.dismissKeyboard()
+            
+        }
+        
     }
+    
+}
+
+
+
+
+
+
+
+
+
