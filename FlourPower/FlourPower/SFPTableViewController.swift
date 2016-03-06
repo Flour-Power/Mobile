@@ -93,22 +93,13 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     }
 
     
-//    func updateSearchResultsForSearchController(searchController: UISearchController) {
-//        if let searchText = searchController.searchBar.text {
-//            filteredData = searchText.isEmpty ? data : data.filter({(dataString: String) -> Bool in
-//                return dataString.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
-//            })
-//            
-//            tableView.reloadData()
-//        }
-//    }
 
     
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-        filteredData.removeAll(keepCapacity: false)
-        let searchPredicate = NSPredicate(format: "name CONTAINS[c] %@", searchController.searchBar.text!)
+        recipes.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
         let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
         filteredData = array as! [String]
         

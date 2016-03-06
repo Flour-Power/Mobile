@@ -17,9 +17,9 @@ class WSVViewController: UIViewController {
     
     @IBOutlet weak var wView: UIWebView!
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         var info = RequestInfo()
         info.endpoint = "/api/recipes/\(categoryID ?? 0)"
         info.method = .GET

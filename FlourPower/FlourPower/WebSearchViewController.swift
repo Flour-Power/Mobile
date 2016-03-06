@@ -8,15 +8,19 @@
 
 import UIKit
 
-class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
-    var search_terms = String()
+    var search_terms = String?()
     var category: String?
+    var data : [String] = []
+    var filteredData: [String]!
     var recipes: [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
     var searchActive : Bool = false
-  
+    var type = String?()
+    
+    
     
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
@@ -35,23 +39,42 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var bbItem: UIBarButtonItem!
     @IBOutlet weak var imageLogo: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func configureSearchController() {
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        webSearchTV.tableHeaderView = searchController.searchBar
 
         
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureSearchController()
         
     }
 
     func dismissKeyboard() {
+        
         webSearchBar.resignFirstResponder()
     }
     
+   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return recipes.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         let recipe = recipes[indexPath.row]
@@ -62,28 +85,18 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
 
     }
     
-    func configureSearchController() {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.sizeToFit()
-        
-
-        
-    }
-
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        searchResults.removeAll()
+        recipes.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredData = array as! [String]
         
-                    dispatch_async(dispatch_get_main_queue()) {
-                    self.webSearchTV.reloadData()
-                    self.webSearchTV.setContentOffset(CGPointZero, animated: false)
-                }
+        self.webSearchTV.reloadData()
     
     }
+   
 
 
     
@@ -97,7 +110,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        let searchText = searchBar.text ?? ""
+        recipes = []
+        
+        let searchText = webSearchBar.text ?? ""
         
         var info = RequestInfo()
         info.endpoint = "/api/recipes/search?query=\(searchText)"
@@ -119,7 +134,6 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
             self.webSearchTV.reloadData()
 
         }
-
         
         dispatch_async(dispatch_get_main_queue()) {
         self.dismissKeyboard()
@@ -127,19 +141,8 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
     }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let recipe = recipes[indexPath.row]
-        
-        let webVC = storyboard?.instantiateViewControllerWithIdentifier("webVC") as? WSVViewController
-    
-        webVC?.recipe = recipe
-        
-        navigationController?.pushViewController(webVC!, animated: true)
-        
-    }
-    
+ 
+
 }
 
 
