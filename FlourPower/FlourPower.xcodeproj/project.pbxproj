@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */; };
-		3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */; };
+		3D1F212A1C8C715D00513A28 /* WebSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */; };
 		3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF971C1A133700169B2A /* IngredientCell.swift */; };
 		3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF991C1A134F00169B2A /* StepCell.swift */; };
 		3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesCollectionVC.swift; sourceTree = "<group>"; };
-		3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
+		3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSearchTableViewController.swift; sourceTree = "<group>"; };
 		3D29EF971C1A133700169B2A /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		3D29EF991C1A134F00169B2A /* StepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
 		3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */,
-				3D25BA291C555CA900EDAE6B /* WebSearchViewController.swift */,
+				3D1F21291C8C715D00513A28 /* WebSearchTableViewController.swift */,
 				3D8176A31C86270E009EBEF3 /* WSVViewController.swift */,
 			);
 			name = "Create Flow";
@@ -260,9 +260,9 @@
 				3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */,
 				3D29EF981C1A133700169B2A /* IngredientCell.swift in Sources */,
 				3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */,
+				3D1F212A1C8C715D00513A28 /* WebSearchTableViewController.swift in Sources */,
 				3D2EEB7E1C0E3F6F009E4472 /* AppDelegate.swift in Sources */,
 				3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */,
-				3D25BA2A1C555CA900EDAE6B /* WebSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

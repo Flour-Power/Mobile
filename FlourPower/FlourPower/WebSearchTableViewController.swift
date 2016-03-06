@@ -1,15 +1,15 @@
 //
-//  WebSearchViewController.swift
+//  WebSearchTableViewController.swift
 //  FlourPower
 //
-//  Created by Kelly Robinson on 1/24/16.
+//  Created by Kelly Robinson on 3/6/16.
 //  Copyright © 2016 Kelly Robinson. All rights reserved.
 //
 
 import UIKit
 
-class WebSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
-    
+class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+
     var search_terms = String?()
     var category: String?
     var data : [String] = []
@@ -26,12 +26,12 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
         return recognizer
     }()
-
-
+    
+    
     @IBAction func backButtonItem(sender: UIBarButtonItem) {
         
         dismissViewControllerAnimated(true, completion: nil)
-
+        
     }
     @IBOutlet weak var webSearchBar: UISearchBar!
     @IBOutlet weak var webSearchTV: UITableView!
@@ -44,8 +44,9 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        webSearchTV.tableHeaderView = searchController.searchBar
-
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        
         
         
     }
@@ -53,27 +54,25 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureSearchController()
         
     }
-
+    
     func dismissKeyboard() {
         
         webSearchBar.resignFirstResponder()
     }
     
-   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return recipes.count
     }
     
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
@@ -82,7 +81,7 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.text = recipe.recipeTitle
         
         return cell
-
+        
     }
     
     
@@ -94,11 +93,11 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         filteredData = array as! [String]
         
         self.webSearchTV.reloadData()
-    
+        
     }
-   
-
-
+    
+    
+    
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
@@ -106,7 +105,7 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
         webSearchBar.text = ""
         webSearchTV.reloadData()
     }
-
+    
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
@@ -132,21 +131,15 @@ class WebSearchViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
             self.webSearchTV.reloadData()
-
+            
         }
         
         dispatch_async(dispatch_get_main_queue()) {
-        self.dismissKeyboard()
-        
+            self.dismissKeyboard()
+            
         }
         
     }
- 
+    
 
 }
-
-
-
-
-
-
