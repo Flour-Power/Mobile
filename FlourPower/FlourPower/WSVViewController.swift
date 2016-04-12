@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class WSVViewController: UIViewController {
 
@@ -14,11 +15,16 @@ class WSVViewController: UIViewController {
     var recipes: [Recipe] = []
     var recipe: Recipe!
     var categoryID: Int?
+
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var wView: UIWebView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        recipes = []
         
         var info = RequestInfo()
         info.endpoint = "/api/recipes/\(categoryID ?? 0)"
@@ -36,16 +42,32 @@ class WSVViewController: UIViewController {
                     
                 }
             }
-            
+           
+
             self.wView.reload()
             
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
     }
     
+    func webDidStartLoad(_: UIWebView) {
+        
+        activityIndicator.startAnimating()
+        
+        print("webView is Loading")
+        
+    }
+    
+    func webDidFinishLoad(_: UIWebView) {
+        
+        activityIndicator.stopAnimating()
+        
+        print("webView Stopped Loading")
+        
+    }
+
+  
+
 
 }

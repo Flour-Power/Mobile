@@ -47,7 +47,8 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         if !loadSettings() {
             registerDefaultSettings()
         }
-            speechSynthesizer.delegate = self
+        
+        speechSynthesizer.delegate = self
         
         titleLabel.text = recipe.recipeTitle
         
@@ -129,7 +130,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             speechSynthesizer.speakUtterance(speechUtterance)
             
-            currentIngredient++
+            currentIngredient += 1
             
             if currentIngredient == recipe.ingredients.count { currentIngredient = 0 }
             
@@ -160,7 +161,7 @@ class RecipeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 speechSynthesizer.speakUtterance(speechUtterance)
                 
-                currentStep++
+                currentStep += 1
                 
                 if currentStep == recipe.directions.count { currentStep = 0 }
                 

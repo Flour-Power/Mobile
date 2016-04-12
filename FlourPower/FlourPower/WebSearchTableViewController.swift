@@ -19,15 +19,8 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     var searchResults = [String]()
     var searchActive : Bool = false
     var type = String?()
-    
-    
-    
-    lazy var tapRecognizer: UITapGestureRecognizer = {
-        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
-        return recognizer
-    }()
-    
-    
+
+   
     @IBAction func backButtonItem(sender: UIBarButtonItem) {
         
         dismissViewControllerAnimated(true, completion: nil)
@@ -72,13 +65,22 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
         return recipes.count
     }
     
-override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! WebCell
         
         let recipe = recipes[indexPath.row]
         
-        cell.textLabel?.text = recipe.recipeTitle
+        print(recipe.recipeTitle)
+        
+        cell.recipeInfo = recipe
+        
+        cell.webTitleLabel?.text = recipe.recipeTitle
+        
+        cell.webView?.image = recipe.recipeSourceImage ?? recipe.getImage()
+        
+        cell.webView?.contentMode = .ScaleAspectFill
+        
         
         return cell
         
@@ -88,9 +90,9 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
         recipes.removeAll(keepCapacity: false)
-        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredData = array as! [String]
+//        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
+//        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
+//        filteredData = array as! [String]
         
         self.webSearchTV.reloadData()
         
@@ -141,5 +143,26 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        
+        if segue == "SendDataSegue" {
+            
+            if let webVC = segue.destinationViewController as? WSVViewController {
+                
+                let path = tableView.indexPathForSelectedRow
+                let cell = tableView.cellForRowAtIndexPath(path!)
+            }
+            
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        _ = tableView.indexPathForSelectedRow!
+        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
+            self.performSegueWithIdentifier("SendDataSegue", sender: self)
+        }
+        
+    }
 
 }

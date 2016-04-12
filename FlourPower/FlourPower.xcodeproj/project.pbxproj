@@ -19,6 +19,8 @@
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
 		3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */; };
+		3D4451F91CA8340B006D02D9 /* WebCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4451F81CA8340B006D02D9 /* WebCell.swift */; };
+		3D4451FB1CA83ACD006D02D9 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4451FA1CA83ACD006D02D9 /* MyCell.swift */; };
 		3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8176A31C86270E009EBEF3 /* WSVViewController.swift */; };
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
 		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
@@ -42,6 +44,8 @@
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
 		3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3D4451F81CA8340B006D02D9 /* WebCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCell.swift; sourceTree = "<group>"; };
+		3D4451FA1CA83ACD006D02D9 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		3D8176A31C86270E009EBEF3 /* WSVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSVViewController.swift; sourceTree = "<group>"; };
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
 		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				3D29EF9F1C1A1B4E00169B2A /* RecipeCell.swift */,
 				3D29EF971C1A133700169B2A /* IngredientCell.swift */,
 				3D29EF991C1A134F00169B2A /* StepCell.swift */,
+				3D4451F81CA8340B006D02D9 /* WebCell.swift */,
+				3D4451FA1CA83ACD006D02D9 /* MyCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 				3D29EF9C1C1A1A6800169B2A /* Login Flow */,
 				3D29EF9D1C1A1A9B00169B2A /* Create Flow */,
 				3D30FD361C7E5A5300F35D03 /* Delete Flow */,
+				3D29EF9E1C1A1AAD00169B2A /* Cells */,
 				3DEBA4311C173B4200C088BA /* Recipe Flow */,
 				3D29EF9B1C1A1A2300169B2A /* System */,
 			);
@@ -156,7 +163,6 @@
 			children = (
 				3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */,
 				3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */,
-				3D29EF9E1C1A1AAD00169B2A /* Cells */,
 			);
 			name = "Recipe Flow";
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 				3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */,
 				3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */,
 				3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */,
+				3D4451F91CA8340B006D02D9 /* WebCell.swift in Sources */,
 				3D0B66531C0F9B8B00D2143E /* RecipesCollectionVC.swift in Sources */,
+				3D4451FB1CA83ACD006D02D9 /* MyCell.swift in Sources */,
 				3DD4C9BD1C0F766F0067D90D /* HomeVC.swift in Sources */,
 				3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */,
 				3DEBA42A1C172D9A00C088BA /* RecipeDetailVC.swift in Sources */,

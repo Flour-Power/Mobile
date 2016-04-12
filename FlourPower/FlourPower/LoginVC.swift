@@ -33,7 +33,7 @@ class LoginVC: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
         guard let email = emailField.text else { return }
         //if they aren't empty
         
-        print("logged in pressed")
+        print("login pressed")
         
         RailsRequest.session().loginWithEmail(email, andPassword: password, completion: {
             

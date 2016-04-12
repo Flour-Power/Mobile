@@ -8,7 +8,7 @@
 
 import UIKit
 
-public let ingredient = String!()
+public let ingredient = String()
 public var type = String()
 
 
@@ -17,21 +17,15 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     
     var search_terms = String?()
     var category: String?
-    var data : [String] = []
-    var filteredData: [String]!
-    var recipes: [Recipe] = []
+    var data = [String]()
+    var filteredData = [MyRecipe]()
+    var recipes : [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
     var searchActive : Bool = false
     var type = String?()
     
-    
-    lazy var tapRecognizer: UITapGestureRecognizer = {
-        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
-        return recognizer
-    }()
-    
-    
+  
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
     
     @IBAction func bButton(sender: UIBarButtonItem) {
@@ -54,12 +48,19 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
     }
     
-    
+    struct MyRecipe {
+        
+        var myRecipeTitle: String?
+        var myRecipeSource: String?
+        var myIngredients: [[String:AnyObject]] = []
+
+    }
     
     func dismissKeyboard() {
         appSearchBar.resignFirstResponder()
@@ -80,28 +81,33 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MyCell
         
         let recipe = recipes[indexPath.row]
         
         print(recipe.recipeTitle)
         
-        cell.textLabel?.text = recipe.recipeTitle
+        cell.recipeInfo = recipe
+
+        cell.myLabel?.text = recipe.recipeTitle
+        
+        cell.MyImage?.image = recipe.recipeSourceImage ?? recipe.getImage()
+        
+        cell.MyImage?.contentMode = .ScaleAspectFill
+
 
         return cell
     
     }
 
-    
 
-    
-    
+
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
         recipes.removeAll(keepCapacity: false)
         let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
         let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredData = array as! [String]
+        data = array as! [String]
         
         self.tableView.reloadData()
         
@@ -151,6 +157,20 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
             self.dismissKeyboard()
             
         }
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let recipe = recipes[indexPath.row]
+        
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
+        
+        
+        detailVC?.recipe = recipe
+        
+        
+        navigationController?.pushViewController(detailVC!, animated: true)
         
     }
     
