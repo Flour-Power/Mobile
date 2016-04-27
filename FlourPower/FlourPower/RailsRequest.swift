@@ -17,6 +17,9 @@
 
     class RailsRequest: NSObject {
         
+        var recipes: [Recipe] = []
+
+        
         class func session() -> RailsRequest { return _rr }
         
         var token: String? {
@@ -96,7 +99,7 @@
             }
             
         }
-        
+
         
         func requiredWithInfo(info: RequestInfo, completion: (returnedInfo: AnyObject?) -> ()) {
             

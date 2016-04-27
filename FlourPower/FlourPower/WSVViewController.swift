@@ -9,65 +9,58 @@
 import UIKit
 import WebKit
 
-class WSVViewController: UIViewController {
-
-    var category: String?
-    var recipes: [Recipe] = []
-    var recipe: Recipe!
-    var categoryID: Int?
-
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+class WSVViewController: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var wView: UIWebView!
+    var recipe: Recipe!
+    var webView : WKWebView!
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    
+    
+    func webView(webView: WKWebView,
+                 didStartProvisionalNavigation navigation: WKNavigation){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func webView(webView: WKWebView,
+                 didFinishNavigation navigation: WKNavigation){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func webView(webView: WKWebView,
+                 decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse,
+                                                   decisionHandler: ((WKNavigationResponsePolicy) -> Void)){
+        
+        print(navigationResponse.response.MIMEType)
+        
+        decisionHandler(.Allow)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        webView = WKWebView()
+        containerView.addSubview(webView)
+        print(containerView.bounds.width)
+        
+        guard let url = NSURL(string: recipe.recipeSourceURL ?? "") else { return }
+        
+        webView.loadRequest(NSURLRequest(URL: url))
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        recipes = []
-        
-        var info = RequestInfo()
-        info.endpoint = "/api/recipes/\(categoryID ?? 0)"
-        info.method = .GET
-        
-        RailsRequest.session().requiredWithInfo(info) { (returnedInfo) -> () in
-            
-            if let recipeInfos = returnedInfo?["recipes"] as? [[String:AnyObject]] {
-                
-                for recipeInfo in recipeInfos {
-                    
-                    let recipe = Recipe(info: recipeInfo, category: self.category)
-                    
-                    self.recipes.append(recipe)
-                    
-                }
-            }
-           
-
-            self.wView.reload()
-            
-        }
-        
+        let frame = CGRectMake(0, 0, self.containerView.bounds.width, self.containerView.bounds.height)
+        self.webView.frame = frame
         
     }
     
-    func webDidStartLoad(_: UIWebView) {
-        
-        activityIndicator.startAnimating()
-        
-        print("webView is Loading")
-        
-    }
-    
-    func webDidFinishLoad(_: UIWebView) {
-        
-        activityIndicator.stopAnimating()
-        
-        print("webView Stopped Loading")
-        
-    }
-
-  
-
-
 }
+
+
+
+

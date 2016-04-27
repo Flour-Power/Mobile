@@ -12,15 +12,16 @@ class AddCell: UICollectionViewCell {
     
     var recipeInfo: Recipe!
 
-    
+
     @IBOutlet weak var addImageView: UIImageView!
     
     
-    @IBOutlet weak var recipeNameText: UITextField!
-    
-    @IBOutlet weak var ingredientsText: UITextView!
-    
-    @IBOutlet weak var directionsText: UITextView!
+    @IBOutlet weak var addRecipeNameTextField: UITextField!
     
     
+    @IBOutlet weak var addIgredientsTextView: UITextView!
+    
+    
+    @IBOutlet weak var addDirectionsTextView: UITextView!
+ 
 }

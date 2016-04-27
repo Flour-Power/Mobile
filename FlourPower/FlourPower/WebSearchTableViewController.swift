@@ -13,7 +13,7 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     var search_terms = String?()
     var category: String?
     var data : [String] = []
-    var filteredData: [String]!
+    var filteredData = [Recipe]()
     var recipes: [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
@@ -86,16 +86,19 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
         
     }
     
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredData = recipes.filter { recipe in
+            return recipe.recipeSource!.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        webSearchTV.reloadData()
+    }
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        recipes.removeAll(keepCapacity: false)
-//        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
-//        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
-//        filteredData = array as! [String]
-        
-        self.webSearchTV.reloadData()
-        
+        filterContentForSearchText(searchController.searchBar.text!)
+
+
     }
     
     
@@ -145,13 +148,16 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) else { return }
+        
+        
         
         if segue == "SendDataSegue" {
             
             if let webVC = segue.destinationViewController as? WSVViewController {
                 
-                let path = tableView.indexPathForSelectedRow
-                let cell = tableView.cellForRowAtIndexPath(path!)
+                webVC.recipe = recipes[indexPath.row]
+
             }
             
         }

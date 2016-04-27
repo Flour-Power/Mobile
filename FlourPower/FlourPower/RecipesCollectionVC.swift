@@ -16,6 +16,7 @@ typealias Dictionary = [String : AnyObject]
 class RecipesCollectionVC: UICollectionViewController {
     
     var recipes: [Recipe] = []
+    var recipe = Recipe!(nil)
     
     var category: String?
     var categoryID: Int?

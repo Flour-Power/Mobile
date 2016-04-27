@@ -18,7 +18,8 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     var search_terms = String?()
     var category: String?
     var data = [String]()
-    var filteredData = [MyRecipe]()
+//    var filteredData = [MyRecipe]()
+//    var recipesData = [MyRecipe]()
     var recipes : [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
@@ -54,13 +55,13 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
  
     }
     
-    struct MyRecipe {
-        
-        var myRecipeTitle: String?
-        var myRecipeSource: String?
-        var myIngredients: [[String:AnyObject]] = []
-
-    }
+//    struct MyRecipe {
+//        
+//        var myRecipeTitle: String?
+//        var myRecipeSource: String?
+//        var myIngredients: [[String:AnyObject]] = []
+//
+//    }
     
     func dismissKeyboard() {
         appSearchBar.resignFirstResponder()
@@ -102,14 +103,10 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
 
 
 
+
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        
-        recipes.removeAll(keepCapacity: false)
-        let searchPredicate = NSPredicate(format: "SELF.name CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (recipes as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        data = array as! [String]
-        
-        self.tableView.reloadData()
+        searchActive = true
+      
         
     }
 
