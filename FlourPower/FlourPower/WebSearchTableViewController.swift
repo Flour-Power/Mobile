@@ -13,12 +13,13 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     var search_terms = String?()
     var category: String?
     var data : [String] = []
-    var filteredData = [Recipe]()
     var recipes: [Recipe] = []
     var searchController: UISearchController!
     var searchResults = [String]()
     var searchActive : Bool = false
     var type = String?()
+    var categoryID: Int?
+
 
    
     @IBAction func backButtonItem(sender: UIBarButtonItem) {
@@ -47,8 +48,12 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         
     }
+    
+    
+
     
     func dismissKeyboard() {
         
@@ -86,29 +91,25 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
         
     }
     
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredData = recipes.filter { recipe in
-            return recipe.recipeSource!.lowercaseString.containsString(searchText.lowercaseString)
-        }
-        
-        webSearchTV.reloadData()
-    }
+
+
     
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
-        filterContentForSearchText(searchController.searchBar.text!)
-
-
+        searchActive = true
+        webSearchBar.text = ""
+        
+        self.webSearchTV.reloadData()
+        
+     
     }
-    
-    
     
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
         dismissKeyboard()
         webSearchBar.text = ""
-        webSearchTV.reloadData()
+        self.tableView.reloadData()
     }
     
     
@@ -143,32 +144,30 @@ class WebSearchTableViewController: UITableViewController, UISearchBarDelegate, 
             self.dismissKeyboard()
             
         }
+   
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) else { return }
-        
-        
-        
-        if segue == "SendDataSegue" {
-            
-            if let webVC = segue.destinationViewController as? WSVViewController {
-                
-                webVC.recipe = recipes[indexPath.row]
-
-            }
-            
-        }
-    }
+ 
     
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        _ = tableView.indexPathForSelectedRow!
-        if let _ = tableView.cellForRowAtIndexPath(indexPath) {
-            self.performSegueWithIdentifier("SendDataSegue", sender: self)
-        }
+        
+        let recipe = recipes[indexPath.row]
+        
+        
+        
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailVC") as? RecipeDetailVC
+        
+        
+        detailVC?.recipe = recipe
+        
+        
+        navigationController?.pushViewController(detailVC!, animated: true)
+        
         
     }
 
 }
+
+

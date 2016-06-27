@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var recipes: [Recipe] = []
+    var newMedia: Bool?
     
     
     @IBOutlet weak var lImage: PrettyButton!
@@ -37,8 +39,83 @@ class AddViewController: UIViewController {
 
     }
     
-    @IBAction func uploadButton(sender: AnyObject) {
+    @IBAction func useCamera(sender: AnyObject) {
         
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerControllerSourceType.Camera) {
+            
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType =
+                UIImagePickerControllerSourceType.Camera
+            imagePicker.mediaTypes = [kUTTypeImage as NSString as String]
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true,
+                                       completion: nil)
+            newMedia = true
+        }
+    }
+    
+    @IBAction func uploadButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(
+        UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType =
+                UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.mediaTypes = [kUTTypeImage as NSString as String]
+            imagePicker.allowsEditing = false
+            self.presentViewController(imagePicker, animated: true,
+                                       completion: nil)
+            self.newMedia = false
+        }
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+ 
+        
+        let mediaType = info[UIImagePickerControllerMediaType] as! String
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if mediaType == String(kUTTypeImage as! String) {
+            let image = info[UIImagePickerControllerOriginalImage]
+                as! UIImage
+            
+            addImageView.image = image
+            
+            if (newMedia == true) {
+                UIImageWriteToSavedPhotosAlbum(image, self,
+                                               "image:didFinishSavingWithError:contextInfo:", nil)
+            } else if mediaType == String(kUTTypeMovie as! String) {
+                // Code to support video here
+            }
+            
+        }
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
+        
+        if error != nil {
+            let alert = UIAlertController(title: "Save Failed",
+                                          message: "Failed to save image",
+                                          preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK",
+                                             style: .Cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true,
+                                       completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
