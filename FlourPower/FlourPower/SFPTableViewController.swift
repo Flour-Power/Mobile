@@ -12,7 +12,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     var searchActive : Bool = false
     var data: [String] = []
-    
+    var recipes: [Recipe] = []
     
     var category: String?
     var categoryID: Int?
@@ -69,16 +69,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filtered = data.filter({ (text) -> Bool in
-            let tmp: NSString = text
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-            return range.location != NSNotFound
-        })
-        if(filtered.count == 0){
-            searchActive = false
-        } else {
-            searchActive = true
-        }
+        
         self.tableView.reloadData()
     }
 
@@ -93,7 +84,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive) {
-            return filtered.count
+            return recipes.count
         }
         return data.count
     }
