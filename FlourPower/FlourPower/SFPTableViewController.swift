@@ -8,12 +8,20 @@
 
 import UIKit
 
+<<<<<<< HEAD
 public let ingredient = String()
 public var type = String()
 
 
 class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
+=======
+class SFPTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    var searchActive : Bool = false
+    var data: [String] = []
+    var recipes: [Recipe] = []
+>>>>>>> master
     
     var search_terms = String?()
     var category: String?
@@ -72,6 +80,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     
     
     
+<<<<<<< HEAD
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MyCell
@@ -87,6 +96,13 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         cell.MyImage?.image = recipe.recipeSourceImage ?? recipe.getImage()
         
         cell.MyImage?.contentMode = .ScaleAspectFill
+=======
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
+        self.tableView.reloadData()
+    }
+>>>>>>> master
 
 
         return cell
@@ -103,12 +119,20 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         
     }
 
+<<<<<<< HEAD
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false
         dismissKeyboard()
         appSearchBar.text = ""
         self.tableView.reloadData()
+=======
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return recipes.count
+        }
+        return data.count
+>>>>>>> master
     }
     
     
