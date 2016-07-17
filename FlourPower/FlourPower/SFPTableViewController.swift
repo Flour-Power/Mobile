@@ -14,6 +14,7 @@ public var type = String()
 
 
 class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+<<<<<<< HEAD
     
 
     
@@ -24,7 +25,41 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     var searchController: UISearchController!
     var searchResults = [String]()
     var searchActive : Bool = false
+<<<<<<< Updated upstream
     var type = String?()
+=======
+
+
+
+    
+
+=======
+    
+    
+    var search_terms = String?()
+    var category: String?
+    var data : [String] = []
+    var filteredData: [String]!
+    var recipes: [Recipe] = []
+    var searchController: UISearchController!
+    var searchResults = [String]()
+    var searchActive : Bool = false
+    var type = String?()
+    
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
+    
+>>>>>>> origin/master
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
+    
+>>>>>>> Stashed changes
     
   
     @IBOutlet weak var itemBackButton: UIBarButtonItem!
@@ -73,6 +108,23 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     }
     
     
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let recipe = recipes[indexPath.row]
+        
+        print(recipe.recipeTitle)
+        
+        cell.textLabel?.text = recipe.recipeTitle
+
+=======
+>>>>>>> Stashed changes
     
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -99,6 +151,7 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
 
 
 
+>>>>>>> origin/master
         return cell
     
     }
@@ -113,7 +166,19 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         
     }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if(searchActive) {
+//            return recipes.count
+//        }
+    
+>>>>>>> Stashed changes
 
+=======
+>>>>>>> origin/master
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false

@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+>>>>>>> origin/master
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes/>
@@ -947,7 +968,19 @@
                             </connections>
                         </searchBar>
                         <prototypes>
+<<<<<<< Updated upstream
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oGB-NX-Bm7" customClass="MyCell" customModule="FlourPower" customModuleProvider="target">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oGB-NX-Bm7" customClass="MyCell" customModule="FlourPower" customModuleProvider="target">
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oGB-NX-Bm7">
+>>>>>>> origin/master
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oGB-NX-Bm7">
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                                 <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGB-NX-Bm7" id="w2F-hZ-pZO">
@@ -1015,6 +1048,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fc-gE-Vw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="FDc-19-sHg"/>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
             </objects>
             <point key="canvasLocation" x="438.5" y="1252.5"/>
         </scene>
@@ -1302,7 +1340,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4v-eG-SKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116.5" y="1285.5"/>
+<<<<<<< Updated upstream
 >>>>>>> master
+=======
+=======
+            </objects>
+            <point key="canvasLocation" x="451.5" y="1252.5"/>
+>>>>>>> origin/master
+=======
+            </objects>
+            <point key="canvasLocation" x="451.5" y="1252.5"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         </scene>
         <!--LoginVC-->
         <scene sceneID="4IX-Bj-Nwl">
@@ -1571,6 +1620,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="y7W-4g-y4U">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
@@ -1580,10 +1634,28 @@
                                 <connections>
                                     <outlet property="delegate" destination="H4X-MP-5HZ" id="xip-av-2ay"/>
                                 </connections>
+<<<<<<< Updated upstream
+=======
+=======
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-Ab-m0w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+>>>>>>> origin/master
+=======
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-Ab-m0w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
                             <constraint firstAttribute="trailing" secondItem="y7W-4g-y4U" secondAttribute="trailing" constant="169" id="Hah-yh-hCN"/>
                             <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="BV4-Ab-m0w" secondAttribute="bottom" id="JFj-xy-LI5"/>
                             <constraint firstItem="y7W-4g-y4U" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" constant="169" id="USv-fX-pbc"/>
@@ -1592,17 +1664,54 @@
                             <constraint firstAttribute="trailing" secondItem="BV4-Ab-m0w" secondAttribute="trailing" id="n5q-8L-gqL"/>
                             <constraint firstItem="BV4-Ab-m0w" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="nOG-M1-Eqf"/>
                             <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="y7W-4g-y4U" secondAttribute="bottom" constant="315" id="pku-fn-1ht"/>
+<<<<<<< Updated upstream
+=======
+=======
+                            <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="BV4-Ab-m0w" secondAttribute="bottom" id="JFj-xy-LI5"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="top" secondItem="U9y-Ev-VNZ" secondAttribute="bottom" id="dXx-PV-Jco"/>
+                            <constraint firstAttribute="trailing" secondItem="BV4-Ab-m0w" secondAttribute="trailing" id="n5q-8L-gqL"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="nOG-M1-Eqf"/>
+>>>>>>> origin/master
+=======
+                            <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="BV4-Ab-m0w" secondAttribute="bottom" id="JFj-xy-LI5"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="top" secondItem="U9y-Ev-VNZ" secondAttribute="bottom" id="dXx-PV-Jco"/>
+                            <constraint firstAttribute="trailing" secondItem="BV4-Ab-m0w" secondAttribute="trailing" id="n5q-8L-gqL"/>
+                            <constraint firstItem="BV4-Ab-m0w" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="nOG-M1-Eqf"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+<<<<<<< Updated upstream
                         <outlet property="activityIndicator" destination="y7W-4g-y4U" id="3FW-uZ-bEz"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <outlet property="activityIndicator" destination="y7W-4g-y4U" id="3FW-uZ-bEz"/>
+=======
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                         <outlet property="wView" destination="BV4-Ab-m0w" id="JUx-rc-ezx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsW-vK-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="-439.5" y="2007.5"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <point key="canvasLocation" x="-439.5" y="2007.5"/>
+=======
+            <point key="canvasLocation" x="-181.5" y="1977.5"/>
+>>>>>>> origin/master
+=======
+            <point key="canvasLocation" x="-181.5" y="1977.5"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         </scene>
         <!--Web Search Table View Controller-->
         <scene sceneID="bQT-UM-78c">
@@ -1621,12 +1730,29 @@
                             </connections>
                         </searchBar>
                         <prototypes>
+<<<<<<< Updated upstream
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zZD-ZF-vVf" customClass="WebCell" customModule="FlourPower" customModuleProvider="target">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zZD-ZF-vVf" customClass="WebCell" customModule="FlourPower" customModuleProvider="target">
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zZD-ZF-vVf">
+>>>>>>> origin/master
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zZD-ZF-vVf">
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                                 <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZD-ZF-vVf" id="Mms-lE-WAM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdf-W0-cMY">
                                             <rect key="frame" x="65" y="6" width="302" height="32"/>
@@ -1660,7 +1786,16 @@
                                     <outlet property="webTitleLabel" destination="Tdf-W0-cMY" id="1yI-FJ-sNk"/>
                                     <outlet property="webView" destination="DeJ-zs-1nX" id="pCF-bI-WfG"/>
                                 </connections>
+<<<<<<< Updated upstream
 >>>>>>> master
+=======
+=======
+                                </tableViewCellContentView>
+>>>>>>> origin/master
+=======
+                                </tableViewCellContentView>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1687,18 +1822,40 @@
                         <outlet property="imageLogo" destination="nBS-YF-EaL" id="UUK-z4-6EP"/>
                         <outlet property="webSearchBar" destination="cCo-8r-mGO" id="NhD-g0-0a0"/>
                         <outlet property="webSearchTV" destination="dSA-hQ-ylp" id="dmx-o9-KsT"/>
+<<<<<<< Updated upstream
 
                         <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
 >>>>>>> master
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
+=======
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6e-Yw-kRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
 
             <point key="canvasLocation" x="-406.5" y="1252.5"/>
 =======
             <point key="canvasLocation" x="-439.5" y="1252.5"/>
 >>>>>>> master
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <point key="canvasLocation" x="-439.5" y="1252.5"/>
+=======
+            <point key="canvasLocation" x="-437.5" y="1305.5"/>
+>>>>>>> origin/master
+=======
+            <point key="canvasLocation" x="-437.5" y="1305.5"/>
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="40I-Nu-qkX">
@@ -1724,6 +1881,13 @@
         <scene sceneID="lNY-w6-1Vp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HaF-5l-h8h" sceneMemberID="viewController">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdx-Uz-HRM">
@@ -1735,6 +1899,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="j2c-uv-AZa" kind="relationship" relationship="rootViewController" id="Ahi-2Y-a6l"/>
+<<<<<<< HEAD
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYr-YY-nYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1787,13 +1952,27 @@
             </objects>
             <point key="canvasLocation" x="960.5" y="1272.5"/>
 =======
+<<<<<<< Updated upstream
                         <segue destination="fHT-jV-cbv" kind="relationship" relationship="rootViewController" id="cyc-L7-tkD"/>
+=======
+                        <segue destination="j2c-uv-AZa" kind="relationship" relationship="rootViewController" id="Ahi-2Y-a6l"/>
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8h-w9-qDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="1116.5" y="460.5"/>
 >>>>>>> master
+=======
+            <point key="canvasLocation" x="-898.5" y="1252.5"/>
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         </scene>
     </scenes>
     <resources>
