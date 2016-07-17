@@ -1,8 +1,0 @@
-use_frameworks!
-
-target 'RealmSearchViewControllerExample' do
-  pod 'RealmSwift', '>=0.96'
-  pod 'SwiftFetchedResultsController', '>=2.4'
-  pod 'TOWebViewController'
-end
-
