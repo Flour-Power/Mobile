@@ -46,6 +46,16 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     var searchActive : Bool = false
     var type = String?()
     
+<<<<<<< Updated upstream
+=======
+    
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
+        return recognizer
+    }()
+    
+>>>>>>> origin/master
+>>>>>>> Stashed changes
     
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: "dismissKeyboard")
@@ -109,6 +119,9 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     
     
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 
@@ -122,8 +135,26 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
         print(recipe.recipeTitle)
         
         cell.textLabel?.text = recipe.recipeTitle
+>>>>>>> Stashed changes
 
 =======
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let recipe = recipes[indexPath.row]
+        
+        print(recipe.recipeTitle)
+        
+        cell.textLabel?.text = recipe.recipeTitle
+
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> origin/master
+        return cell
 >>>>>>> Stashed changes
     
 
@@ -167,7 +198,10 @@ class SFPTableViewController: UITableViewController, UISearchBarDelegate, UISear
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 //
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
