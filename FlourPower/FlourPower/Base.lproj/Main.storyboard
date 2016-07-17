@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha"/>
     <dependencies>
@@ -9,6 +10,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+>>>>>>> parent of 6ef8cec... LatestCommit
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -650,11 +654,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpM-H2-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
 
             <point key="canvasLocation" x="668.5" y="460.5"/>
 
             <point key="canvasLocation" x="672.5" y="460.5"/>
 >>>>>>> master
+=======
+            <point key="canvasLocation" x="672.5" y="460.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0zX-qa-IZX">
@@ -1080,25 +1088,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5f-Fj-JwF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5f-Fj-JwF">
                                 <rect key="frame" x="20" y="287" width="335" height="30"/>
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qjL-Ok-HZF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qjL-Ok-HZF">
                                 <rect key="frame" x="20" y="346" width="335" height="128"/>
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="L67-2i-shR"/>
-                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQ2-5C-6Fe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XQ2-5C-6Fe">
                                 <rect key="frame" x="20" y="506" width="335" height="141"/>
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1106,62 +1111,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3KI-4T-Ugz">
-                                <rect key="frame" x="20" y="84" width="335" height="177"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="vbU-1Z-auU"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXR-EG-Htt" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
-                                <rect key="frame" x="164" y="206" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="2cx-Uy-UFl"/>
-                                    <constraint firstAttribute="width" constant="50" id="QAC-1Q-Idg"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4f-L3-Fgy" customClass="PrettyButton" customModule="FlourPower" customModuleProvider="target">
+                                <rect key="frame" x="117" y="101" width="141" height="141"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Upload Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="24"/>
+                                        <real key="value" value="68"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="useCamera:" destination="LgE-66-jf8" eventType="touchUpInside" id="WZK-ee-C7x"/>
+                                    <action selector="uploadButton:" destination="LgE-66-jf8" eventType="touchUpInside" id="qmr-89-7Ci"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf5-Lu-7ie">
-                                <rect key="frame" x="295" y="215" width="51" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Photos"/>
-                                <connections>
-                                    <action selector="uploadButton:" destination="LgE-66-jf8" eventType="touchUpInside" id="cu7-1N-Ea9"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KI-4T-Ugz">
+                                <rect key="frame" x="20" y="84" width="335" height="177"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="leading" secondItem="r5f-Fj-JwF" secondAttribute="leading" id="4Hj-ZU-0De"/>
-                            <constraint firstItem="r5f-Fj-JwF" firstAttribute="top" secondItem="vXR-EG-Htt" secondAttribute="bottom" constant="31" id="4Iy-oF-0kG"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="centerX" secondItem="HxG-lk-Sib" secondAttribute="centerX" id="FPi-WI-wZ6"/>
-                            <constraint firstItem="zf5-Lu-7ie" firstAttribute="leading" secondItem="vXR-EG-Htt" secondAttribute="trailing" constant="81" id="Hxp-xl-BJ1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zf5-Lu-7ie" secondAttribute="trailing" constant="13" id="K2h-ve-h6c"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="top" secondItem="qCI-JE-BgR" secondAttribute="bottom" constant="20" id="VZA-As-jK6"/>
-                            <constraint firstAttribute="bottom" secondItem="XQ2-5C-6Fe" secondAttribute="bottom" constant="20" symbolic="YES" id="YqS-hS-rsG"/>
-                            <constraint firstItem="vXR-EG-Htt" firstAttribute="leading" secondItem="HxG-lk-Sib" secondAttribute="leading" constant="164" id="Yv7-ZT-zW3"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="leading" secondItem="qjL-Ok-HZF" secondAttribute="leading" id="aVC-OV-NxY"/>
-                            <constraint firstItem="qjL-Ok-HZF" firstAttribute="top" secondItem="r5f-Fj-JwF" secondAttribute="bottom" constant="29" id="aoP-vr-wX1"/>
-                            <constraint firstItem="r5f-Fj-JwF" firstAttribute="top" secondItem="3KI-4T-Ugz" secondAttribute="bottom" constant="26" id="d0z-QU-nic"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="trailing" secondItem="XQ2-5C-6Fe" secondAttribute="trailing" id="hNb-z0-93P"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="trailing" secondItem="r5f-Fj-JwF" secondAttribute="trailing" id="jCS-fQ-aZt"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="leading" secondItem="HxG-lk-Sib" secondAttribute="leadingMargin" constant="4" id="osQ-sm-wIk"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="leading" secondItem="XQ2-5C-6Fe" secondAttribute="leading" id="pzd-0d-VHu"/>
-                            <constraint firstItem="3KI-4T-Ugz" firstAttribute="trailing" secondItem="qjL-Ok-HZF" secondAttribute="trailing" id="qEb-dk-osW"/>
-                            <constraint firstItem="zf5-Lu-7ie" firstAttribute="centerY" secondItem="vXR-EG-Htt" secondAttribute="centerY" id="qhV-Xd-XaX"/>
-                            <constraint firstItem="r5f-Fj-JwF" firstAttribute="top" secondItem="zf5-Lu-7ie" secondAttribute="bottom" constant="41" id="sec-h3-eoc"/>
-                            <constraint firstItem="XQ2-5C-6Fe" firstAttribute="top" secondItem="qjL-Ok-HZF" secondAttribute="bottom" constant="32" id="wtT-Zl-d96"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xq2-9G-0oo">
                         <nil key="title"/>
@@ -1182,13 +1156,14 @@
                         <outlet property="bButtonSave" destination="1cJ-U6-AlS" id="hpf-M0-FGm"/>
                         <outlet property="directionsText" destination="XQ2-5C-6Fe" id="vsI-1p-uXt"/>
                         <outlet property="ingredientsText" destination="qjL-Ok-HZF" id="ip4-7g-sDo"/>
-                        <outlet property="lImage" destination="vXR-EG-Htt" id="mxZ-al-IYR"/>
+                        <outlet property="lImage" destination="K4f-L3-Fgy" id="NsM-qA-jKr"/>
                         <outlet property="logoSmall" destination="aBz-3E-5L4" id="0Xo-2G-EXd"/>
                         <outlet property="rTitleText" destination="r5f-Fj-JwF" id="Hx6-fc-vF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY0-5V-kQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="1451.5" y="1272.5"/>
         </scene>
         <!--View Controller-->
@@ -1366,6 +1341,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="1387.5" y="1272.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
         </scene>
         <!--LoginVC-->
         <scene sceneID="4IX-Bj-Nwl">
@@ -1564,6 +1542,7 @@
             </objects>
             <point key="canvasLocation" x="143" y="-355"/>
         </scene>
+<<<<<<< HEAD
 
         <!--Web Search Table View Controller-->
         <scene sceneID="bQT-UM-78c"/>
@@ -1622,6 +1601,8 @@
                                     <outlet property="webView" destination="DeJ-zs-1nX" id="pCF-bI-WfG"/>
                                 </connections>
 
+=======
+>>>>>>> parent of 6ef8cec... LatestCommit
         <!--View Controller-->
         <scene sceneID="EOK-tk-ZRO">
             <objects>
@@ -1634,6 +1615,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -1711,10 +1693,23 @@
                             <constraint firstItem="BV4-Ab-m0w" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="nOG-M1-Eqf"/>
 >>>>>>> origin/master
 >>>>>>> Stashed changes
+=======
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGH-y8-XPg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AGH-y8-XPg" firstAttribute="leading" secondItem="Ipo-aL-zpV" secondAttribute="leading" id="AGV-MJ-b4e"/>
+                            <constraint firstItem="AGH-y8-XPg" firstAttribute="top" secondItem="U9y-Ev-VNZ" secondAttribute="bottom" id="OAb-8M-Scs"/>
+                            <constraint firstAttribute="trailing" secondItem="AGH-y8-XPg" secondAttribute="trailing" id="R7Q-id-Z4w"/>
+                            <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="AGH-y8-XPg" secondAttribute="bottom" id="fdq-0L-swU"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                         <outlet property="activityIndicator" destination="y7W-4g-y4U" id="3FW-uZ-bEz"/>
 =======
@@ -1731,10 +1726,14 @@
 =======
 >>>>>>> Stashed changes
                         <outlet property="wView" destination="BV4-Ab-m0w" id="JUx-rc-ezx"/>
+=======
+                        <outlet property="containerView" destination="AGH-y8-XPg" id="4QG-ax-pC7"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsW-vK-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <point key="canvasLocation" x="-439.5" y="2007.5"/>
 =======
@@ -1752,6 +1751,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="-439.5" y="2007.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
         </scene>
         <!--Web Search Table View Controller-->
         <scene sceneID="bQT-UM-78c">
@@ -1872,6 +1874,7 @@
                         <outlet property="imageLogo" destination="nBS-YF-EaL" id="UUK-z4-6EP"/>
                         <outlet property="webSearchBar" destination="cCo-8r-mGO" id="NhD-g0-0a0"/>
                         <outlet property="webSearchTV" destination="dSA-hQ-ylp" id="dmx-o9-KsT"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
                         <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
@@ -1889,10 +1892,14 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+                        <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6e-Yw-kRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
             <point key="canvasLocation" x="-406.5" y="1252.5"/>
@@ -1914,6 +1921,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="-439.5" y="1252.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="40I-Nu-qkX">

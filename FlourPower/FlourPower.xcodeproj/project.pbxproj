@@ -19,9 +19,11 @@
 		3D2EEB881C0E3F6F009E4472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EEB861C0E3F6F009E4472 /* LaunchScreen.storyboard */; };
 		3D2EEB901C0F36DA009E4472 /* RailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */; };
 		3D2EEB921C0F3D8F009E4472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */; };
+		3D37B7381CBD613B0009B883 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37B7371CBD613B0009B883 /* AddCollectionViewController.swift */; };
 		3D4451F91CA8340B006D02D9 /* WebCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4451F81CA8340B006D02D9 /* WebCell.swift */; };
 		3D4451FB1CA83ACD006D02D9 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4451FA1CA83ACD006D02D9 /* MyCell.swift */; };
 		3D6B24671CCFFB3500F02BCA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B24661CCFFB3500F02BCA /* AddViewController.swift */; };
+		3D6D7A021CBD68FF00E87FA7 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7A011CBD68FF00E87FA7 /* AddCell.swift */; };
 		3D8176A41C86270E009EBEF3 /* WSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8176A31C86270E009EBEF3 /* WSVViewController.swift */; };
 		3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */; };
 		3D9CD8001C72AD9600645850 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CD7FE1C72AD9600645850 /* Fabric.framework */; };
@@ -45,9 +47,11 @@
 		3D2EEB891C0E3F6F009E4472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D2EEB8F1C0F36DA009E4472 /* RailsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailsRequest.swift; sourceTree = "<group>"; };
 		3D2EEB911C0F3D8F009E4472 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3D37B7371CBD613B0009B883 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		3D4451F81CA8340B006D02D9 /* WebCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCell.swift; sourceTree = "<group>"; };
 		3D4451FA1CA83ACD006D02D9 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		3D6B24661CCFFB3500F02BCA /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		3D6D7A011CBD68FF00E87FA7 /* AddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		3D8176A31C86270E009EBEF3 /* WSVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSVViewController.swift; sourceTree = "<group>"; };
 		3D8853E41C46F2B80028D51A /* SFPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFPTableViewController.swift; sourceTree = "<group>"; };
 		3D9CD7FE1C72AD9600645850 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				3D29EF991C1A134F00169B2A /* StepCell.swift */,
 				3D4451F81CA8340B006D02D9 /* WebCell.swift */,
 				3D4451FA1CA83ACD006D02D9 /* MyCell.swift */,
+				3D6D7A011CBD68FF00E87FA7 /* AddCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				3D0B66521C0F9B8B00D2143E /* RecipesCollectionVC.swift */,
 				3DEBA4291C172D9A00C088BA /* RecipeDetailVC.swift */,
+				3D37B7371CBD613B0009B883 /* AddCollectionViewController.swift */,
 				3D6B24661CCFFB3500F02BCA /* AddViewController.swift */,
 			);
 			name = "Recipe Flow";
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D37B7381CBD613B0009B883 /* AddCollectionViewController.swift in Sources */,
 				3D29EFA21C1A1CE100169B2A /* PrettyButton.swift in Sources */,
 				3D6B24671CCFFB3500F02BCA /* AddViewController.swift in Sources */,
 				3D29EF9A1C1A134F00169B2A /* StepCell.swift in Sources */,
+				3D6D7A021CBD68FF00E87FA7 /* AddCell.swift in Sources */,
 				3D29EFA01C1A1B4E00169B2A /* RecipeCell.swift in Sources */,
 				3D8853E51C46F2B80028D51A /* SFPTableViewController.swift in Sources */,
 				3D4451F91CA8340B006D02D9 /* WebCell.swift in Sources */,
