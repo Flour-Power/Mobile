@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha"/>
     <dependencies>
@@ -10,6 +11,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
+>>>>>>> parent of 6ef8cec... LatestCommit
 =======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTO-hQ-Aha">
 >>>>>>> parent of 6ef8cec... LatestCommit
@@ -655,11 +659,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpM-H2-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             <point key="canvasLocation" x="668.5" y="460.5"/>
 
             <point key="canvasLocation" x="672.5" y="460.5"/>
 >>>>>>> master
+=======
+            <point key="canvasLocation" x="672.5" y="460.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
 =======
             <point key="canvasLocation" x="672.5" y="460.5"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
@@ -1164,6 +1172,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY0-5V-kQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <point key="canvasLocation" x="1451.5" y="1272.5"/>
         </scene>
         <!--View Controller-->
@@ -1341,6 +1350,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="1387.5" y="1272.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
 =======
             <point key="canvasLocation" x="1387.5" y="1272.5"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
@@ -1543,6 +1555,7 @@
             <point key="canvasLocation" x="143" y="-355"/>
         </scene>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <!--Web Search Table View Controller-->
         <scene sceneID="bQT-UM-78c"/>
@@ -1603,6 +1616,8 @@
 
 =======
 >>>>>>> parent of 6ef8cec... LatestCommit
+=======
+>>>>>>> parent of 6ef8cec... LatestCommit
         <!--View Controller-->
         <scene sceneID="EOK-tk-ZRO">
             <objects>
@@ -1615,6 +1630,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
@@ -1694,6 +1710,8 @@
 >>>>>>> origin/master
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> parent of 6ef8cec... LatestCommit
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGH-y8-XPg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </containerView>
@@ -1704,11 +1722,15 @@
                             <constraint firstItem="AGH-y8-XPg" firstAttribute="top" secondItem="U9y-Ev-VNZ" secondAttribute="bottom" id="OAb-8M-Scs"/>
                             <constraint firstAttribute="trailing" secondItem="AGH-y8-XPg" secondAttribute="trailing" id="R7Q-id-Z4w"/>
                             <constraint firstItem="Cyb-hp-JR9" firstAttribute="top" secondItem="AGH-y8-XPg" secondAttribute="bottom" id="fdq-0L-swU"/>
+<<<<<<< HEAD
+>>>>>>> parent of 6ef8cec... LatestCommit
+=======
 >>>>>>> parent of 6ef8cec... LatestCommit
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
                         <outlet property="activityIndicator" destination="y7W-4g-y4U" id="3FW-uZ-bEz"/>
@@ -1729,11 +1751,15 @@
 =======
                         <outlet property="containerView" destination="AGH-y8-XPg" id="4QG-ax-pC7"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
+=======
+                        <outlet property="containerView" destination="AGH-y8-XPg" id="4QG-ax-pC7"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsW-vK-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <point key="canvasLocation" x="-439.5" y="2007.5"/>
 =======
@@ -1751,6 +1777,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="-439.5" y="2007.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
 =======
             <point key="canvasLocation" x="-439.5" y="2007.5"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
@@ -1875,6 +1904,7 @@
                         <outlet property="webSearchBar" destination="cCo-8r-mGO" id="NhD-g0-0a0"/>
                         <outlet property="webSearchTV" destination="dSA-hQ-ylp" id="dmx-o9-KsT"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
                         <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
@@ -1895,10 +1925,14 @@
 =======
                         <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
+=======
+                        <segue destination="H4X-MP-5HZ" kind="show" identifier="SendDataSegue" id="Al7-WM-Fag"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6e-Yw-kRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 
@@ -1921,6 +1955,9 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            <point key="canvasLocation" x="-439.5" y="1252.5"/>
+>>>>>>> parent of 6ef8cec... LatestCommit
 =======
             <point key="canvasLocation" x="-439.5" y="1252.5"/>
 >>>>>>> parent of 6ef8cec... LatestCommit
